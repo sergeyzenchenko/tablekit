@@ -21,6 +21,14 @@
 		AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
 		AD0E6E7A16E7988600231F24 /* DXTableKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E7916E7988600231F24 /* DXTableKitTests.m */; };
+		AD0E6E9516E79CEE00231F24 /* DXTKBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8616E79CEE00231F24 /* DXTKBaseDataProvider.m */; };
+		AD0E6E9616E79CEE00231F24 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */; };
+		AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */; };
+		AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */; };
+		AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */; };
+		AD0E6E9A16E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E9416E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m */; };
+		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
+		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04F00490A4A0473A95D0FFDA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E4B16E7988600231F24 /* DXTableKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DXTableKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E4E16E7988600231F24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD0E6E5016E7988600231F24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -47,12 +56,31 @@
 		AD0E6E6016E7988600231F24 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AD0E6E6216E7988600231F24 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AD0E6E6416E7988600231F24 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AD0E6E6B16E7988600231F24 /* DXTableKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DXTableKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD0E6E6B16E7988600231F24 /* tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E6C16E7988600231F24 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD0E6E7416E7988600231F24 /* DXTableKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DXTableKitTests-Info.plist"; sourceTree = "<group>"; };
 		AD0E6E7616E7988600231F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD0E6E7816E7988600231F24 /* DXTableKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTableKitTests.h; sourceTree = "<group>"; };
 		AD0E6E7916E7988600231F24 /* DXTableKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXTableKitTests.m; sourceTree = "<group>"; };
+		AD0E6E8416E79CEE00231F24 /* DXTKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseCell.h; sourceTree = "<group>"; };
+		AD0E6E8516E79CEE00231F24 /* DXTKBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataProvider.h; sourceTree = "<group>"; };
+		AD0E6E8616E79CEE00231F24 /* DXTKBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataProvider.m; sourceTree = "<group>"; };
+		AD0E6E8716E79CEE00231F24 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
+		AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
+		AD0E6E8916E79CEE00231F24 /* DXTKBlockBasedCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedCellMapping.h; sourceTree = "<group>"; };
+		AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedCellMapping.m; sourceTree = "<group>"; };
+		AD0E6E8B16E79CEE00231F24 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
+		AD0E6E8C16E79CEE00231F24 /* DXTKCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewDataSource.h; sourceTree = "<group>"; };
+		AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSource.m; sourceTree = "<group>"; };
+		AD0E6E8E16E79CEE00231F24 /* DXTKDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataProvider.h; sourceTree = "<group>"; };
+		AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
+		AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
+		AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
+		AD0E6E9316E79CEE00231F24 /* DXTKProgressIndicatorPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKProgressIndicatorPlugin.h; sourceTree = "<group>"; };
+		AD0E6E9416E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKProgressIndicatorPlugin.m; sourceTree = "<group>"; };
+		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +91,7 @@
 				AD0E6E4F16E7988600231F24 /* UIKit.framework in Frameworks */,
 				AD0E6E5116E7988600231F24 /* Foundation.framework in Frameworks */,
 				AD0E6E5316E7988600231F24 /* CoreGraphics.framework in Frameworks */,
+				FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +102,7 @@
 				AD0E6E6D16E7988600231F24 /* SenTestingKit.framework in Frameworks */,
 				AD0E6E6E16E7988600231F24 /* UIKit.framework in Frameworks */,
 				AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */,
+				C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +116,8 @@
 				AD0E6E7216E7988600231F24 /* DXTableKitTests */,
 				AD0E6E4D16E7988600231F24 /* Frameworks */,
 				AD0E6E4C16E7988600231F24 /* Products */,
+				F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */,
+				E05490AFBF4641459DCDD716 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				AD0E6E4B16E7988600231F24 /* DXTableKit.app */,
-				AD0E6E6B16E7988600231F24 /* DXTableKitTests.octest */,
+				AD0E6E6B16E7988600231F24 /* tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +137,8 @@
 				AD0E6E5016E7988600231F24 /* Foundation.framework */,
 				AD0E6E5216E7988600231F24 /* CoreGraphics.framework */,
 				AD0E6E6C16E7988600231F24 /* SenTestingKit.framework */,
+				DB986F7D61DD4761AE812EFE /* libPods-tests.a */,
+				04F00490A4A0473A95D0FFDA /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +146,7 @@
 		AD0E6E5416E7988600231F24 /* DXTableKit */ = {
 			isa = PBXGroup;
 			children = (
+				AD0E6E8316E79CCD00231F24 /* Code */,
 				AD0E6E5D16E7988600231F24 /* DXTKAppDelegate.h */,
 				AD0E6E5E16E7988600231F24 /* DXTKAppDelegate.m */,
 				AD0E6E5516E7988600231F24 /* Supporting Files */,
@@ -152,6 +187,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AD0E6E8316E79CCD00231F24 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				AD0E6E8416E79CEE00231F24 /* DXTKBaseCell.h */,
+				AD0E6E8516E79CEE00231F24 /* DXTKBaseDataProvider.h */,
+				AD0E6E8616E79CEE00231F24 /* DXTKBaseDataProvider.m */,
+				AD0E6E8716E79CEE00231F24 /* DXTKBaseDataSource.h */,
+				AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */,
+				AD0E6E8916E79CEE00231F24 /* DXTKBlockBasedCellMapping.h */,
+				AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */,
+				AD0E6E8B16E79CEE00231F24 /* DXTKCellMapping.h */,
+				AD0E6E8C16E79CEE00231F24 /* DXTKCollectionViewDataSource.h */,
+				AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */,
+				AD0E6E8E16E79CEE00231F24 /* DXTKDataProvider.h */,
+				AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */,
+				AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */,
+				AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */,
+				AD0E6E9216E79CEE00231F24 /* Plugins */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		AD0E6E9216E79CEE00231F24 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				AD0E6E9316E79CEE00231F24 /* DXTKProgressIndicatorPlugin.h */,
+				AD0E6E9416E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +228,7 @@
 				AD0E6E4716E7988600231F24 /* Sources */,
 				AD0E6E4816E7988600231F24 /* Frameworks */,
 				AD0E6E4916E7988600231F24 /* Resources */,
+				F63A0E402BD848D785560EE0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -172,23 +239,24 @@
 			productReference = AD0E6E4B16E7988600231F24 /* DXTableKit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AD0E6E6A16E7988600231F24 /* DXTableKitTests */ = {
+		AD0E6E6A16E7988600231F24 /* tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AD0E6E8016E7988600231F24 /* Build configuration list for PBXNativeTarget "DXTableKitTests" */;
+			buildConfigurationList = AD0E6E8016E7988600231F24 /* Build configuration list for PBXNativeTarget "tests" */;
 			buildPhases = (
 				AD0E6E6616E7988600231F24 /* Sources */,
 				AD0E6E6716E7988600231F24 /* Frameworks */,
 				AD0E6E6816E7988600231F24 /* Resources */,
 				AD0E6E6916E7988600231F24 /* ShellScript */,
+				976F15D8E1F8434F87CDD945 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				AD0E6E7116E7988600231F24 /* PBXTargetDependency */,
 			);
-			name = DXTableKitTests;
+			name = tests;
 			productName = DXTableKitTests;
-			productReference = AD0E6E6B16E7988600231F24 /* DXTableKitTests.octest */;
+			productReference = AD0E6E6B16E7988600231F24 /* tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -214,7 +282,7 @@
 			projectRoot = "";
 			targets = (
 				AD0E6E4A16E7988600231F24 /* DXTableKit */,
-				AD0E6E6A16E7988600231F24 /* DXTableKitTests */,
+				AD0E6E6A16E7988600231F24 /* tests */,
 			);
 		};
 /* End PBXProject section */
@@ -242,6 +310,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		976F15D8E1F8434F87CDD945 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-tests-resources.sh\"\n";
+		};
 		AD0E6E6916E7988600231F24 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +337,20 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		F63A0E402BD848D785560EE0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,6 +360,12 @@
 			files = (
 				AD0E6E5B16E7988600231F24 /* main.m in Sources */,
 				AD0E6E5F16E7988600231F24 /* DXTKAppDelegate.m in Sources */,
+				AD0E6E9516E79CEE00231F24 /* DXTKBaseDataProvider.m in Sources */,
+				AD0E6E9616E79CEE00231F24 /* DXTKBaseDataSource.m in Sources */,
+				AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */,
+				AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */,
+				AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */,
+				AD0E6E9A16E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +465,7 @@
 		};
 		AD0E6E7E16E7988600231F24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05490AFBF4641459DCDD716 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXTableKit/DXTableKit-Prefix.pch";
@@ -374,6 +477,7 @@
 		};
 		AD0E6E7F16E7988600231F24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E05490AFBF4641459DCDD716 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXTableKit/DXTableKit-Prefix.pch";
@@ -385,6 +489,7 @@
 		};
 		AD0E6E8116E7988600231F24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DXTableKit.app/DXTableKit";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -402,6 +507,7 @@
 		};
 		AD0E6E8216E7988600231F24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DXTableKit.app/DXTableKit";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -436,14 +542,16 @@
 				AD0E6E7F16E7988600231F24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		AD0E6E8016E7988600231F24 /* Build configuration list for PBXNativeTarget "DXTableKitTests" */ = {
+		AD0E6E8016E7988600231F24 /* Build configuration list for PBXNativeTarget "tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AD0E6E8116E7988600231F24 /* Debug */,
 				AD0E6E8216E7988600231F24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

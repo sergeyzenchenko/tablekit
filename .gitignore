@@ -1,0 +1,16 @@
+.DS_Store
+
+*.xcworkspace/**
+!*.xcworkspace/*.xcworkspacedata
+
+Pods
+.idea
+
+build/*
+
+cpd-output.*
+DerivedData
+build.output
+
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata

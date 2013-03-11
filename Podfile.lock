@@ -1,18 +1,21 @@
 
 PODS:
 - DXFoundation (0.0.9)
+- Funcussion (0.1.1)
 - Kiwi (2.0.5)
 - MBProgressHUD (0.5)
 - PSTCollectionView (0.0.1)
 
 DEPENDENCIES:
 - DXFoundation
+- Funcussion
 - Kiwi
 - MBProgressHUD
 - PSTCollectionView
 
 SPEC CHECKSUMS:
   DXFoundation: 4d0ffbc519a6958e352d06ea9ec1a364249d4e37
+  Funcussion: f8383c7db59d37a4f6c75e787e6e41e1b0d2a792
   MBProgressHUD: b23ee11c42253d6d804e8e0bfabdc334e8b2571f
   PSTCollectionView: c2ce6d64ffe55a8c3e68bb1036442817aaf83409
   Kiwi: 89ade77eb49c889178cb2779e02514a7b9b9449e

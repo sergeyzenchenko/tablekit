@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKDataProvider.h"
+#import "DXTKContentProvider.h"
 
 @class DXTKBaseDataSource;
 
-@protocol DXTKDataSourcePlugin <NSObject, DXTKDataProviderDelegate>
+@protocol DXTKDataSourcePlugin <NSObject, DXTKContentProviderDelegate>
 
 - (void)attachToDataSource:(DXTKBaseDataSource*)dataSource;
 

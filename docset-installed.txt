@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/zen/Library/Developer/Shared/Documentation/DocSets/com.111minutes.dxtablekit.DXTableKit.docset
+Time: 2013-03-10 15:12:38 +0000

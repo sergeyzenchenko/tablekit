@@ -21,7 +21,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataProvider numberOfRowsInSection:section];
+    return [self.dataProvider numberOfItemsInSection:section];
 }
 
 - (id)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

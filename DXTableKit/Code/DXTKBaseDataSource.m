@@ -48,9 +48,9 @@
     }
 }
 
-- (void)setDataProvider:(id<DXTKDataProvider>)dataProvider
+- (void)setDataProvider:(id<DXTKContentProvider>)dataProvider
 {
-    NSParameterAssert([dataProvider conformsToProtocol:@protocol(DXTKDataProvider)]);
+    NSParameterAssert([dataProvider conformsToProtocol:@protocol(DXTKContentProvider)]);
     if (_dataProvider != dataProvider) {
         _dataProvider = dataProvider;
         _dataProvider.delegate = self;
@@ -74,10 +74,8 @@
         self.cellsMapping = [DXTKBlockBasedCellMapping shared];
         return;
     }
-    
-    if ([self.dataProvider isLoadable]) {
-        [self.plugins makeObjectsPerformSelector:@selector(reload)];
-    }
+
+    [self.plugins makeObjectsPerformSelector:@selector(reload)];
     
     [self.dataProvider reload];
 }
@@ -89,7 +87,7 @@
 
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath
 {
-    id domainObject = [self.dataProvider objectForIndexPath:indexPath];
+    id domainObject = [self.dataProvider itemForIndexPath:indexPath];
     
     assert(domainObject);
     
@@ -105,21 +103,21 @@
 - (void)selectCellAtIndexPath:(NSIndexPath*)indexPath
 {
     if ([self.delegate respondsToSelector:@selector(didSelectDomainObject:fromDataSource:)]) {
-        [self.delegate didSelectDomainObject:[self.dataProvider objectForIndexPath:indexPath] fromDataSource:self];
+        [self.delegate didSelectDomainObject:[self.dataProvider itemForIndexPath:indexPath] fromDataSource:self];
     }
 }
 
 #pragma mark -
 #pragma mark HIDataProviderDelegate
 
-- (void)dataProvider:(id <DXTKDataProvider>)dataProvider didFinishLoadingWithError:(NSError *)error
+- (void)dataProvider:(id <DXTKContentProvider>)dataProvider didFinishLoadingWithError:(NSError *)error
 {
     [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
         [plugin dataProvider:dataProvider didFinishLoadingWithError:error];
     }];
 }
 
-- (void)dataProviderDidFinishLoading:(id <DXTKDataProvider>)dataProvider
+- (void)dataProviderDidFinishLoading:(id <DXTKContentProvider>)dataProvider
 {
     [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
         [plugin dataProviderDidFinishLoading:dataProvider];

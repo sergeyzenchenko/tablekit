@@ -30,12 +30,12 @@
     [MBProgressHUD showHUDAddedTo:self.dataSource.contentView animated:YES];
 }
 
-- (void)dataProvider:(id <DXTKDataProvider>)dataProvider didFinishLoadingWithError:(NSError *)error
+- (void)dataProvider:(id <DXTKContentProvider>)dataProvider didFinishLoadingWithError:(NSError *)error
 {
     
 }
 
-- (void)dataProviderDidFinishLoading:(id <DXTKDataProvider>)dataProvider
+- (void)dataProviderDidFinishLoading:(id <DXTKContentProvider>)dataProvider
 {
     [MBProgressHUD hideAllHUDsForView:self.dataSource.contentView animated:YES];
 }

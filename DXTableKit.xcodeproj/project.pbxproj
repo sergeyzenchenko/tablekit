@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D6A3163B671633CC51D780F /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */; };
+		1D6A31EE29CC65EF3F186A94 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */; };
+		1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */; };
+		1D6A3990C37CB94539451750 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A36605F4BD566A847C096 /* MenuItem.m */; };
+		1D6A3BBE1072D076CB21629D /* DXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3BBD20F61668504013A9 /* DXTableView.m */; };
+		1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A397BB1500B44BEAA9E33 /* RootViewController.m */; };
 		AD0E6E4F16E7988600231F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E4E16E7988600231F24 /* UIKit.framework */; };
 		AD0E6E5116E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E5316E7988600231F24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5216E7988600231F24 /* CoreGraphics.framework */; };
@@ -21,7 +27,7 @@
 		AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
 		AD0E6E7A16E7988600231F24 /* DXTableKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E7916E7988600231F24 /* DXTableKitTests.m */; };
-		AD0E6E9516E79CEE00231F24 /* DXTKBaseDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8616E79CEE00231F24 /* DXTKBaseDataProvider.m */; };
+		AD0E6E9516E79CEE00231F24 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8616E79CEE00231F24 /* DXTKBaseContentProvider.m */; };
 		AD0E6E9616E79CEE00231F24 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */; };
 		AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */; };
 		AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */; };
@@ -43,6 +49,18 @@
 
 /* Begin PBXFileReference section */
 		04F00490A4A0473A95D0FFDA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6A301D467704E22E29BDEE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		1D6A3151D6FDE45E07D2FE9A /* DXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTableView.h; sourceTree = "<group>"; };
+		1D6A3348F9DD29DF6E7740BC /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		1D6A3657321999F77D3CCA90 /* MenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDataProvider.h; sourceTree = "<group>"; };
+		1D6A36605F4BD566A847C096 /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
+		1D6A3724B3B1CF627286C871 /* DXTKContentSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
+		1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKContentSection.m; sourceTree = "<group>"; };
+		1D6A397BB1500B44BEAA9E33 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1D6A3BBD20F61668504013A9 /* DXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTableView.m; sourceTree = "<group>"; };
+		1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDataProvider.m; sourceTree = "<group>"; };
+		1D6A3CAF805CD7E303F018B9 /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
 		AD0E6E4B16E7988600231F24 /* DXTableKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DXTableKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E4E16E7988600231F24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD0E6E5016E7988600231F24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,8 +81,8 @@
 		AD0E6E7816E7988600231F24 /* DXTableKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTableKitTests.h; sourceTree = "<group>"; };
 		AD0E6E7916E7988600231F24 /* DXTableKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXTableKitTests.m; sourceTree = "<group>"; };
 		AD0E6E8416E79CEE00231F24 /* DXTKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseCell.h; sourceTree = "<group>"; };
-		AD0E6E8516E79CEE00231F24 /* DXTKBaseDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataProvider.h; sourceTree = "<group>"; };
-		AD0E6E8616E79CEE00231F24 /* DXTKBaseDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataProvider.m; sourceTree = "<group>"; };
+		AD0E6E8516E79CEE00231F24 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
+		AD0E6E8616E79CEE00231F24 /* DXTKBaseContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseContentProvider.m; sourceTree = "<group>"; };
 		AD0E6E8716E79CEE00231F24 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
 		AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
 		AD0E6E8916E79CEE00231F24 /* DXTKBlockBasedCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedCellMapping.h; sourceTree = "<group>"; };
@@ -72,7 +90,7 @@
 		AD0E6E8B16E79CEE00231F24 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
 		AD0E6E8C16E79CEE00231F24 /* DXTKCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewDataSource.h; sourceTree = "<group>"; };
 		AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSource.m; sourceTree = "<group>"; };
-		AD0E6E8E16E79CEE00231F24 /* DXTKDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataProvider.h; sourceTree = "<group>"; };
+		AD0E6E8E16E79CEE00231F24 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
 		AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
 		AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
 		AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
@@ -109,6 +127,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D6A3C55F518016F5B07E5F3 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A397BB1500B44BEAA9E33 /* RootViewController.m */,
+				1D6A301D467704E22E29BDEE /* RootViewController.h */,
+				1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */,
+				1D6A3657321999F77D3CCA90 /* MenuDataProvider.h */,
+				1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */,
+				1D6A3348F9DD29DF6E7740BC /* MenuCell.h */,
+				1D6A36605F4BD566A847C096 /* MenuItem.m */,
+				1D6A3CAF805CD7E303F018B9 /* MenuItem.h */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		AD0E6E4216E7988600231F24 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +183,7 @@
 				AD0E6E5D16E7988600231F24 /* DXTKAppDelegate.h */,
 				AD0E6E5E16E7988600231F24 /* DXTKAppDelegate.m */,
 				AD0E6E5516E7988600231F24 /* Supporting Files */,
+				1D6A3C55F518016F5B07E5F3 /* Examples */,
 			);
 			path = DXTableKit;
 			sourceTree = "<group>";
@@ -191,8 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				AD0E6E8416E79CEE00231F24 /* DXTKBaseCell.h */,
-				AD0E6E8516E79CEE00231F24 /* DXTKBaseDataProvider.h */,
-				AD0E6E8616E79CEE00231F24 /* DXTKBaseDataProvider.m */,
+				AD0E6E8516E79CEE00231F24 /* DXTKBaseContentProvider.h */,
+				AD0E6E8616E79CEE00231F24 /* DXTKBaseContentProvider.m */,
 				AD0E6E8716E79CEE00231F24 /* DXTKBaseDataSource.h */,
 				AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */,
 				AD0E6E8916E79CEE00231F24 /* DXTKBlockBasedCellMapping.h */,
@@ -200,11 +234,15 @@
 				AD0E6E8B16E79CEE00231F24 /* DXTKCellMapping.h */,
 				AD0E6E8C16E79CEE00231F24 /* DXTKCollectionViewDataSource.h */,
 				AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */,
-				AD0E6E8E16E79CEE00231F24 /* DXTKDataProvider.h */,
+				AD0E6E8E16E79CEE00231F24 /* DXTKContentProvider.h */,
 				AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */,
 				AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */,
 				AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */,
 				AD0E6E9216E79CEE00231F24 /* Plugins */,
+				1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */,
+				1D6A3724B3B1CF627286C871 /* DXTKContentSection.h */,
+				1D6A3BBD20F61668504013A9 /* DXTableView.m */,
+				1D6A3151D6FDE45E07D2FE9A /* DXTableView.h */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -360,12 +398,18 @@
 			files = (
 				AD0E6E5B16E7988600231F24 /* main.m in Sources */,
 				AD0E6E5F16E7988600231F24 /* DXTKAppDelegate.m in Sources */,
-				AD0E6E9516E79CEE00231F24 /* DXTKBaseDataProvider.m in Sources */,
+				AD0E6E9516E79CEE00231F24 /* DXTKBaseContentProvider.m in Sources */,
 				AD0E6E9616E79CEE00231F24 /* DXTKBaseDataSource.m in Sources */,
 				AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */,
 				AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */,
 				AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */,
 				AD0E6E9A16E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m in Sources */,
+				1D6A31EE29CC65EF3F186A94 /* DXTKContentSection.m in Sources */,
+				1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */,
+				1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */,
+				1D6A3163B671633CC51D780F /* MenuCell.m in Sources */,
+				1D6A3990C37CB94539451750 /* MenuItem.m in Sources */,
+				1D6A3BBE1072D076CB21629D /* DXTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

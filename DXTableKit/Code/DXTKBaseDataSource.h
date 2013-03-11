@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DXTKCellMapping.h"
-#import "DXTKDataProvider.h"
+#import "DXTKContentProvider.h"
 #import "DXTKBlockBasedCellMapping.h"
 #import "DXTKDataSourcePlugin.h"
 
@@ -20,9 +20,9 @@
 
 @end
 
-@interface DXTKBaseDataSource : NSObject <DXTKDataProviderDelegate>
+@interface DXTKBaseDataSource : NSObject <DXTKContentProviderDelegate>
 
-@property (nonatomic, strong) id<DXTKDataProvider> dataProvider;
+@property (nonatomic, strong) id<DXTKContentProvider> dataProvider;
 @property (nonatomic, strong) id<DXTKCellMapping> cellsMapping;
 @property (nonatomic, weak) UIView *contentView;
 @property (nonatomic, weak) id<DXTKBaseDataSourceDelegate> delegate;

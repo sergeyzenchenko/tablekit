@@ -21,7 +21,7 @@
 
 - (NSInteger)collectionView:(PSUICollectionView *)view numberOfItemsInSection:(NSInteger)section;
 {
-    return [self.dataProvider numberOfRowsInSection:section];
+    return [self.dataProvider numberOfItemsInSection:section];
 }
 
 - (id)collectionView:(PSUICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;

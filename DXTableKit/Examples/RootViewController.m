@@ -25,13 +25,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView = [[DXTableView alloc] initWithFrame:self.view.bounds];
+    self.tableView = [[DXTableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
 
     self.tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
     [self.view addSubview:self.tableView];
 
     MenuDataProvider *provider = [MenuDataProvider new];
+
+    [provider addSectionWithTitle:@"Static"];
 
     [provider addMenuItemWithTitle:@"Simple List" block:^{
 
@@ -41,6 +43,8 @@
 
     }];
 
+    [provider addSectionWithTitle:@"Dynamic"];
+
     [provider addMenuItemWithTitle:@"Remove api list" block:^{
 
     }];
@@ -48,6 +52,8 @@
     [provider addMenuItemWithTitle:@"Core Data List" block:^{
 
     }];
+
+    [provider addSectionWithTitle:@"Forms"];
 
     [provider addMenuItemWithTitle:@"Form" block:^{
 

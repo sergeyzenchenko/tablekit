@@ -2,7 +2,7 @@
 
 @interface DXTKBaseContentProvider ()
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSArray *sections;
 
 @end
 
@@ -26,20 +26,20 @@
 
 - (NSInteger)numberOfItemsInSection:(NSInteger)section
 {
-    return self.items.count;
+    return [[self.sections[section] items] count];
 }
 
 - (id)itemForIndexPath:(NSIndexPath *)path
 {
-    NSParameterAssert(path.section == 0);
-    NSParameterAssert(path.row <= self.items.count);
+    NSParameterAssert(path.section <= self.sections.count);
+    NSParameterAssert(path.row <= [[self.sections[path.section] items] count]);
     
-    return self.items[path.row];
+    return [self.sections[path.section] items][path.row];
 }
 
 - (NSInteger)numberOfSections
 {
-    return 1;
+    return self.sections.count;
 }
 
 - (void)reload
@@ -49,9 +49,9 @@
 
 - (void)commitResult:(NSArray *)array
 {
-    self.items = array;
+    self.sections = array;
 
-    if (self.items.count > 0) {
+    if (self.sections.count > 0) {
         self.state = DXTKContentProviderStateHasResults;
     } else {
         self.state = DXTKContentProviderStateEmpty;

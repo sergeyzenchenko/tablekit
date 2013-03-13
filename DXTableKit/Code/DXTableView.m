@@ -8,9 +8,7 @@
 #import "DXTableView.h"
 
 
-@implementation DXTableView {
-
-}
+@implementation DXTableView
 
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
@@ -26,5 +24,15 @@
 {
     [self.customDataSource reload];
 }
+
+/** DXTableView will work only if dataSource and delegate is customDataSource */
+- (void)reloadData
+{
+    NSParameterAssert(self.dataSource == self.customDataSource);
+    NSParameterAssert(self.delegate == self.customDataSource);
+
+    [super reloadData];
+}
+
 
 @end

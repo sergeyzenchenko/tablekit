@@ -7,7 +7,6 @@
 //
 
 #import "DXTKBaseDataSource.h"
-#import "DXTKProgressIndicatorPlugin.h"
 
 @interface DXTKBaseDataSource ()
 
@@ -29,7 +28,7 @@
 
 - (void)setup
 {
-    [self attachPlugin:[DXTKProgressIndicatorPlugin new]];
+
 }
 
 - (void)attachPlugin:(id<DXTKDataSourcePlugin>)plugin
@@ -88,12 +87,12 @@
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath
 {
     id domainObject = [self.dataProvider itemForIndexPath:indexPath];
-    
-    assert(domainObject);
+
+    NSParameterAssert(domainObject != nil);
     
     id<DXTKBaseCell> cell = [self.cellsMapping dequeueReusableCellFromCollectionViewOrTable:self.contentView forDomainObject:domainObject indexPath:indexPath];
-    
-    assert(cell);
+
+    NSParameterAssert(cell != nil);
     
     [cell fillWithObject:domainObject];
     

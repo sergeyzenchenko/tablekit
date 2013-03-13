@@ -32,7 +32,6 @@
 		AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */; };
 		AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */; };
 		AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */; };
-		AD0E6E9A16E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E9416E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -94,8 +93,6 @@
 		AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
 		AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
 		AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
-		AD0E6E9316E79CEE00231F24 /* DXTKProgressIndicatorPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKProgressIndicatorPlugin.h; sourceTree = "<group>"; };
-		AD0E6E9416E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKProgressIndicatorPlugin.m; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -238,22 +235,12 @@
 				AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */,
 				AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */,
 				AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */,
-				AD0E6E9216E79CEE00231F24 /* Plugins */,
 				1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */,
 				1D6A3724B3B1CF627286C871 /* DXTKContentSection.h */,
 				1D6A3BBD20F61668504013A9 /* DXTableView.m */,
 				1D6A3151D6FDE45E07D2FE9A /* DXTableView.h */,
 			);
 			path = Code;
-			sourceTree = "<group>";
-		};
-		AD0E6E9216E79CEE00231F24 /* Plugins */ = {
-			isa = PBXGroup;
-			children = (
-				AD0E6E9316E79CEE00231F24 /* DXTKProgressIndicatorPlugin.h */,
-				AD0E6E9416E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m */,
-			);
-			path = Plugins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,7 +390,6 @@
 				AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */,
 				AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */,
 				AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */,
-				AD0E6E9A16E79CEE00231F24 /* DXTKProgressIndicatorPlugin.m in Sources */,
 				1D6A31EE29CC65EF3F186A94 /* DXTKContentSection.m in Sources */,
 				1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */,
 				1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */,

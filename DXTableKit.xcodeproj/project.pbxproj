@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1D6A3163B671633CC51D780F /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */; };
-		1D6A31EE29CC65EF3F186A94 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */; };
 		1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */; };
 		1D6A3990C37CB94539451750 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A36605F4BD566A847C096 /* MenuItem.m */; };
-		1D6A3BBE1072D076CB21629D /* DXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3BBD20F61668504013A9 /* DXTableView.m */; };
 		1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A397BB1500B44BEAA9E33 /* RootViewController.m */; };
+		308FD2EA16F0E090006B0415 /* DXTKCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2E916F0E090006B0415 /* DXTKCollectionViewDataSource.m */; };
+		308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2ED16F0E0BB006B0415 /* DXTableView.m */; };
+		308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */; };
+		308FD2FF16F0E119006B0415 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */; };
+		308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */; };
+		308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */; };
+		308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2FE16F0E119006B0415 /* DXTKContentSection.m */; };
 		AD0E6E4F16E7988600231F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E4E16E7988600231F24 /* UIKit.framework */; };
 		AD0E6E5116E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E5316E7988600231F24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5216E7988600231F24 /* CoreGraphics.framework */; };
@@ -27,11 +32,6 @@
 		AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
 		AD0E6E7A16E7988600231F24 /* DXTableKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E7916E7988600231F24 /* DXTableKitTests.m */; };
-		AD0E6E9516E79CEE00231F24 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8616E79CEE00231F24 /* DXTKBaseContentProvider.m */; };
-		AD0E6E9616E79CEE00231F24 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */; };
-		AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */; };
-		AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */; };
-		AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -50,16 +50,30 @@
 		04F00490A4A0473A95D0FFDA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D6A301D467704E22E29BDEE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
-		1D6A3151D6FDE45E07D2FE9A /* DXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTableView.h; sourceTree = "<group>"; };
 		1D6A3348F9DD29DF6E7740BC /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
 		1D6A3657321999F77D3CCA90 /* MenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDataProvider.h; sourceTree = "<group>"; };
 		1D6A36605F4BD566A847C096 /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
-		1D6A3724B3B1CF627286C871 /* DXTKContentSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
-		1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKContentSection.m; sourceTree = "<group>"; };
 		1D6A397BB1500B44BEAA9E33 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		1D6A3BBD20F61668504013A9 /* DXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTableView.m; sourceTree = "<group>"; };
 		1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDataProvider.m; sourceTree = "<group>"; };
 		1D6A3CAF805CD7E303F018B9 /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
+		308FD2E316F0E067006B0415 /* DXTKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseCell.h; sourceTree = "<group>"; };
+		308FD2E416F0E067006B0415 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
+		308FD2E516F0E067006B0415 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
+		308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
+		308FD2E816F0E090006B0415 /* DXTKCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewDataSource.h; sourceTree = "<group>"; };
+		308FD2E916F0E090006B0415 /* DXTKCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSource.m; sourceTree = "<group>"; };
+		308FD2EC16F0E0BB006B0415 /* DXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTableView.h; sourceTree = "<group>"; };
+		308FD2ED16F0E0BB006B0415 /* DXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTableView.m; sourceTree = "<group>"; };
+		308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
+		308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
+		308FD2F416F0E119006B0415 /* DXTKBlockBasedCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedCellMapping.h; sourceTree = "<group>"; };
+		308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedCellMapping.m; sourceTree = "<group>"; };
+		308FD2F716F0E119006B0415 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
+		308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseContentProvider.m; sourceTree = "<group>"; };
+		308FD2FA16F0E119006B0415 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
+		308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
+		308FD2FD16F0E119006B0415 /* DXTKContentSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
+		308FD2FE16F0E119006B0415 /* DXTKContentSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKContentSection.m; sourceTree = "<group>"; };
 		AD0E6E4B16E7988600231F24 /* DXTableKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DXTableKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E4E16E7988600231F24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD0E6E5016E7988600231F24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,20 +93,6 @@
 		AD0E6E7616E7988600231F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD0E6E7816E7988600231F24 /* DXTableKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTableKitTests.h; sourceTree = "<group>"; };
 		AD0E6E7916E7988600231F24 /* DXTableKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXTableKitTests.m; sourceTree = "<group>"; };
-		AD0E6E8416E79CEE00231F24 /* DXTKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseCell.h; sourceTree = "<group>"; };
-		AD0E6E8516E79CEE00231F24 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
-		AD0E6E8616E79CEE00231F24 /* DXTKBaseContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseContentProvider.m; sourceTree = "<group>"; };
-		AD0E6E8716E79CEE00231F24 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
-		AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
-		AD0E6E8916E79CEE00231F24 /* DXTKBlockBasedCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedCellMapping.h; sourceTree = "<group>"; };
-		AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedCellMapping.m; sourceTree = "<group>"; };
-		AD0E6E8B16E79CEE00231F24 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
-		AD0E6E8C16E79CEE00231F24 /* DXTKCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewDataSource.h; sourceTree = "<group>"; };
-		AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSource.m; sourceTree = "<group>"; };
-		AD0E6E8E16E79CEE00231F24 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
-		AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
-		AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
-		AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -137,6 +137,84 @@
 				1D6A3CAF805CD7E303F018B9 /* MenuItem.h */,
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		308FD2E216F0E067006B0415 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2E316F0E067006B0415 /* DXTKBaseCell.h */,
+				308FD2E416F0E067006B0415 /* DXTKCellMapping.h */,
+				308FD2E516F0E067006B0415 /* DXTKContentProvider.h */,
+				308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		308FD2E716F0E090006B0415 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2E816F0E090006B0415 /* DXTKCollectionViewDataSource.h */,
+				308FD2E916F0E090006B0415 /* DXTKCollectionViewDataSource.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		308FD2EB16F0E0BB006B0415 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2EC16F0E0BB006B0415 /* DXTableView.h */,
+				308FD2ED16F0E0BB006B0415 /* DXTableView.m */,
+				308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */,
+				308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		308FD2F216F0E119006B0415 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2F616F0E119006B0415 /* ContentProvider */,
+				308FD2F916F0E119006B0415 /* DataSource */,
+				308FD2F316F0E119006B0415 /* CellMapping */,
+				308FD2FC16F0E119006B0415 /* Section */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		308FD2F316F0E119006B0415 /* CellMapping */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2F416F0E119006B0415 /* DXTKBlockBasedCellMapping.h */,
+				308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */,
+			);
+			path = CellMapping;
+			sourceTree = "<group>";
+		};
+		308FD2F616F0E119006B0415 /* ContentProvider */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2F716F0E119006B0415 /* DXTKBaseContentProvider.h */,
+				308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */,
+			);
+			path = ContentProvider;
+			sourceTree = "<group>";
+		};
+		308FD2F916F0E119006B0415 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2FA16F0E119006B0415 /* DXTKBaseDataSource.h */,
+				308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		308FD2FC16F0E119006B0415 /* Section */ = {
+			isa = PBXGroup;
+			children = (
+				308FD2FD16F0E119006B0415 /* DXTKContentSection.h */,
+				308FD2FE16F0E119006B0415 /* DXTKContentSection.m */,
+			);
+			path = Section;
 			sourceTree = "<group>";
 		};
 		AD0E6E4216E7988600231F24 = {
@@ -221,24 +299,10 @@
 		AD0E6E8316E79CCD00231F24 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				AD0E6E8416E79CEE00231F24 /* DXTKBaseCell.h */,
-				AD0E6E8516E79CEE00231F24 /* DXTKBaseContentProvider.h */,
-				AD0E6E8616E79CEE00231F24 /* DXTKBaseContentProvider.m */,
-				AD0E6E8716E79CEE00231F24 /* DXTKBaseDataSource.h */,
-				AD0E6E8816E79CEE00231F24 /* DXTKBaseDataSource.m */,
-				AD0E6E8916E79CEE00231F24 /* DXTKBlockBasedCellMapping.h */,
-				AD0E6E8A16E79CEE00231F24 /* DXTKBlockBasedCellMapping.m */,
-				AD0E6E8B16E79CEE00231F24 /* DXTKCellMapping.h */,
-				AD0E6E8C16E79CEE00231F24 /* DXTKCollectionViewDataSource.h */,
-				AD0E6E8D16E79CEE00231F24 /* DXTKCollectionViewDataSource.m */,
-				AD0E6E8E16E79CEE00231F24 /* DXTKContentProvider.h */,
-				AD0E6E8F16E79CEE00231F24 /* DXTKDataSourcePlugin.h */,
-				AD0E6E9016E79CEE00231F24 /* DXTKTableViewDataSource.h */,
-				AD0E6E9116E79CEE00231F24 /* DXTKTableViewDataSource.m */,
-				1D6A393971F1FDD7EDF86E64 /* DXTKContentSection.m */,
-				1D6A3724B3B1CF627286C871 /* DXTKContentSection.h */,
-				1D6A3BBD20F61668504013A9 /* DXTableView.m */,
-				1D6A3151D6FDE45E07D2FE9A /* DXTableView.h */,
+				308FD2F216F0E119006B0415 /* Base */,
+				308FD2EB16F0E0BB006B0415 /* TableView */,
+				308FD2E716F0E090006B0415 /* CollectionView */,
+				308FD2E216F0E067006B0415 /* Protocols */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -385,17 +449,17 @@
 			files = (
 				AD0E6E5B16E7988600231F24 /* main.m in Sources */,
 				AD0E6E5F16E7988600231F24 /* DXTKAppDelegate.m in Sources */,
-				AD0E6E9516E79CEE00231F24 /* DXTKBaseContentProvider.m in Sources */,
-				AD0E6E9616E79CEE00231F24 /* DXTKBaseDataSource.m in Sources */,
-				AD0E6E9716E79CEE00231F24 /* DXTKBlockBasedCellMapping.m in Sources */,
-				AD0E6E9816E79CEE00231F24 /* DXTKCollectionViewDataSource.m in Sources */,
-				AD0E6E9916E79CEE00231F24 /* DXTKTableViewDataSource.m in Sources */,
-				1D6A31EE29CC65EF3F186A94 /* DXTKContentSection.m in Sources */,
 				1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */,
 				1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */,
 				1D6A3163B671633CC51D780F /* MenuCell.m in Sources */,
 				1D6A3990C37CB94539451750 /* MenuItem.m in Sources */,
-				1D6A3BBE1072D076CB21629D /* DXTableView.m in Sources */,
+				308FD2EA16F0E090006B0415 /* DXTKCollectionViewDataSource.m in Sources */,
+				308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */,
+				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
+				308FD2FF16F0E119006B0415 /* DXTKBlockBasedCellMapping.m in Sources */,
+				308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */,
+				308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */,
+				308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

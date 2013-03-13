@@ -72,13 +72,13 @@ typedef enum DXTKContentProviderState {
  * @param section section index
  * @return Number of items in specific section, if content contains no sections this method should return just number of content items
 * */
-- (NSInteger)numberOfItemsInSection:(NSInteger)section;
+- (NSInteger)numberOfItemsInSection:(NSUInteger)section;
 
 /** Get section object at specific section index.
 * @param section section index
 * @return section Section object or nil if there is no section object for this section index.
 * */
-- (id)sectionObjectForSection:(NSInteger)section;
+- (id)sectionObjectForSection:(NSUInteger)section;
 
 /** Get item at specific indexPath.
 * @param path item indexPath

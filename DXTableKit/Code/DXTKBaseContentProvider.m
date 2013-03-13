@@ -24,9 +24,14 @@
 
 }
 
-- (NSInteger)numberOfItemsInSection:(NSInteger)section
+- (NSInteger)numberOfItemsInSection:(NSUInteger)section
 {
     return [[self.sections[section] items] count];
+}
+
+- (id)sectionObjectForSection:(NSUInteger)section
+{
+    return self.sections[section];
 }
 
 - (id)itemForIndexPath:(NSIndexPath *)path

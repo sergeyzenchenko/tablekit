@@ -24,6 +24,11 @@
 
 }
 
+- (NSInteger)numberOfSections
+{
+    return self.sections.count;
+}
+
 - (NSInteger)numberOfItemsInSection:(NSUInteger)section
 {
     return [[self.sections[section] items] count];
@@ -40,11 +45,6 @@
     NSParameterAssert(path.row <= [[self.sections[path.section] items] count]);
     
     return [self.sections[path.section] items][path.row];
-}
-
-- (NSInteger)numberOfSections
-{
-    return self.sections.count;
 }
 
 - (void)reload

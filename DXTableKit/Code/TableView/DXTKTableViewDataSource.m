@@ -36,4 +36,46 @@
     [self selectCellAtIndexPath:indexPath];
 }
 
+- (id)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    id sectionObject = [self.dataProvider sectionObjectForSection:section];
+    id<DXTKHeaderFooterFilling> footer = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionObject type:@"Footer"];
+    [footer fillWithObject:sectionObject];
+    return footer;
+}
+
+- (id)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    id sectionObject = [self.dataProvider sectionObjectForSection:section];
+    id<DXTKHeaderFooterFilling> header = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionObject type:@"Header"];
+    [header fillWithObject:sectionObject];
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    id sectionObject = [self.dataProvider sectionObjectForSection:section];
+    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject type:@"Footer"];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    id sectionObject = [self.dataProvider sectionObjectForSection:section];
+    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject type:@"Header"];
+}
+
+- (void)reload
+{
+    [super reload];
+    if(!self.headerFooterMapping){
+        self.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping new];
+    }
+}
+
+-(void)setHeaderFooterMapping:(id<DXTKHeaderFooterMapping>)headerFooterMapping
+{
+    _headerFooterMapping = headerFooterMapping;
+    [self reload];
+}
+
 @end

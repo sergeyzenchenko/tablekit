@@ -33,6 +33,9 @@
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
 		AD0E6E7A16E7988600231F24 /* DXTableKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E7916E7988600231F24 /* DXTableKitTests.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
+		D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */; };
+		D399C0AE16F5F02100A053BB /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AD16F5F02100A053BB /* Header.m */; };
+		D399C0B216F6587F00A053BB /* Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0B116F6587F00A053BB /* Footer.m */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,13 @@
 		AD0E6E7616E7988600231F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AD0E6E7816E7988600231F24 /* DXTableKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTableKitTests.h; sourceTree = "<group>"; };
 		AD0E6E7916E7988600231F24 /* DXTableKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXTableKitTests.m; sourceTree = "<group>"; };
+		D399C0A916F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedHeaderFooterMapping.h; sourceTree = "<group>"; };
+		D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedHeaderFooterMapping.m; sourceTree = "<group>"; };
+		D399C0AC16F5F02100A053BB /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		D399C0AD16F5F02100A053BB /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
+		D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterFilling.h; sourceTree = "<group>"; };
+		D399C0B016F6587F00A053BB /* Footer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Footer.h; sourceTree = "<group>"; };
+		D399C0B116F6587F00A053BB /* Footer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footer.m; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -135,6 +145,10 @@
 				1D6A3348F9DD29DF6E7740BC /* MenuCell.h */,
 				1D6A36605F4BD566A847C096 /* MenuItem.m */,
 				1D6A3CAF805CD7E303F018B9 /* MenuItem.h */,
+				D399C0AC16F5F02100A053BB /* Header.h */,
+				D399C0AD16F5F02100A053BB /* Header.m */,
+				D399C0B016F6587F00A053BB /* Footer.h */,
+				D399C0B116F6587F00A053BB /* Footer.m */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -146,6 +160,7 @@
 				308FD2E416F0E067006B0415 /* DXTKCellMapping.h */,
 				308FD2E516F0E067006B0415 /* DXTKContentProvider.h */,
 				308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */,
+				D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -213,6 +228,8 @@
 			children = (
 				308FD2FD16F0E119006B0415 /* DXTKContentSection.h */,
 				308FD2FE16F0E119006B0415 /* DXTKContentSection.m */,
+				D399C0A916F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.h */,
+				D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -460,6 +477,9 @@
 				308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */,
 				308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */,
 				308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */,
+				D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */,
+				D399C0AE16F5F02100A053BB /* Header.m in Sources */,
+				D399C0B216F6587F00A053BB /* Footer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

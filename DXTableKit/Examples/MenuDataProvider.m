@@ -24,8 +24,6 @@
 {
     self.sections = [NSMutableArray new];
     self.currentItems = [NSMutableArray new];
-
-    [self addSectionWithTitle:nil];
 }
 
 - (void)reload

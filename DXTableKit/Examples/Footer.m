@@ -22,7 +22,7 @@
 
 -(void)fillWithObject:(id)object
 {
-    self.textLabel.text = @"ololo";
+    self.textLabel.text = @"Footer Label";
 }
 
 +(CGFloat)heightForHeaderFooter

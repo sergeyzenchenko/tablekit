@@ -64,12 +64,6 @@
     return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject type:@"Header"];
 }
 
--(void)setHeaderFooterMapping:(id<DXTKHeaderFooterMapping>)headerFooterMapping
-{
-    _headerFooterMapping = headerFooterMapping;
-    [self reload];
-}
-
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     if([self.dataProvider respondsToSelector:@selector(arrayOfIndexes)]){
         return [self.dataProvider arrayOfIndexes];

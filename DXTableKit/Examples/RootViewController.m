@@ -60,17 +60,16 @@
     [provider addMenuItemWithTitle:@"Form" block:^{
 
     }];
-
-    self.tableView.customDataSource.dataProvider = provider;
-
-       self.tableView.customDataSource.cellsMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
-       [mapping registerClass:[MenuCell class] forDomainObjectClass:[MenuItem class]];
-        
-    }];
     self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(id<DXTKHeaderFooterMapping> mapping) {
         [mapping registerClassForHeader:[Header class] forSectionClass:[DXTKContentSection class]];
         [mapping registerClassForFooter:[Footer class] forSectionClass:[DXTKContentSection class]];
     }];
+    self.tableView.customDataSource.dataProvider = provider;
+       self.tableView.customDataSource.cellsMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
+       [mapping registerClass:[MenuCell class] forDomainObjectClass:[MenuItem class]];
+        
+    }];
+
 }
 
 @end

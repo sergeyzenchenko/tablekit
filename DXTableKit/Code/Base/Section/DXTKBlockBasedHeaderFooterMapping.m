@@ -52,10 +52,7 @@
         return nil;
     }
     headerFooterView = [table dequeueReusableHeaderFooterViewWithIdentifier:identifierString];
-    
-    if (!headerFooterView) {
-        headerFooterView = [self createHeaderFooterIdentifier:identifierString];
-    }
+    headerFooterView = [self createHeaderFooterIdentifier:identifierString];
     return headerFooterView;
 }
 

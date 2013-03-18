@@ -8,7 +8,6 @@
 
 #import "DXTKBaseDataSource.h"
 #import "DXTKBlockBasedHeaderFooterMapping.h"
-#import "DXTKHeaderFooterFilling.h"
 
 @interface DXTKTableViewDataSource : DXTKBaseDataSource
 @property (nonatomic,strong) id<DXTKHeaderFooterMapping> headerFooterMapping;

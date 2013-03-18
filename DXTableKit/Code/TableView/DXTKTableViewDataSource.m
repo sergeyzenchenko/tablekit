@@ -64,14 +64,6 @@
     return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject type:@"Header"];
 }
 
-- (void)reload
-{
-    [super reload];
-    if(!self.headerFooterMapping){
-        self.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping new];
-    }
-}
-
 -(void)setHeaderFooterMapping:(id<DXTKHeaderFooterMapping>)headerFooterMapping
 {
     _headerFooterMapping = headerFooterMapping;
@@ -79,7 +71,10 @@
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    return self.arrayOfIndexes;
+    if([self.dataProvider respondsToSelector:@selector(arrayOfIndexes)]){
+        return [self.dataProvider arrayOfIndexes];
+    }
+    return nil;
 }
 
 @end

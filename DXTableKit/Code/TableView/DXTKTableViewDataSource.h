@@ -12,5 +12,4 @@
 
 @interface DXTKTableViewDataSource : DXTKBaseDataSource
 @property (nonatomic,strong) id<DXTKHeaderFooterMapping> headerFooterMapping;
-@property (nonatomic,strong) NSArray * arrayOfIndexes;
 @end

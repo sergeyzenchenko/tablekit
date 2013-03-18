@@ -59,4 +59,9 @@
     [self.currentItems addObject:item];
 }
 
+- (NSArray*)arrayOfIndexes
+{
+    return [NSArray arrayWithObjects:@"A",@"Z", nil];
+}
+
 @end

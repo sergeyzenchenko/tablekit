@@ -78,4 +78,8 @@
     [self reload];
 }
 
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return self.arrayOfIndexes;
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "DXTKTableViewDataSource.h"
+#import "DXTKContentSection.h"
 
 @interface DXTKTableViewDataSource () <UITableViewDataSource, UITableViewDelegate>
 
@@ -38,30 +39,30 @@
 
 - (id)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
-    id sectionObject = [self.dataProvider sectionObjectForSection:section];
-    id<DXTKHeaderFooterFilling> footer = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionObject type:@"Footer"];
-    [footer fillWithObject:sectionObject];
+    DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
+    id<DXTKHeaderFooterFilling> footer = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:@"Footer"];
+    [footer fillWithObject:sectionEntity.sectionObject];
     return footer;
 }
 
 - (id)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    id sectionObject = [self.dataProvider sectionObjectForSection:section];
-    id<DXTKHeaderFooterFilling> header = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionObject type:@"Header"];
-    [header fillWithObject:sectionObject];
+    DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
+    id<DXTKHeaderFooterFilling> header = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:@"Header"];
+    [header fillWithObject:sectionEntity.sectionObject];
     return header;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    id sectionObject = [self.dataProvider sectionObjectForSection:section];
-    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject type:@"Footer"];
+    DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
+    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionEntity.sectionObject type:@"Footer"];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    id sectionObject = [self.dataProvider sectionObjectForSection:section];
-    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject type:@"Header"];
+    DXTKContentSection * sectionObject = [self.dataProvider sectionObjectForSection:section];
+    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject.sectionObject type:@"Header"];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
@@ -69,6 +70,21 @@
         return [self.dataProvider arrayOfIndexes];
     }
     return nil;
+}
+
+- (void)setCellsMapping:(id<DXTKCellMapping>)cellsMapping
+{
+
+    if(!self.headerFooterMapping){
+        self.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping new];
+    }
+    [super setCellsMapping:cellsMapping];
+}
+
+-(void)setHeaderFooterMapping:(id<DXTKHeaderFooterMapping>)headerFooterMapping
+{
+    _headerFooterMapping = headerFooterMapping;
+    [self.headerFooterMapping setupMappingsTable:(UITableView *)self.contentView];
 }
 
 @end

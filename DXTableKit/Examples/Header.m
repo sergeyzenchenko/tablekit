@@ -21,7 +21,7 @@
 
 -(void)fillWithObject:(id)object
 {
-    self.textLabel.text = (NSString *)[(DXTKContentSection *)object sectionObject];
+    self.textLabel.text = (NSString *)object;
 }
 
 +(CGFloat)heightForHeaderFooter

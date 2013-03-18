@@ -14,7 +14,8 @@
 - (void)registerClassForHeader:(Class)headerClass forSectionClass:(Class)sectionClass;
 - (void)registerClassForFooter:(Class)footerClass forSectionClass:(Class)sectionClass;
 - (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)section type:(NSString *)type;
-- (CGFloat)heightForHeaderFooterInSection:(id)section type:(NSString *)type;
+- (CGFloat)heightForHeaderFooterInSection:(id)sectionObject type:(NSString *)type;
+- (void)setupMappingsTable:(UITableView *)table;
 @end
 
 @interface DXTKBlockBasedHeaderFooterMapping : NSObject<DXSingleton,DXTKHeaderFooterMapping>

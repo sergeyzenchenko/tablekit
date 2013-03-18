@@ -61,8 +61,8 @@
 
     }];
     self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(id<DXTKHeaderFooterMapping> mapping) {
-        [mapping registerClassForHeader:[Header class] forSectionClass:[DXTKContentSection class]];
-        [mapping registerClassForFooter:[Footer class] forSectionClass:[DXTKContentSection class]];
+        //[mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
+        [mapping registerClassForFooter:[Footer class] forSectionClass:[@"static string" class]];
     }];
     self.tableView.customDataSource.dataProvider = provider;
        self.tableView.customDataSource.cellsMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {

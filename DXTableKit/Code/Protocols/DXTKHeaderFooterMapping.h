@@ -10,6 +10,6 @@
 
 @protocol DXTKHeaderFooterMapping <NSObject>
 - (void)setupMappingsTable:(UITableView *)table;
-- (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)section type:(NSInteger)type;
-- (CGFloat)heightForHeaderFooterInSection:(id)sectionObject type:(NSInteger)type;
+- (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)section type:(NSString *)type;
+- (CGFloat)heightForHeaderFooterInSection:(id)sectionObject type:(NSString *)type;
 @end

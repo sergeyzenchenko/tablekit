@@ -11,11 +11,11 @@
 #import "DXTKHeaderFooterFilling.h"
 #import "DXTKHeaderFooterMapping.h"
 
-enum
-{
-    DXTKTableViewHeader = 0,
-    DXTKTableViewFooter = 1
-};
+extern const struct DXTableViewHeaderFooterConstants{
+    __unsafe_unretained NSString * DXTKTableViewHeader;
+    __unsafe_unretained NSString * DXTKTableViewFooter;
+    __unsafe_unretained NSString * DXTKTableViewDefineHeader;
+} DXTableViewHeaderFooterConstants;
 
 @interface DXTKBlockBasedHeaderFooterMapping : NSObject<DXSingleton,DXTKHeaderFooterMapping>
 + (id)mappingWithBlock:(void (^)(id<DXTKHeaderFooterMapping>))mappingConfig;

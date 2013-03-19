@@ -40,7 +40,7 @@
 - (id)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
 {
     DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
-    id<DXTKHeaderFooterFilling> footer = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:DXTKTableViewFooter];
+    id<DXTKHeaderFooterFilling> footer = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewFooter];
     [footer fillWithObject:sectionEntity.sectionObject];
     return footer;
 }
@@ -48,7 +48,7 @@
 - (id)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
-    id<DXTKHeaderFooterFilling> header = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:DXTKTableViewHeader];
+    id<DXTKHeaderFooterFilling> header = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewHeader];
     [header fillWithObject:sectionEntity.sectionObject];
     return header;
 }
@@ -56,13 +56,13 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
-    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionEntity.sectionObject type:DXTKTableViewFooter];
+    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionEntity.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewFooter];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     DXTKContentSection * sectionObject = [self.dataProvider sectionObjectForSection:section];
-    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject.sectionObject type:DXTKTableViewHeader];
+    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewHeader];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {

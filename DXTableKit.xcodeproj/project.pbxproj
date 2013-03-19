@@ -99,6 +99,7 @@
 		AD0E6E7916E7988600231F24 /* DXTableKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXTableKitTests.m; sourceTree = "<group>"; };
 		D366374C16F772940049A9CE /* DXTKBaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseHeader.h; sourceTree = "<group>"; };
 		D366374D16F772940049A9CE /* DXTKBaseHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseHeader.m; sourceTree = "<group>"; };
+		D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterMapping.h; sourceTree = "<group>"; };
 		D399C0A916F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedHeaderFooterMapping.h; sourceTree = "<group>"; };
 		D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedHeaderFooterMapping.m; sourceTree = "<group>"; };
 		D399C0AC16F5F02100A053BB /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
@@ -164,6 +165,7 @@
 				308FD2E516F0E067006B0415 /* DXTKContentProvider.h */,
 				308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */,
 				D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */,
+				D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";

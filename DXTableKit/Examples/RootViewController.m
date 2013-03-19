@@ -60,7 +60,7 @@
     [provider addMenuItemWithTitle:@"Form" block:^{
 
     }];
-    self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(id<DXTKHeaderFooterMapping> mapping) {
+    self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(DXTKBlockBasedHeaderFooterMapping* mapping) {
         [mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
         [mapping registerClassForFooter:[Footer class] forSectionClass:[@"static string" class]];
     }];

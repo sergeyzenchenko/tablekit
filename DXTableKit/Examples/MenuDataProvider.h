@@ -8,7 +8,7 @@
 #import "DXTKBaseContentProvider.h"
 #import "MenuItem.h"
 
-@interface MenuDataProvider : DXTKBaseContentProvider
+@interface MenuDataProvider : DXTKBaseContentProvider <DXTKContentProvider>
 
 - (void)addSectionWithTitle:(NSString*)sectionTitle;
 

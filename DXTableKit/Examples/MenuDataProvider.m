@@ -24,8 +24,6 @@
 {
     self.sections = [NSMutableArray new];
     self.currentItems = [NSMutableArray new];
-
-    [self addSectionWithTitle:nil];
 }
 
 - (void)reload
@@ -59,6 +57,11 @@
     item.callback = callback;
 
     [self.currentItems addObject:item];
+}
+
+- (NSArray*)arrayOfIndexes
+{
+    return [NSArray arrayWithObjects:@"A",@"Z", nil];
 }
 
 @end

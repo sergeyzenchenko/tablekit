@@ -11,6 +11,8 @@
 #import "DXTKContentSection.h"
 #import "DXTKBaseHeader.h"
 
+#define DefaultHeader @"DefaultHeader"
+
 @interface DXTKBlockBasedHeaderFooterMapping()
 @property (nonatomic,strong)NSMutableDictionary * mappings;
 @end
@@ -36,12 +38,12 @@
 
 - (void)registerClassForHeader:(Class)headerClass forSectionClass:(Class)sectionClass
 {
-    [self.mappings setObject:headerClass forKey:[NSString stringWithFormat:@"%@Header",NSStringFromClass(sectionClass)]];
+    [self.mappings setObject:headerClass forKey:[NSString stringWithFormat:@"%@%d",NSStringFromClass(sectionClass),DXTKTableViewHeader]];
 }
 
 - (void)registerClassForFooter:(Class)footerClass forSectionClass:(Class)sectionClass
 {
-    [self.mappings setObject:footerClass forKey:[NSString stringWithFormat:@"%@Footer",NSStringFromClass(sectionClass)]];
+    [self.mappings setObject:footerClass forKey:[NSString stringWithFormat:@"%@%d",NSStringFromClass(sectionClass),DXTKTableViewFooter]];
 }
 
 -(void)setupMappingsTable:(UITableView*)table
@@ -50,17 +52,17 @@
     {
         [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
     }
-    [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:@"DefaultHeader"];
+    [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DefaultHeader];
 }
 
-- (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)sectionObject type:(NSString *)type
+- (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)sectionObject type:(NSInteger)type
 {
-    NSString* identifierString = [NSString stringWithFormat:@"%@%@",NSStringFromClass([sectionObject class]),type];
+    NSString* identifierString = [NSString stringWithFormat:@"%@%d",NSStringFromClass([sectionObject class]),type];
     
     id<DXTKHeaderFooterFilling> headerFooterView = nil;
     if(!self.mappings[identifierString]){
-        if([type isEqualToString:@"Header"] && [sectionObject isKindOfClass:[NSString class]]){
-            identifierString = @"DefaultHeader";
+        if(type == DXTKTableViewHeader && [sectionObject isKindOfClass:[NSString class]]){
+            identifierString = DefaultHeader;
         } else {
             return nil;
         }
@@ -69,11 +71,11 @@
     return headerFooterView;
 }
 
-- (CGFloat)heightForHeaderFooterInSection:(id)sectionObject type:(NSString *)type
+- (CGFloat)heightForHeaderFooterInSection:(id)sectionObject type:(NSInteger)type
 {
-    NSString* identifierString = [NSString stringWithFormat:@"%@%@",NSStringFromClass([sectionObject class]),type];
+    NSString* identifierString = [NSString stringWithFormat:@"%@%d",NSStringFromClass([sectionObject class]),type];
     if(!self.mappings[identifierString]){
-        if([type isEqualToString:@"Header"] && [sectionObject isKindOfClass:[NSString class]]){
+        if(type == DXTKTableViewHeader && [sectionObject isKindOfClass:[NSString class]]){
            return [DXTKBaseHeader heightForHeaderFooter];
         }
     } else {

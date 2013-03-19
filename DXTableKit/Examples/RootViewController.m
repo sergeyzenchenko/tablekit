@@ -61,7 +61,7 @@
 
     }];
     self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(id<DXTKHeaderFooterMapping> mapping) {
-        //[mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
+        [mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
         [mapping registerClassForFooter:[Footer class] forSectionClass:[@"static string" class]];
     }];
     self.tableView.customDataSource.dataProvider = provider;

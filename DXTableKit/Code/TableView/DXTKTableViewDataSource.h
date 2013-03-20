@@ -11,5 +11,5 @@
 
 @interface DXTKTableViewDataSource : DXTKBaseDataSource
 @property (nonatomic,strong) id<DXTKHeaderFooterMapping> headerFooterMapping;
-@property BOOL leaveCellSelected;
+@property BOOL shouldAutoDeselectCells;
 @end

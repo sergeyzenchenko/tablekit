@@ -32,7 +32,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    if(!self.leaveCellSelected){
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
     [self selectCellAtIndexPath:indexPath];
 }
 

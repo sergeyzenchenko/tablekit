@@ -13,6 +13,7 @@
 #import "Header.h"
 #import "DXTKContentSection.h"
 #import "Footer.h"
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface RootViewController ()
 
@@ -26,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
 
     self.tableView = [[DXTableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
 

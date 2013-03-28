@@ -6,7 +6,7 @@
 
 
 #import "DXTKBlockBasedCellMapping.h"
-
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 @interface DXTKBlockBasedCellMapping ()
 
 @property (nonatomic, strong) NSMutableDictionary *mappings;
@@ -51,12 +51,17 @@
         if ([mappingObject isKindOfClass:[UINib class]]) {
             [view registerNib:mappingObject forCellReuseIdentifier:className];
         } else if ([view respondsToSelector:@selector(registerClass:forCellReuseIdentifier:)]) {
-            [view registerClass:mappingObject forCellReuseIdentifier:className];
+            if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
+                
+            } else {
+                [view registerClass:mappingObject forCellReuseIdentifier:className];
+            }
 
         } else if ([mappingObject isKindOfClass:[UINib class]] && [view respondsToSelector:@selector(registerNib:forCellWithReuseIdentifier:)]) {
             [view registerNib:mappingObject forCellWithReuseIdentifier:className];
             
         } else if ([view respondsToSelector:@selector(registerClass:forCellWithReuseIdentifier:)]) {
+
             [view registerClass:mappingObject forCellWithReuseIdentifier:className];
         }
     }

@@ -10,6 +10,7 @@
 #import "DXTKHeaderFooterFilling.h"
 #import "DXTKContentSection.h"
 #import "DXTKBaseHeader.h"
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface DXTKBlockBasedHeaderFooterMapping()
 @property (nonatomic,strong)NSMutableDictionary * mappings;
@@ -55,9 +56,17 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
 {
     for(NSString * key in self.mappings.allKeys)
     {
-        [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
+        if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
+            
+        } else {
+            [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
+        }
     }
-    [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DXTableViewHeaderFooterConstants.DXTKTableViewDefineHeader];
+    if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
+        
+    } else {
+        [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DXTableViewHeaderFooterConstants.DXTKTableViewDefineHeader];
+    }
 }
 
 - (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)sectionObject type:(NSString *)type

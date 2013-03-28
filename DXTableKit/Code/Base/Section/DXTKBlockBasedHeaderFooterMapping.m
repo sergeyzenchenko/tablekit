@@ -10,9 +10,11 @@
 #import "DXTKHeaderFooterFilling.h"
 #import "DXTKContentSection.h"
 #import "DXTKBaseHeader.h"
+#define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface DXTKBlockBasedHeaderFooterMapping()
 @property (nonatomic,strong)NSMutableDictionary * mappings;
+@property CGFloat tableWidth;
 @end
 
 @implementation DXTKBlockBasedHeaderFooterMapping
@@ -53,11 +55,15 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
 
 -(void)setupMappingsTable:(UITableView*)table
 {
-    for(NSString * key in self.mappings.allKeys)
-    {
-        [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
+    self.tableWidth = table.bounds.size.width;
+    if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
+        for(NSString * key in self.mappings.allKeys)
+        {
+            [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
+        }
+    
+        [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DXTableViewHeaderFooterConstants.DXTKTableViewDefineHeader];
     }
-    [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DXTableViewHeaderFooterConstants.DXTKTableViewDefineHeader];
 }
 
 - (id<DXTKHeaderFooterFilling>)dequeueReusableHeaderFooterForTableView:(UITableView*)table forSection:(id)sectionObject type:(NSString *)type
@@ -72,7 +78,12 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
             return nil;
         }
     }
-    headerFooterView = [table dequeueReusableHeaderFooterViewWithIdentifier:identifierString];
+    if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
+        return [[self.mappings[identifierString] alloc] initWithFrame:CGRectMake(0, 0, self.tableWidth, [self heightForHeaderFooterInSection:sectionObject type:type])];
+    } else {
+        headerFooterView = [table dequeueReusableHeaderFooterViewWithIdentifier:identifierString];
+    }
+
     return headerFooterView;
 }
 

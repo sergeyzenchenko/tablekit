@@ -15,6 +15,7 @@
 - (void)fillWithObject:(MenuItem*)object
 {
     self.textLabel.text = object.title;
+    self.textLabel.textColor = [UIColor grayColor];
 }
 
 @end

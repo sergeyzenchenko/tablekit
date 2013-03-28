@@ -51,10 +51,7 @@
         if ([mappingObject isKindOfClass:[UINib class]]) {
             [view registerNib:mappingObject forCellReuseIdentifier:className];
         } else if ([view respondsToSelector:@selector(registerClass:forCellReuseIdentifier:)]) {
-            if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
                 [view registerClass:mappingObject forCellReuseIdentifier:className];
-            }
-
         } else if ([mappingObject isKindOfClass:[UINib class]] && [view respondsToSelector:@selector(registerNib:forCellWithReuseIdentifier:)]) {
             [view registerNib:mappingObject forCellWithReuseIdentifier:className];
             

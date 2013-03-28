@@ -14,6 +14,7 @@
 
 @interface DXTKBlockBasedHeaderFooterMapping()
 @property (nonatomic,strong)NSMutableDictionary * mappings;
+@property CGFloat tableWidth;
 @end
 
 @implementation DXTKBlockBasedHeaderFooterMapping
@@ -54,6 +55,7 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
 
 -(void)setupMappingsTable:(UITableView*)table
 {
+    self.tableWidth = table.bounds.size.width;
     if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
         for(NSString * key in self.mappings.allKeys)
         {
@@ -77,7 +79,7 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
         }
     }
     if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
-        return [[self.mappings[identifierString] alloc] initWithFrame:CGRectMake(0, 0, 320, [self heightForHeaderFooterInSection:sectionObject type:type])];
+        return [[self.mappings[identifierString] alloc] initWithFrame:CGRectMake(0, 0, self.tableWidth, [self heightForHeaderFooterInSection:sectionObject type:type])];
     } else {
         headerFooterView = [table dequeueReusableHeaderFooterViewWithIdentifier:identifierString];
     }

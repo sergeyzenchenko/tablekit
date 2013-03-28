@@ -54,13 +54,12 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
 
 -(void)setupMappingsTable:(UITableView*)table
 {
-    for(NSString * key in self.mappings.allKeys)
-    {
-        if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
+    if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
+        for(NSString * key in self.mappings.allKeys)
+        {
             [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
         }
-    }
-    if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
+    
         [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DXTableViewHeaderFooterConstants.DXTKTableViewDefineHeader];
     }
 }

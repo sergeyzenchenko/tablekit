@@ -13,8 +13,9 @@
 #import "Header.h"
 #import "DXTKContentSection.h"
 #import "Footer.h"
+#import "IOS5Header.h"
+#import "IOS5Footer.h"
 #define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
-
 @interface RootViewController ()
 
 @property (nonatomic, strong) DXTableView *tableView;
@@ -62,9 +63,16 @@
     [provider addMenuItemWithTitle:@"Form" block:^{
 
     }];
+    NSLog(@"%@",[Header class]);
+    
     self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(DXTKBlockBasedHeaderFooterMapping* mapping) {
-        [mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
-        [mapping registerClassForFooter:[Footer class] forSectionClass:[@"static string" class]];
+        if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
+            [mapping registerClassForHeader:[IOS5Header class] forSectionClass:[@"static string" class]];
+            [mapping registerClassForFooter:[IOS5Footer class] forSectionClass:[@"static string" class]];
+        } else {
+            [mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
+            [mapping registerClassForFooter:[Footer class] forSectionClass:[@"static string" class]];
+        }
     }];
     self.tableView.customDataSource.dataProvider = provider;
        self.tableView.customDataSource.cellsMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {

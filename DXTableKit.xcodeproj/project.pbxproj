@@ -37,6 +37,8 @@
 		D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */; };
 		D399C0AE16F5F02100A053BB /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AD16F5F02100A053BB /* Header.m */; };
 		D399C0B216F6587F00A053BB /* Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0B116F6587F00A053BB /* Footer.m */; };
+		D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A834A3170469D700AE6006 /* IOS5Header.m */; };
+		D3A834A717046FD800AE6006 /* IOS5Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A834A617046FD800AE6006 /* IOS5Footer.m */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +109,10 @@
 		D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterFilling.h; sourceTree = "<group>"; };
 		D399C0B016F6587F00A053BB /* Footer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Footer.h; sourceTree = "<group>"; };
 		D399C0B116F6587F00A053BB /* Footer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footer.m; sourceTree = "<group>"; };
+		D3A834A2170469D700AE6006 /* IOS5Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS5Header.h; sourceTree = "<group>"; };
+		D3A834A3170469D700AE6006 /* IOS5Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS5Header.m; sourceTree = "<group>"; };
+		D3A834A517046FD700AE6006 /* IOS5Footer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS5Footer.h; sourceTree = "<group>"; };
+		D3A834A617046FD800AE6006 /* IOS5Footer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS5Footer.m; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -153,6 +159,10 @@
 				D399C0AD16F5F02100A053BB /* Header.m */,
 				D399C0B016F6587F00A053BB /* Footer.h */,
 				D399C0B116F6587F00A053BB /* Footer.m */,
+				D3A834A2170469D700AE6006 /* IOS5Header.h */,
+				D3A834A3170469D700AE6006 /* IOS5Header.m */,
+				D3A834A517046FD700AE6006 /* IOS5Footer.h */,
+				D3A834A617046FD800AE6006 /* IOS5Footer.m */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -496,6 +506,8 @@
 				D399C0AE16F5F02100A053BB /* Header.m in Sources */,
 				D399C0B216F6587F00A053BB /* Footer.m in Sources */,
 				D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */,
+				D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */,
+				D3A834A717046FD800AE6006 /* IOS5Footer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

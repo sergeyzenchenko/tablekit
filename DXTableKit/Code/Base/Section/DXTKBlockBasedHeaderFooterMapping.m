@@ -56,15 +56,11 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
 {
     for(NSString * key in self.mappings.allKeys)
     {
-        if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
-            
-        } else {
+        if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
             [table registerClass:self.mappings[key] forHeaderFooterViewReuseIdentifier:key];
         }
     }
-    if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
-        
-    } else {
+    if(!SYSTEM_VERSION_LESS_THAN(@"6.0")){
         [table registerClass:[DXTKBaseHeader class] forHeaderFooterViewReuseIdentifier:DXTableViewHeaderFooterConstants.DXTKTableViewDefineHeader];
     }
 }
@@ -81,7 +77,12 @@ const struct DXTableViewHeaderFooterConstants DXTableViewHeaderFooterConstants =
             return nil;
         }
     }
-    headerFooterView = [table dequeueReusableHeaderFooterViewWithIdentifier:identifierString];
+    if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
+        return [[self.mappings[identifierString] alloc] initWithFrame:CGRectMake(0, 0, 320, [self heightForHeaderFooterInSection:sectionObject type:type])];
+    } else {
+        headerFooterView = [table dequeueReusableHeaderFooterViewWithIdentifier:identifierString];
+    }
+
     return headerFooterView;
 }
 

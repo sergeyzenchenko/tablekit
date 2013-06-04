@@ -9,7 +9,7 @@
 #import "DXTKCollectionViewDataSource.h"
 #import <PSTCollectionView/PSTCollectionView.h>
 
-@interface DXTKCollectionViewDataSource () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+@interface DXTKCollectionViewDataSource () 
 
 @end
 

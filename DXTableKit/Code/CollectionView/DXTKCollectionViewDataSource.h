@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "DXTKBaseDataSource.h"
 
-@interface DXTKCollectionViewDataSource : DXTKBaseDataSource
+@interface DXTKCollectionViewDataSource : DXTKBaseDataSource <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end

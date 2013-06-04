@@ -1,4 +1,5 @@
 #import "DXTKBaseContentProvider.h"
+#import "DXTKContentSection.h"
 
 @interface DXTKBaseContentProvider ()
 
@@ -54,17 +55,29 @@
 
 - (void)commitResult:(NSArray *)array
 {
+    array= [self embedSectionIfNeed:array];
+    
     self.sections = array;
-
+    
     if (self.sections.count > 0) {
         self.state = DXTKContentProviderStateHasResults;
     } else {
         self.state = DXTKContentProviderStateEmpty;
     }
-
+    
     [self.delegate dataProviderDidFinishLoading:self];
 }
 
+- (NSArray *)embedSectionIfNeed:(NSArray *)array
+{
+    if (array.count > 0 && ![array[0] isKindOfClass:[DXTKContentSection class]]) {
+        DXTKContentSection *contentSection = [DXTKContentSection new];
+        contentSection.items = array;
+        array = @[contentSection];
+    }
+    
+    return array;
+}
 - (void)commitError:(NSError *)error
 {
     self.state = DXTKContentProviderStateError;

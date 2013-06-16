@@ -9,7 +9,7 @@
 #import "DXTKTableViewDataSource.h"
 #import "DXTKContentSection.h"
 
-@interface DXTKTableViewDataSource () <UITableViewDataSource, UITableViewDelegate>
+@interface DXTKTableViewDataSource ()
 
 @end
 

@@ -48,7 +48,7 @@
     
     for (NSString * className in self.mappings.allKeys) {
         id mappingObject = self.mappings[className];
-        if ([mappingObject isKindOfClass:[UINib class]]) {
+        if ([mappingObject isKindOfClass:[UINib class]] && [view respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
             [view registerNib:mappingObject forCellReuseIdentifier:className];
         } else if ([view respondsToSelector:@selector(registerClass:forCellReuseIdentifier:)]) {
                 [view registerClass:mappingObject forCellReuseIdentifier:className];

@@ -9,9 +9,12 @@
 #import <Kiwi/Kiwi.h>
 #import "DXTKTableViewCellBuilder.h"
 #import "DXTKBlockBasedCellMapping.h"
+#import "DXTKDomaonObject.h"
 
 
 SPEC_BEGIN(DXTKTableViewCellBuilderSpec)
+
+__block DXTKTableViewCellBuilder *cellBuilder;
 
 describe(@"#initWithContentView:", ^{
     context(@"Valid params", ^{
@@ -39,7 +42,7 @@ describe(@"#initWithContentView:", ^{
 });
 
 describe(@"#setMapping", ^{
-    __block DXTKTableViewCellBuilder *cellBuilder;
+    
     __block id<DXTKCellMapping> cellMapping;
     __block UINib *cellNib = [KWMock mockForClass:[UINib class]];
     
@@ -79,6 +82,26 @@ describe(@"#setMapping", ^{
             [[theBlock(^{
                 [cellBuilder setMapping:cellMapping];
             }) should] raise];
+        });
+    });
+});
+
+describe(@"#buildCellForDomainObject:indexPath:", ^{
+    __block UITableView *tableView;
+    
+    beforeEach(^{
+        tableView = [KWMock mockForClass:[UITableView class]];
+        cellBuilder = [[DXTKTableViewCellBuilder alloc] initWithContentView:tableView];
+    });
+    
+    context(@"Registred cells requested", ^{
+        it(@"Should deque cell", ^{
+            
+            [[tableView should] receive:@selector(dequeueReusableCellWithIdentifier:forIndexPath:)
+                                   withArguments:@"DXTKDomaonObject", [NSIndexPath indexPathForRow:0 inSection:0], nil];
+            
+            id cell = [cellBuilder buildCellForDomainObject:[DXTKDomaonObject new]
+                                                  indexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         });
     });
 });

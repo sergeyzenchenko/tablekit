@@ -29,9 +29,10 @@
     [self.contentView registerClass:class forCellWithReuseIdentifier:key];
 }
 
-- (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath
+- (id<DXTKBaseCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath
 {
-    return nil;
+    return [self.contentView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([domainObject class])
+                                                       forIndexPath:indexPath];
 }
 
 @end

@@ -16,7 +16,7 @@
 
 - (void)setMapping:(id<DXTKCellMapping>)cellMapping;
 
-- (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath;
+- (id<DXTKBaseCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath;
 
 - (void)validate;
 

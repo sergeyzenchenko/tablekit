@@ -38,6 +38,7 @@
 		AD68D9C118EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C018EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m */; };
 		AD68D9C418EAD3D800BE7E13 /* DXTKCollectionViewCellBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */; };
 		AD68D9C718EAD66100BE7E13 /* DXTKBaseCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C618EAD66100BE7E13 /* DXTKBaseCellBuilder.m */; };
+		AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D366374D16F772940049A9CE /* DXTKBaseHeader.m */; };
 		D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */; };
@@ -116,6 +117,8 @@
 		AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewCellBuilderSpec.m; sourceTree = "<group>"; };
 		AD68D9C518EAD66100BE7E13 /* DXTKBaseCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseCellBuilder.h; sourceTree = "<group>"; };
 		AD68D9C618EAD66100BE7E13 /* DXTKBaseCellBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseCellBuilder.m; sourceTree = "<group>"; };
+		AD68D9C918EB017700BE7E13 /* DXTKDomaonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDomaonObject.h; sourceTree = "<group>"; };
+		AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDomaonObject.m; sourceTree = "<group>"; };
 		D366374C16F772940049A9CE /* DXTKBaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseHeader.h; sourceTree = "<group>"; };
 		D366374D16F772940049A9CE /* DXTKBaseHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseHeader.m; sourceTree = "<group>"; };
 		D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterMapping.h; sourceTree = "<group>"; };
@@ -332,6 +335,7 @@
 		AD0E6E7216E7988600231F24 /* DXTableKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				AD68D9C818EB013800BE7E13 /* Helpers */,
 				AD0E6E7316E7988600231F24 /* Supporting Files */,
 				AD68D9B518EAC73100BE7E13 /* DXTKCellBuilderSpec.m */,
 				AD68D9BC18EAC85700BE7E13 /* DXTKTableViewCellBuilderSpec.m */,
@@ -382,6 +386,15 @@
 				AD68D9C618EAD66100BE7E13 /* DXTKBaseCellBuilder.m */,
 			);
 			path = CellBuilder;
+			sourceTree = "<group>";
+		};
+		AD68D9C818EB013800BE7E13 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AD68D9C918EB017700BE7E13 /* DXTKDomaonObject.h */,
+				AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D366374B16F7722F0049A9CE /* BaseHeader */ = {
@@ -564,6 +577,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD68D9B718EAC73E00BE7E13 /* DXTKCellBuilderSpec.m in Sources */,
+				AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */,
 				AD68D9C418EAD3D800BE7E13 /* DXTKCollectionViewCellBuilderSpec.m in Sources */,
 				AD68D9BE18EAC85A00BE7E13 /* DXTKTableViewCellBuilderSpec.m in Sources */,
 			);

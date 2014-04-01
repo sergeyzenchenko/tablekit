@@ -54,7 +54,7 @@
     @throw @"not implemented";
 }
 
-- (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath
+- (id<DXTKBaseCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath
 {
     @throw @"not implemented";
 }

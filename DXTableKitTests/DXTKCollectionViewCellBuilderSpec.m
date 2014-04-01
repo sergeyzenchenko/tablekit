@@ -9,8 +9,12 @@
 #import <Kiwi/Kiwi.h>
 #import "DXTKCollectionViewCellBuilder.h"
 #import "DXTKBlockBasedCellMapping.h"
+#import "DXTKDomaonObject.h"
 
 SPEC_BEGIN(DXTKCollectionViewCellBuilderSpec)
+
+__block DXTKCollectionViewCellBuilder *cellBuilder;
+__block id<DXTKCellMapping> cellMapping;
 
 describe(@"#initWithContentView:", ^{
     context(@"Valid params", ^{
@@ -38,8 +42,6 @@ describe(@"#initWithContentView:", ^{
 });
 
 describe(@"#setMapping", ^{
-    __block DXTKCollectionViewCellBuilder *cellBuilder;
-    __block id<DXTKCellMapping> cellMapping;
     __block UINib *cellNib = [KWMock mockForClass:[UINib class]];
     
     context(@"CollectionView is setuped", ^{
@@ -80,6 +82,26 @@ describe(@"#setMapping", ^{
             }) should] raise];
         });
     });
+});
+
+describe(@"#buildCellForDomainObject:indexPath:", ^{
+    __block UICollectionView *collectionViewMock;
+    
+    beforeEach(^{
+        collectionViewMock = [KWMock mockForClass:[UICollectionView class]];
+        cellBuilder = [[DXTKCollectionViewCellBuilder alloc] initWithContentView:collectionViewMock];
+    });
+    
+    context(@"Registred cells requested", ^{
+        it(@"Should deque cell", ^{
+            [[collectionViewMock should] receive:@selector(dequeueReusableCellWithReuseIdentifier:forIndexPath:)
+                                   withArguments:@"DXTKDomaonObject", [NSIndexPath indexPathForRow:0 inSection:0], nil];
+            
+            id cell = [cellBuilder buildCellForDomainObject:[DXTKDomaonObject new]
+                                                  indexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        });
+    });
+    
 });
 
 SPEC_END

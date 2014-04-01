@@ -18,31 +18,27 @@
 
 - (instancetype)initWithContentView:(id)contentView;
 {
-    NSParameterAssert([contentView isKindOfClass:[UICollectionView class]]);
-    
     self = [super init];
     if (self) {
         self.collectionView = contentView;
+        [self validate];
     }
     return self;
 }
 
-- (void)setMapping:(id<DXTKCellMapping>)cellMapping
+- (void)validate
 {
-    NSParameterAssert(cellMapping);
-    NSParameterAssert(self.collectionView);
-    
-    NSDictionary *mappings = [cellMapping mappings];
-    
-    for (id key in mappings.allKeys) {
-        id value = mappings[key];
-        
-        if ([value isKindOfClass:[UINib class]]) {
-            [self.collectionView registerNib:value forCellWithReuseIdentifier:key];
-        } else {
-            [self.collectionView registerClass:value forCellWithReuseIdentifier:key];
-        }
-    }
+    NSParameterAssert([self.collectionView isKindOfClass:[UICollectionView class]]);
+}
+
+- (void)setupNib:(UINib*)nib forKey:(NSString*)key
+{
+    [self.collectionView registerNib:nib forCellWithReuseIdentifier:key];
+}
+
+- (void)setupCellClass:(Class)class forKey:(NSString*)key
+{
+    [self.collectionView registerClass:class forCellWithReuseIdentifier:key];
 }
 
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath

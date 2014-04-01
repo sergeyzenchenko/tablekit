@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKCellBuilder.h"
+#import "DXTKBaseCellBuilder.h"
 
-@interface DXTKTableViewCellBuilder : NSObject <DXTKCellBuilder>
+@interface DXTKTableViewCellBuilder : DXTKBaseCellBuilder
 
 
 @end

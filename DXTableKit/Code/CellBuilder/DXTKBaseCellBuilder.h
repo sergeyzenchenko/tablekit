@@ -1,5 +1,5 @@
 //
-//  DXTKCollectionViewCellBuilder.h
+//  DXTKBaseCellBuilder.h
 //  DXTableKit
 //
 //  Created by Sergey Zenchenko on 4/1/14.
@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKBaseCellBuilder.h"
+#import "DXTKCellBuilder.h"
 
-@interface DXTKCollectionViewCellBuilder : DXTKBaseCellBuilder
+@interface DXTKBaseCellBuilder : NSObject <DXTKCellBuilder>
 
 @end

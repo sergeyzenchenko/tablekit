@@ -18,31 +18,27 @@
 
 - (instancetype)initWithContentView:(id)contentView;
 {
-    NSParameterAssert([contentView isKindOfClass:[UITableView class]]);
-    
     self = [super init];
     if (self) {
         self.tableView = contentView;
+        [self validate];
     }
     return self;
 }
 
-- (void)setMapping:(id<DXTKCellMapping>)cellMapping
+- (void)validate
 {
-    NSParameterAssert(cellMapping);
-    NSParameterAssert(self.tableView);
-    
-    NSDictionary *mappings = [cellMapping mappings];
-    
-    for (id key in mappings.allKeys) {
-        id value = mappings[key];
-        
-        if ([value isKindOfClass:[UINib class]]) {
-            [self.tableView registerNib:value forCellReuseIdentifier:key];
-        } else {
-            [self.tableView registerClass:value forCellReuseIdentifier:key];
-        }
-    }
+    NSParameterAssert([self.tableView isKindOfClass:[UITableView class]]);
+}
+
+- (void)setupNib:(UINib*)nib forKey:(NSString*)key
+{
+    [self.tableView registerNib:nib forCellReuseIdentifier:key];
+}
+
+- (void)setupCellClass:(Class)class forKey:(NSString*)key
+{
+    [self.tableView registerClass:class forCellReuseIdentifier:key];
 }
 
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath

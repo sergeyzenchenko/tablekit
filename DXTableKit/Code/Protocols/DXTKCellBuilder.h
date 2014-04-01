@@ -18,4 +18,6 @@
 
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath;
 
+- (void)validate;
+
 @end

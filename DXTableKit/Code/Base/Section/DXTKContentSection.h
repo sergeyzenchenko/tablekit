@@ -18,5 +18,4 @@
 /** Array of business objects in section */
 @property (nonatomic, strong) NSArray *items;
 
-
 @end

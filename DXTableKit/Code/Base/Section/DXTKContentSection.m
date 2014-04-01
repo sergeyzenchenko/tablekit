@@ -8,7 +8,8 @@
 #import "DXTKContentSection.h"
 
 
-@implementation DXTKContentSection {
+@implementation DXTKContentSection
 
-}
+
+
 @end

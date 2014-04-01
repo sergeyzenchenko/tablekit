@@ -41,7 +41,6 @@
 		AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D366374D16F772940049A9CE /* DXTKBaseHeader.m */; };
-		D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */; };
 		D399C0AE16F5F02100A053BB /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AD16F5F02100A053BB /* Header.m */; };
 		D399C0B216F6587F00A053BB /* Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0B116F6587F00A053BB /* Footer.m */; };
 		D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A834A3170469D700AE6006 /* IOS5Header.m */; };
@@ -119,11 +118,10 @@
 		AD68D9C618EAD66100BE7E13 /* DXTKBaseCellBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseCellBuilder.m; sourceTree = "<group>"; };
 		AD68D9C918EB017700BE7E13 /* DXTKDomaonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDomaonObject.h; sourceTree = "<group>"; };
 		AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDomaonObject.m; sourceTree = "<group>"; };
+		AD68D9CC18EB05B600BE7E13 /* DXTKContentSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
 		D366374C16F772940049A9CE /* DXTKBaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseHeader.h; sourceTree = "<group>"; };
 		D366374D16F772940049A9CE /* DXTKBaseHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseHeader.m; sourceTree = "<group>"; };
 		D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterMapping.h; sourceTree = "<group>"; };
-		D399C0A916F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedHeaderFooterMapping.h; sourceTree = "<group>"; };
-		D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedHeaderFooterMapping.m; sourceTree = "<group>"; };
 		D399C0AC16F5F02100A053BB /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		D399C0AD16F5F02100A053BB /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
 		D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterFilling.h; sourceTree = "<group>"; };
@@ -198,6 +196,7 @@
 				308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */,
 				D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */,
 				D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */,
+				AD68D9CC18EB05B600BE7E13 /* DXTKContentSection.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -266,8 +265,6 @@
 			children = (
 				308FD2FD16F0E119006B0415 /* DXTKContentSection.h */,
 				308FD2FE16F0E119006B0415 /* DXTKContentSection.m */,
-				D399C0A916F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.h */,
-				D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */,
 			);
 			path = Section;
 			sourceTree = "<group>";
@@ -562,7 +559,6 @@
 				308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */,
 				308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */,
 				308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */,
-				D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */,
 				D399C0AE16F5F02100A053BB /* Header.m in Sources */,
 				AD68D9C118EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m in Sources */,
 				D399C0B216F6587F00A053BB /* Footer.m in Sources */,

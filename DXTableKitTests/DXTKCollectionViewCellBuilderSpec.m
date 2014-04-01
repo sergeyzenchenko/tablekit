@@ -18,7 +18,7 @@ describe(@"#initWithContentView:", ^{
             UICollectionView *collectionView = [KWMock mockForClass:[UICollectionView class]];
             DXTKCollectionViewCellBuilder *cellBuilder = [[DXTKCollectionViewCellBuilder alloc] initWithContentView:collectionView];
             
-            [[[cellBuilder performSelector:@selector(collectionView)] should] equal:collectionView];
+            [[[cellBuilder performSelector:@selector(contentView)] should] equal:collectionView];
         });
     });
     

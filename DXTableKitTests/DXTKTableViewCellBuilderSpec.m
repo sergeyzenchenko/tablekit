@@ -19,7 +19,7 @@ describe(@"#initWithContentView:", ^{
             UITableView *tableView = [[UITableView alloc] init];
             DXTKTableViewCellBuilder *cellBuilder = [[DXTKTableViewCellBuilder alloc] initWithContentView:tableView];
             
-            [[[cellBuilder performSelector:@selector(tableView)] should] equal:tableView];
+            [[[cellBuilder performSelector:@selector(contentView)] should] equal:tableView];
         });
     });
     

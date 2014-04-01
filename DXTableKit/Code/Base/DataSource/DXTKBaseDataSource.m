@@ -71,11 +71,6 @@
 
 - (void)reload
 {
-    if (!self.cellsMapping) {
-        self.cellsMapping = [DXTKBlockBasedCellMapping shared];
-        return;
-    }
-
     [self.plugins makeObjectsPerformSelector:@selector(reload)];
     
     [self.dataProvider reload];
@@ -107,9 +102,6 @@
         [self.delegate didSelectDomainObject:[self.dataProvider itemForIndexPath:indexPath] fromDataSource:self];
     }
 }
-
-#pragma mark -
-#pragma mark HIDataProviderDelegate
 
 - (void)dataProvider:(id <DXTKContentProvider>)dataProvider didFinishLoadingWithError:(NSError *)error
 {

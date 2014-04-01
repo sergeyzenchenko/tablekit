@@ -10,35 +10,23 @@
 
 @interface DXTKCollectionViewCellBuilder ()
 
-@property (nonatomic, strong) UICollectionView *collectionView;
-
 @end
 
 @implementation DXTKCollectionViewCellBuilder
 
-- (instancetype)initWithContentView:(id)contentView;
+- (Class)contentViewClass
 {
-    self = [super init];
-    if (self) {
-        self.collectionView = contentView;
-        [self validate];
-    }
-    return self;
-}
-
-- (void)validate
-{
-    NSParameterAssert([self.collectionView isKindOfClass:[UICollectionView class]]);
+    return [UICollectionView class];
 }
 
 - (void)setupNib:(UINib*)nib forKey:(NSString*)key
 {
-    [self.collectionView registerNib:nib forCellWithReuseIdentifier:key];
+    [self.contentView registerNib:nib forCellWithReuseIdentifier:key];
 }
 
 - (void)setupCellClass:(Class)class forKey:(NSString*)key
 {
-    [self.collectionView registerClass:class forCellWithReuseIdentifier:key];
+    [self.contentView registerClass:class forCellWithReuseIdentifier:key];
 }
 
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath

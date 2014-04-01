@@ -10,35 +10,25 @@
 
 @interface DXTKTableViewCellBuilder ()
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableView *contentView;
 
 @end
 
 @implementation DXTKTableViewCellBuilder
 
-- (instancetype)initWithContentView:(id)contentView;
+- (Class)contentViewClass
 {
-    self = [super init];
-    if (self) {
-        self.tableView = contentView;
-        [self validate];
-    }
-    return self;
-}
-
-- (void)validate
-{
-    NSParameterAssert([self.tableView isKindOfClass:[UITableView class]]);
+    return [UITableView class];
 }
 
 - (void)setupNib:(UINib*)nib forKey:(NSString*)key
 {
-    [self.tableView registerNib:nib forCellReuseIdentifier:key];
+    [self.contentView registerNib:nib forCellReuseIdentifier:key];
 }
 
 - (void)setupCellClass:(Class)class forKey:(NSString*)key
 {
-    [self.tableView registerClass:class forCellReuseIdentifier:key];
+    [self.contentView registerClass:class forCellReuseIdentifier:key];
 }
 
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath

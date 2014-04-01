@@ -11,4 +11,8 @@
 
 @interface DXTKBaseCellBuilder : NSObject <DXTKCellBuilder>
 
+@property (nonatomic, strong) id contentView;
+
+- (Class)contentViewClass;
+
 @end

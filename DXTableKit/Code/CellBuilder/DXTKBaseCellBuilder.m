@@ -10,6 +10,21 @@
 
 @implementation DXTKBaseCellBuilder
 
+- (instancetype)initWithContentView:(id)contentView;
+{
+    self = [super init];
+    if (self) {
+        self.contentView = contentView;
+        [self validate];
+    }
+    return self;
+}
+
+- (Class)contentViewClass
+{
+    @throw @"not implemented";
+}
+
 - (void)setMapping:(id<DXTKCellMapping>)cellMapping
 {
     NSParameterAssert(cellMapping);
@@ -46,7 +61,7 @@
 
 - (void)validate
 {
-    @throw @"not implemented";
+    NSParameterAssert([self.contentView isKindOfClass:self.contentViewClass]);
 }
 
 @end

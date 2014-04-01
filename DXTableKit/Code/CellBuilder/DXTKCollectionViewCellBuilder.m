@@ -8,10 +8,6 @@
 
 #import "DXTKCollectionViewCellBuilder.h"
 
-@interface DXTKCollectionViewCellBuilder ()
-
-@end
-
 @implementation DXTKCollectionViewCellBuilder
 
 - (Class)contentViewClass

@@ -8,12 +8,6 @@
 
 #import "DXTKTableViewCellBuilder.h"
 
-@interface DXTKTableViewCellBuilder ()
-
-@property (nonatomic, strong) UITableView *contentView;
-
-@end
-
 @implementation DXTKTableViewCellBuilder
 
 - (Class)contentViewClass

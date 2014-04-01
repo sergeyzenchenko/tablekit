@@ -22,7 +22,7 @@
 
 - (Class)contentViewClass
 {
-    @throw @"not implemented";
+    return nil;
 }
 
 - (void)setMapping:(id<DXTKCellMapping>)cellMapping

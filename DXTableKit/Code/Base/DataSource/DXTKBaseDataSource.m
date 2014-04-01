@@ -64,7 +64,6 @@
     
     if (_cellsMapping != cellsMapping) {
         _cellsMapping = cellsMapping;
-        [_cellsMapping setupMappingsForCollectionViewOrTable:self.contentView];
         [self reload];
     }
 }
@@ -87,7 +86,7 @@
 
     NSParameterAssert(domainObject != nil);
     
-    id<DXTKBaseCell> cell = [self.cellsMapping dequeueReusableCellFromCollectionViewOrTable:self.contentView forDomainObject:domainObject indexPath:indexPath];
+    id<DXTKBaseCell> cell = nil;
 
     NSParameterAssert(cell != nil);
     

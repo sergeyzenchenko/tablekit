@@ -35,35 +35,8 @@
     if(self.shouldAutoDeselectCells){
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
     }
+    
     [self selectCellAtIndexPath:indexPath];
-}
-
-- (id)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
-    id<DXTKHeaderFooterFilling> footer = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewFooter];
-    [footer fillWithObject:sectionEntity.sectionObject];
-    return footer;
-}
-
-- (id)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
-    id<DXTKHeaderFooterFilling> header = [self.headerFooterMapping dequeueReusableHeaderFooterForTableView:tableView forSection:sectionEntity.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewHeader];
-    [header fillWithObject:sectionEntity.sectionObject];
-    return header;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    DXTKContentSection * sectionEntity = [self.dataProvider sectionObjectForSection:section];
-    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionEntity.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewFooter];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    DXTKContentSection * sectionObject = [self.dataProvider sectionObjectForSection:section];
-    return [self.headerFooterMapping heightForHeaderFooterInSection:sectionObject.sectionObject type:DXTableViewHeaderFooterConstants.DXTKTableViewHeader];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
@@ -71,21 +44,6 @@
         return [self.dataProvider arrayOfIndexes];
     }
     return nil;
-}
-
-- (void)setCellsMapping:(id<DXTKCellMapping>)cellsMapping
-{
-
-    if(!self.headerFooterMapping){
-        self.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping new];
-    }
-    [super setCellsMapping:cellsMapping];
-}
-
--(void)setHeaderFooterMapping:(id<DXTKHeaderFooterMapping>)headerFooterMapping
-{
-    _headerFooterMapping = headerFooterMapping;
-    [self.headerFooterMapping setupMappingsTable:(UITableView *)self.contentView];
 }
 
 @end

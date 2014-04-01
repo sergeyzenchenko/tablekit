@@ -11,7 +11,6 @@
 		1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */; };
 		1D6A3990C37CB94539451750 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A36605F4BD566A847C096 /* MenuItem.m */; };
 		1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A397BB1500B44BEAA9E33 /* RootViewController.m */; };
-		308FD2EA16F0E090006B0415 /* DXTKCollectionViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2E916F0E090006B0415 /* DXTKCollectionViewDataSource.m */; };
 		308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2ED16F0E0BB006B0415 /* DXTableView.m */; };
 		308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */; };
 		308FD2FF16F0E119006B0415 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */; };
@@ -40,7 +39,6 @@
 		AD68D9C718EAD66100BE7E13 /* DXTKBaseCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C618EAD66100BE7E13 /* DXTKBaseCellBuilder.m */; };
 		AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
-		D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D366374D16F772940049A9CE /* DXTKBaseHeader.m */; };
 		D399C0AE16F5F02100A053BB /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AD16F5F02100A053BB /* Header.m */; };
 		D399C0B216F6587F00A053BB /* Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0B116F6587F00A053BB /* Footer.m */; };
 		D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A834A3170469D700AE6006 /* IOS5Header.m */; };
@@ -72,8 +70,6 @@
 		308FD2E416F0E067006B0415 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
 		308FD2E516F0E067006B0415 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
 		308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
-		308FD2E816F0E090006B0415 /* DXTKCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewDataSource.h; sourceTree = "<group>"; };
-		308FD2E916F0E090006B0415 /* DXTKCollectionViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSource.m; sourceTree = "<group>"; };
 		308FD2EC16F0E0BB006B0415 /* DXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTableView.h; sourceTree = "<group>"; };
 		308FD2ED16F0E0BB006B0415 /* DXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTableView.m; sourceTree = "<group>"; };
 		308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
@@ -119,8 +115,6 @@
 		AD68D9C918EB017700BE7E13 /* DXTKDomaonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDomaonObject.h; sourceTree = "<group>"; };
 		AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDomaonObject.m; sourceTree = "<group>"; };
 		AD68D9CC18EB05B600BE7E13 /* DXTKContentSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
-		D366374C16F772940049A9CE /* DXTKBaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseHeader.h; sourceTree = "<group>"; };
-		D366374D16F772940049A9CE /* DXTKBaseHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseHeader.m; sourceTree = "<group>"; };
 		D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterMapping.h; sourceTree = "<group>"; };
 		D399C0AC16F5F02100A053BB /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		D399C0AD16F5F02100A053BB /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
@@ -201,19 +195,9 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		308FD2E716F0E090006B0415 /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				308FD2E816F0E090006B0415 /* DXTKCollectionViewDataSource.h */,
-				308FD2E916F0E090006B0415 /* DXTKCollectionViewDataSource.m */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
 		308FD2EB16F0E0BB006B0415 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				D366374B16F7722F0049A9CE /* BaseHeader */,
 				308FD2EC16F0E0BB006B0415 /* DXTableView.h */,
 				308FD2ED16F0E0BB006B0415 /* DXTableView.m */,
 				308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */,
@@ -357,7 +341,6 @@
 				AD68D9AC18EAC54900BE7E13 /* Builder */,
 				308FD2F216F0E119006B0415 /* Base */,
 				308FD2EB16F0E0BB006B0415 /* TableView */,
-				308FD2E716F0E090006B0415 /* CollectionView */,
 				308FD2E216F0E067006B0415 /* Protocols */,
 			);
 			path = Code;
@@ -392,15 +375,6 @@
 				AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		D366374B16F7722F0049A9CE /* BaseHeader */ = {
-			isa = PBXGroup;
-			children = (
-				D366374C16F772940049A9CE /* DXTKBaseHeader.h */,
-				D366374D16F772940049A9CE /* DXTKBaseHeader.m */,
-			);
-			path = BaseHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,7 +525,6 @@
 				1D6A3990C37CB94539451750 /* MenuItem.m in Sources */,
 				AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */,
 				AD68D9BB18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m in Sources */,
-				308FD2EA16F0E090006B0415 /* DXTKCollectionViewDataSource.m in Sources */,
 				308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
 				308FD2FF16F0E119006B0415 /* DXTKBlockBasedCellMapping.m in Sources */,
@@ -562,7 +535,6 @@
 				D399C0AE16F5F02100A053BB /* Header.m in Sources */,
 				AD68D9C118EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m in Sources */,
 				D399C0B216F6587F00A053BB /* Footer.m in Sources */,
-				D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */,
 				D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */,
 				D3A834A717046FD800AE6006 /* IOS5Footer.m in Sources */,
 			);

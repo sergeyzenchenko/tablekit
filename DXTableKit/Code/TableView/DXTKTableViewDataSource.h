@@ -7,9 +7,9 @@
 //
 
 #import "DXTKBaseDataSource.h"
-#import "DXTKBlockBasedHeaderFooterMapping.h"
 
 @interface DXTKTableViewDataSource : DXTKBaseDataSource <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic,strong) id<DXTKHeaderFooterMapping> headerFooterMapping;
+
 @property BOOL shouldAutoDeselectCells;
+
 @end

@@ -6,11 +6,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DXTKCellMapping.h"
-#import <DXFoundation/DXSingleton.h>
 
-@interface DXTKBlockBasedCellMapping : NSObject <DXTKCellMapping, DXSingleton>
+@interface DXTKBlockBasedCellMapping : NSObject <DXTKCellMapping>
 
 + (id <DXTKCellMapping>)mappingWithBlock:(void (^)(DXTKBlockBasedCellMapping *))mappingConfig;
-
 
 @end

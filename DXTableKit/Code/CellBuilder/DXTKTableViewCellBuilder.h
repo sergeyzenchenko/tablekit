@@ -11,5 +11,4 @@
 
 @interface DXTKTableViewCellBuilder : DXTKBaseCellBuilder
 
-
 @end

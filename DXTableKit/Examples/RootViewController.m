@@ -63,17 +63,9 @@
     [provider addMenuItemWithTitle:@"Form" block:^{
 
     }];
+    
     NSLog(@"%@",[Header class]);
     
-    self.tableView.customDataSource.headerFooterMapping = [DXTKBlockBasedHeaderFooterMapping mappingWithBlock:^(DXTKBlockBasedHeaderFooterMapping* mapping) {
-        if(SYSTEM_VERSION_LESS_THAN(@"6.0")){
-            [mapping registerClassForHeader:[IOS5Header class] forSectionClass:[@"static string" class]];
-            [mapping registerClassForFooter:[IOS5Footer class] forSectionClass:[@"static string" class]];
-        } else {
-            [mapping registerClassForHeader:[Header class] forSectionClass:[@"static string" class]];
-            [mapping registerClassForFooter:[Footer class] forSectionClass:[@"static string" class]];
-        }
-    }];
     self.tableView.customDataSource.dataProvider = provider;
        self.tableView.customDataSource.cellsMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
        [mapping registerClass:[MenuCell class] forDomainObjectClass:[MenuItem class]];

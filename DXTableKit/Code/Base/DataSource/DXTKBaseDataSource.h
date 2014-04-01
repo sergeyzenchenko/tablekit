@@ -10,7 +10,7 @@
 #import "DXTKCellMapping.h"
 #import "DXTKContentProvider.h"
 #import "DXTKBlockBasedCellMapping.h"
-#import "DXTKDataSourcePlugin.h"
+#import "DXTKDataSource.h"
 
 @class DXTKBaseDataSource;
 
@@ -20,7 +20,7 @@
 
 @end
 
-@interface DXTKBaseDataSource : NSObject <DXTKContentProviderDelegate>
+@interface DXTKBaseDataSource : NSObject <DXTKContentProviderDelegate, DXTKDataSource>
 
 @property (nonatomic, strong) id<DXTKContentProvider> dataProvider;
 @property (nonatomic, strong) id<DXTKCellMapping> cellsMapping;
@@ -28,12 +28,11 @@
 @property (nonatomic, weak) id<DXTKBaseDataSourceDelegate> delegate;
 
 - (void)setup;
+
 - (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath;
-- (void)reload;
+
 - (void)reloadContentView;
+
 - (void)selectCellAtIndexPath:(NSIndexPath*)indexPath;
-
-- (void)attachPlugin:(id<DXTKDataSourcePlugin>)plugin;
-
 
 @end

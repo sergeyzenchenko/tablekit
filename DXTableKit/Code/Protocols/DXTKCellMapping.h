@@ -13,6 +13,11 @@
 
 - (void)setupMappingsForCollectionViewOrTable:(id)view;
 
+- (NSDictionary*)mappings;
+
 - (id<DXTKBaseCell>)dequeueReusableCellFromCollectionViewOrTable:(id)view forDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath;
+
+- (void)registerClass:(Class)cellClass forDomainObjectClass:(Class)domainClass;
+- (void)registerNib:(UINib *)nib forDomainObjectClass:(Class)domainClass;
 
 @end

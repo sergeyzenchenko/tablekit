@@ -14,9 +14,11 @@
 - (id)init
 {
     self = [super init];
+    
     if (self) {
         [self prepareToUse];
     }
+    
     return self;
 }
 
@@ -55,7 +57,7 @@
 
 - (void)commitResult:(NSArray *)array
 {
-    array= [self embedSectionIfNeed:array];
+    array = [self embedSectionIfNeed:array];
     
     self.sections = array;
     

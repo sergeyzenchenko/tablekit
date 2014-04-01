@@ -31,7 +31,12 @@
 		AD0E6E6E16E7988600231F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E4E16E7988600231F24 /* UIKit.framework */; };
 		AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
-		AD0E6E7A16E7988600231F24 /* DXTableKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD0E6E7916E7988600231F24 /* DXTableKitTests.m */; };
+		AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */; };
+		AD68D9B718EAC73E00BE7E13 /* DXTKCellBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9B518EAC73100BE7E13 /* DXTKCellBuilderSpec.m */; };
+		AD68D9BB18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9BA18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m */; };
+		AD68D9BE18EAC85A00BE7E13 /* DXTKTableViewCellBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9BC18EAC85700BE7E13 /* DXTKTableViewCellBuilderSpec.m */; };
+		AD68D9C118EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C018EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m */; };
+		AD68D9C418EAD3D800BE7E13 /* DXTKCollectionViewCellBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D366374D16F772940049A9CE /* DXTKBaseHeader.m */; };
 		D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AA16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m */; };
@@ -93,12 +98,21 @@
 		AD0E6E6016E7988600231F24 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AD0E6E6216E7988600231F24 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		AD0E6E6416E7988600231F24 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		AD0E6E6B16E7988600231F24 /* tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD0E6E6B16E7988600231F24 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E6C16E7988600231F24 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD0E6E7416E7988600231F24 /* DXTableKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DXTableKitTests-Info.plist"; sourceTree = "<group>"; };
 		AD0E6E7616E7988600231F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AD0E6E7816E7988600231F24 /* DXTableKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTableKitTests.h; sourceTree = "<group>"; };
-		AD0E6E7916E7988600231F24 /* DXTableKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DXTableKitTests.m; sourceTree = "<group>"; };
+		AD68D9AD18EAC55800BE7E13 /* DXTKBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBuilder.h; sourceTree = "<group>"; };
+		AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBuilder.m; sourceTree = "<group>"; };
+		AD68D9B318EAC6CF00BE7E13 /* DXTKCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellBuilder.h; sourceTree = "<group>"; };
+		AD68D9B418EAC6CF00BE7E13 /* DXTKDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSource.h; sourceTree = "<group>"; };
+		AD68D9B518EAC73100BE7E13 /* DXTKCellBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCellBuilderSpec.m; sourceTree = "<group>"; };
+		AD68D9B918EAC83000BE7E13 /* DXTKTableViewCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewCellBuilder.h; sourceTree = "<group>"; };
+		AD68D9BA18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewCellBuilder.m; sourceTree = "<group>"; };
+		AD68D9BC18EAC85700BE7E13 /* DXTKTableViewCellBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewCellBuilderSpec.m; sourceTree = "<group>"; };
+		AD68D9BF18EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewCellBuilder.h; sourceTree = "<group>"; };
+		AD68D9C018EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewCellBuilder.m; sourceTree = "<group>"; };
+		AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewCellBuilderSpec.m; sourceTree = "<group>"; };
 		D366374C16F772940049A9CE /* DXTKBaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseHeader.h; sourceTree = "<group>"; };
 		D366374D16F772940049A9CE /* DXTKBaseHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseHeader.m; sourceTree = "<group>"; };
 		D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterMapping.h; sourceTree = "<group>"; };
@@ -170,6 +184,8 @@
 		308FD2E216F0E067006B0415 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				AD68D9B318EAC6CF00BE7E13 /* DXTKCellBuilder.h */,
+				AD68D9B418EAC6CF00BE7E13 /* DXTKDataSource.h */,
 				308FD2E316F0E067006B0415 /* DXTKBaseCell.h */,
 				308FD2E416F0E067006B0415 /* DXTKCellMapping.h */,
 				308FD2E516F0E067006B0415 /* DXTKContentProvider.h */,
@@ -266,7 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				AD0E6E4B16E7988600231F24 /* DXTableKit.app */,
-				AD0E6E6B16E7988600231F24 /* tests.octest */,
+				AD0E6E6B16E7988600231F24 /* tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,9 +329,10 @@
 		AD0E6E7216E7988600231F24 /* DXTableKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD0E6E7816E7988600231F24 /* DXTableKitTests.h */,
-				AD0E6E7916E7988600231F24 /* DXTableKitTests.m */,
 				AD0E6E7316E7988600231F24 /* Supporting Files */,
+				AD68D9B518EAC73100BE7E13 /* DXTKCellBuilderSpec.m */,
+				AD68D9BC18EAC85700BE7E13 /* DXTKTableViewCellBuilderSpec.m */,
+				AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */,
 			);
 			path = DXTableKitTests;
 			sourceTree = "<group>";
@@ -332,12 +349,34 @@
 		AD0E6E8316E79CCD00231F24 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				AD68D9B818EAC81700BE7E13 /* CellBuilder */,
+				AD68D9AC18EAC54900BE7E13 /* Builder */,
 				308FD2F216F0E119006B0415 /* Base */,
 				308FD2EB16F0E0BB006B0415 /* TableView */,
 				308FD2E716F0E090006B0415 /* CollectionView */,
 				308FD2E216F0E067006B0415 /* Protocols */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		AD68D9AC18EAC54900BE7E13 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				AD68D9AD18EAC55800BE7E13 /* DXTKBuilder.h */,
+				AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		AD68D9B818EAC81700BE7E13 /* CellBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				AD68D9B918EAC83000BE7E13 /* DXTKTableViewCellBuilder.h */,
+				AD68D9BA18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m */,
+				AD68D9BF18EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.h */,
+				AD68D9C018EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m */,
+			);
+			path = CellBuilder;
 			sourceTree = "<group>";
 		};
 		D366374B16F7722F0049A9CE /* BaseHeader */ = {
@@ -387,7 +426,7 @@
 			);
 			name = tests;
 			productName = DXTableKitTests;
-			productReference = AD0E6E6B16E7988600231F24 /* tests.octest */;
+			productReference = AD0E6E6B16E7988600231F24 /* tests.xctest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -495,6 +534,8 @@
 				1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */,
 				1D6A3163B671633CC51D780F /* MenuCell.m in Sources */,
 				1D6A3990C37CB94539451750 /* MenuItem.m in Sources */,
+				AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */,
+				AD68D9BB18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m in Sources */,
 				308FD2EA16F0E090006B0415 /* DXTKCollectionViewDataSource.m in Sources */,
 				308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
@@ -504,6 +545,7 @@
 				308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */,
 				D399C0AB16F5E81F00A053BB /* DXTKBlockBasedHeaderFooterMapping.m in Sources */,
 				D399C0AE16F5F02100A053BB /* Header.m in Sources */,
+				AD68D9C118EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m in Sources */,
 				D399C0B216F6587F00A053BB /* Footer.m in Sources */,
 				D366374E16F772940049A9CE /* DXTKBaseHeader.m in Sources */,
 				D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */,
@@ -515,7 +557,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD0E6E7A16E7988600231F24 /* DXTableKitTests.m in Sources */,
+				AD68D9B718EAC73E00BE7E13 /* DXTKCellBuilderSpec.m in Sources */,
+				AD68D9C418EAD3D800BE7E13 /* DXTKCollectionViewCellBuilderSpec.m in Sources */,
+				AD68D9BE18EAC85A00BE7E13 /* DXTKTableViewCellBuilderSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +689,7 @@
 				INFOPLIST_FILE = "DXTableKitTests/DXTableKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
@@ -663,7 +707,7 @@
 				INFOPLIST_FILE = "DXTableKitTests/DXTableKitTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};

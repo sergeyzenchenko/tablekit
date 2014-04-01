@@ -18,7 +18,9 @@ extern const struct DXTableViewHeaderFooterConstants{
 } DXTableViewHeaderFooterConstants;
 
 @interface DXTKBlockBasedHeaderFooterMapping : NSObject<DXSingleton,DXTKHeaderFooterMapping>
+
 + (id)mappingWithBlock:(void (^)(id<DXTKHeaderFooterMapping>))mappingConfig;
 - (void)registerClassForHeader:(Class)headerClass forSectionClass:(Class)sectionClass;
 - (void)registerClassForFooter:(Class)footerClass forSectionClass:(Class)sectionClass;
+
 @end

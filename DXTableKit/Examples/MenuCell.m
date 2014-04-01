@@ -8,9 +8,7 @@
 #import "MenuCell.h"
 #import "MenuItem.h"
 
-@implementation MenuCell {
-
-}
+@implementation MenuCell
 
 - (void)fillWithObject:(MenuItem*)object
 {

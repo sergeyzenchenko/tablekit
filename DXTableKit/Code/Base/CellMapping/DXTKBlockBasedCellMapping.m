@@ -37,31 +37,6 @@
     return self;
 }
 
-
-- (void)setupMappingsForCollectionViewOrTable:(id)view;
-{
-    NSParameterAssert(view);
-
-    if (self != [DXTKBlockBasedCellMapping shared]) {
-        [self.mappings addEntriesFromDictionary:[DXTKBlockBasedCellMapping shared].mappings];
-    }
-    
-    for (NSString * className in self.mappings.allKeys) {
-        id mappingObject = self.mappings[className];
-        if ([mappingObject isKindOfClass:[UINib class]] && [view respondsToSelector:@selector(registerNib:forCellReuseIdentifier:)]) {
-            [view registerNib:mappingObject forCellReuseIdentifier:className];
-        } else if ([view respondsToSelector:@selector(registerClass:forCellReuseIdentifier:)]) {
-                [view registerClass:mappingObject forCellReuseIdentifier:className];
-        } else if ([mappingObject isKindOfClass:[UINib class]] && [view respondsToSelector:@selector(registerNib:forCellWithReuseIdentifier:)]) {
-            [view registerNib:mappingObject forCellWithReuseIdentifier:className];
-            
-        } else if ([view respondsToSelector:@selector(registerClass:forCellWithReuseIdentifier:)]) {
-
-            [view registerClass:mappingObject forCellWithReuseIdentifier:className];
-        }
-    }
-}
-
 - (id<DXTKBaseCell>)dequeueReusableCellFromCollectionViewOrTable:(id)view forDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath
 {
     assert(self.mappings[NSStringFromClass([domainObject class])]);

@@ -50,6 +50,7 @@
 - (void)setDataProvider:(id<DXTKContentProvider>)dataProvider
 {
     NSParameterAssert([dataProvider conformsToProtocol:@protocol(DXTKContentProvider)]);
+    
     if (_dataProvider != dataProvider) {
         _dataProvider = dataProvider;
         _dataProvider.delegate = self;
@@ -60,6 +61,7 @@
 - (void)setCellsMapping:(id<DXTKCellMapping>)cellsMapping
 {
     NSParameterAssert([cellsMapping conformsToProtocol:@protocol(DXTKCellMapping)]);
+    
     if (_cellsMapping != cellsMapping) {
         _cellsMapping = cellsMapping;
         [_cellsMapping setupMappingsForCollectionViewOrTable:self.contentView];

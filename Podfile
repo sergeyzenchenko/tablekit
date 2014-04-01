@@ -1,4 +1,4 @@
-platform :ios, "5.0"
+platform :ios, "6.0"
 
 pod "DXFoundation"
 pod "PSTCollectionView"
@@ -7,5 +7,5 @@ pod "MBProgressHUD"
 pod "Funcussion"
 
 target :tests, :exclusive => true do
-    pod 'Kiwi'
+    pod 'Kiwi/XCTest'
 end

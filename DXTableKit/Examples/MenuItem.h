@@ -10,6 +10,8 @@
 typedef void (^MenuCallBack)();
 
 @interface MenuItem : NSObject
+
 @property(nonatomic, copy) NSString *title;
 @property(nonatomic, copy) MenuCallBack callback;
+
 @end

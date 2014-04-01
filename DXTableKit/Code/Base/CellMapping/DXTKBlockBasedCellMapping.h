@@ -12,7 +12,5 @@
 
 + (id <DXTKCellMapping>)mappingWithBlock:(void (^)(DXTKBlockBasedCellMapping *))mappingConfig;
 
-- (void)registerClass:(Class)cellClass forDomainObjectClass:(Class)domainClass;
-- (void)registerNib:(UINib *)nib forDomainObjectClass:(Class)domainClass;
 
 @end

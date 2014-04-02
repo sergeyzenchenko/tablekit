@@ -11,10 +11,8 @@
 
 @class DXTKBaseDataSource;
 
-@protocol DXTKDataSourcePlugin <NSObject, DXTKContentProviderDelegate>
+@protocol DXTKDataSourcePlugin <NSObject, DXTKContentProviderDelegate, DXTKDataSourceDelegate>
 
 - (void)attachToDataSource:(DXTKBaseDataSource*)dataSource;
-
-- (void)reload;
 
 @end

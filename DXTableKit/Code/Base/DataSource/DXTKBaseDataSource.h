@@ -9,30 +9,23 @@
 #import <Foundation/Foundation.h>
 #import "DXTKCellMapping.h"
 #import "DXTKContentProvider.h"
-#import "DXTKBlockBasedCellMapping.h"
 #import "DXTKDataSource.h"
+#import "DXTKCellBuilder.h"
 
 @class DXTKBaseDataSource;
+@protocol DXTKDataSourceDelegate;
 
-@protocol DXTKBaseDataSourceDelegate <NSObject>
+@interface DXTKBaseDataSource : NSObject <DXTKDataSource>
 
-- (void)didSelectDomainObject:(id)object fromDataSource:(DXTKBaseDataSource*)dataSource;
+@property (nonatomic, readonly) id<DXTKContentProvider> contentProvider;
 
-@end
-
-@interface DXTKBaseDataSource : NSObject <DXTKContentProviderDelegate, DXTKDataSource>
-
-@property (nonatomic, strong) id<DXTKContentProvider> dataProvider;
-@property (nonatomic, strong) id<DXTKCellMapping> cellsMapping;
-@property (nonatomic, weak) UIView *contentView;
-@property (nonatomic, weak) id<DXTKBaseDataSourceDelegate> delegate;
-
-- (void)setup;
-
-- (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath;
+- (id)initWithContentView:(id)contentView
+          contentProvider:(id <DXTKContentProvider>)contentProvider
+                 delegate:(id <DXTKDataSourceDelegate>)delegate;
 
 - (void)reloadContentView;
 
+- (id<DXTKCell>)buildCellForIndexPath:(NSIndexPath*)indexPath;
 - (void)selectCellAtIndexPath:(NSIndexPath*)indexPath;
 
 @end

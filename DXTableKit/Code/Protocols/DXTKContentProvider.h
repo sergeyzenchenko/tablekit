@@ -9,18 +9,19 @@
 #import <Foundation/Foundation.h>
 
 @protocol DXTKContentProvider;
+@protocol DXTKContentSection;
 
 @protocol DXTKContentProviderDelegate <NSObject>
 
-- (void)dataProvider:(id<DXTKContentProvider>)dataProvider didFinishLoadingWithError:(NSError *)error;
-- (void)dataProviderDidFinishLoading:(id<DXTKContentProvider>)dataProvider;
+- (void)contentProviderDidStartLoading:(id<DXTKContentProvider>)contentProvider;
+- (void)contentProvider:(id <DXTKContentProvider>)contentProvider didFinishLoadingWithError:(NSError *)error;
+- (void)contentProviderDidFinishLoading:(id<DXTKContentProvider>)contentProvider;
 
-@optional
+- (void)contentProviderWillChangeState:(id<DXTKContentProvider>)contentProvider;
+- (void)contentProviderDidChangeState:(id<DXTKContentProvider>)contentProvider;
 
-- (void)dataProviderDidChangeState:(id<DXTKContentProvider>)dataProvider;
-
-- (void)dataProviderWillBeginUpdates:(id<DXTKContentProvider>)dataProvider;
-- (void)dataProviderDidEndUpdates:(id<DXTKContentProvider>)dataProvider;
+- (void)contentProviderWillBeginUpdates:(id<DXTKContentProvider>)contentProvider;
+- (void)contentProviderDidEndUpdates:(id<DXTKContentProvider>)contentProvider;
 
 @end
 
@@ -33,8 +34,8 @@ typedef enum DXTKContentProviderState {
     DXTKContentProviderStateHasResults,
     /** Content provider loading finished with empty data set */
     DXTKContentProviderStateEmpty,
-    /** Content provider loading finished, but content is unavailable (For example there is no internet connection) */
-    DXTKContentProviderStateResourceUnavailable,
+    /** Content provider loading more data */
+    DXTKContentProviderStateUpdating,
     /** Content provider loading finished with error and content is not available */
     DXTKContentProviderStateError
 } DXTKContentProviderState;
@@ -77,7 +78,7 @@ typedef enum DXTKContentProviderState {
 * @param section section index
 * @return section Section object or nil if there is no section object for this section index.
 * */
-- (id)sectionObjectForSection:(NSUInteger)section;
+- (id<DXTKContentSection>)sectionObjectForSection:(NSUInteger)section;
 
 /** Get item at specific indexPath.
 * @param path item indexPath
@@ -92,9 +93,5 @@ typedef enum DXTKContentProviderState {
  * This method should be asynchronous
  * */
 - (void)reload;
-
-@optional
-
-- (NSArray*)arrayOfIndexes;
 
 @end

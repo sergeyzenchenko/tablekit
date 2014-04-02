@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKBaseCell.h"
+#import "DXTKCell.h"
 
 @protocol DXTKCellMapping <NSObject>
 

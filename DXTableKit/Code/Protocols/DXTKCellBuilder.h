@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKBaseCell.h"
+#import "DXTKCell.h"
 #import "DXTKCellMapping.h"
 
 @protocol DXTKCellBuilder <NSObject>
@@ -16,7 +16,7 @@
 
 - (void)setMapping:(id<DXTKCellMapping>)cellMapping;
 
-- (id<DXTKBaseCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath;
+- (id<DXTKCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath;
 
 - (void)validate;
 

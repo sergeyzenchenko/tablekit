@@ -10,6 +10,4 @@
 
 @interface DXTKTableViewDataSource : DXTKBaseDataSource <UITableViewDataSource, UITableViewDelegate>
 
-@property BOOL shouldAutoDeselectCells;
-
 @end

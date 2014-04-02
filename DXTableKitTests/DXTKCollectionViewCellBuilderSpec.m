@@ -8,7 +8,6 @@
 
 #import <Kiwi/Kiwi.h>
 #import "DXTKCollectionViewCellBuilder.h"
-#import "DXTKBlockBasedCellMapping.h"
 #import "DXTKDomaonObject.h"
 
 SPEC_BEGIN(DXTKCollectionViewCellBuilderSpec)
@@ -53,19 +52,11 @@ describe(@"#setMapping", ^{
         });
         
         it(@"Should register cell classess from mapping", ^{
-            cellMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
-                [mapping registerClass:[UICollectionView class] forDomainObjectClass:[NSString class]];
-            }];
-            
             [[collectionViewMock should] receive:@selector(registerClass:forCellWithReuseIdentifier:) withArguments:[UICollectionView class], @"NSString", nil];
             [cellBuilder setMapping:cellMapping];
         });
         
         it(@"Should register cell nibs from mapping", ^{
-            cellMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
-                [mapping registerNib:cellNib forDomainObjectClass:[NSString class]];
-            }];
-            
             [[collectionViewMock should] receive:@selector(registerNib:forCellWithReuseIdentifier:) withArguments:cellNib, @"NSString", nil];
             [cellBuilder setMapping:cellMapping];
         });

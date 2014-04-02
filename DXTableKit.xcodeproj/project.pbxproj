@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D6A3163B671633CC51D780F /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */; };
-		1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */; };
-		1D6A3990C37CB94539451750 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A36605F4BD566A847C096 /* MenuItem.m */; };
-		1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A397BB1500B44BEAA9E33 /* RootViewController.m */; };
-		308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2ED16F0E0BB006B0415 /* DXTableView.m */; };
+		1D6A32104061A1A00DCB694D /* DXTKBaseDataSourcePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A35EF0E7B5A75CB07697A /* DXTKBaseDataSourcePlugin.m */; };
+		1D6A34423D3A77C4B5F1251F /* DXTKBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A38781327588FEC4446B9 /* DXTKBuilderSpec.m */; };
+		1D6A37B5D6D7D14FB34A0658 /* DXTKCollectionViewDataSourceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3F16236F2A65218B397F /* DXTKCollectionViewDataSourceBuilder.m */; };
+		1D6A398712C22C4C4EFF52AF /* DXTKDelegateProxyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A307D835D4C71A3FFEBD8 /* DXTKDelegateProxyPlugin.m */; };
+		1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3705E87DD189FDE246F2 /* DXTKTableViewDataSourceBuilder.m */; };
 		308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */; };
-		308FD2FF16F0E119006B0415 /* DXTKBlockBasedCellMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */; };
 		308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */; };
 		308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */; };
 		308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2FE16F0E119006B0415 /* DXTKContentSection.m */; };
@@ -38,11 +37,9 @@
 		AD68D9C418EAD3D800BE7E13 /* DXTKCollectionViewCellBuilderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */; };
 		AD68D9C718EAD66100BE7E13 /* DXTKBaseCellBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9C618EAD66100BE7E13 /* DXTKBaseCellBuilder.m */; };
 		AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */; };
+		ADA4EDE418EC1784003E6AC5 /* DXTKDelegateProxyPluginSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A36DDB76D3B47B068CFB1 /* DXTKDelegateProxyPluginSpec.m */; };
+		ADA4EDE718EC26AB003E6AC5 /* DXTKBuilder+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
-		D399C0AE16F5F02100A053BB /* Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0AD16F5F02100A053BB /* Header.m */; };
-		D399C0B216F6587F00A053BB /* Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D399C0B116F6587F00A053BB /* Footer.m */; };
-		D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A834A3170469D700AE6006 /* IOS5Header.m */; };
-		D3A834A717046FD800AE6006 /* IOS5Footer.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A834A617046FD800AE6006 /* IOS5Footer.m */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -58,24 +55,25 @@
 
 /* Begin PBXFileReference section */
 		04F00490A4A0473A95D0FFDA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D6A301D467704E22E29BDEE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
-		1D6A3348F9DD29DF6E7740BC /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
-		1D6A3657321999F77D3CCA90 /* MenuDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuDataProvider.h; sourceTree = "<group>"; };
-		1D6A36605F4BD566A847C096 /* MenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItem.m; sourceTree = "<group>"; };
-		1D6A397BB1500B44BEAA9E33 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuDataProvider.m; sourceTree = "<group>"; };
-		1D6A3CAF805CD7E303F018B9 /* MenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItem.h; sourceTree = "<group>"; };
-		308FD2E316F0E067006B0415 /* DXTKBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseCell.h; sourceTree = "<group>"; };
+		1D6A307D835D4C71A3FFEBD8 /* DXTKDelegateProxyPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDelegateProxyPlugin.m; sourceTree = "<group>"; };
+		1D6A308B59475AF884CBE5D4 /* DXTKTableViewDataSourceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSourceBuilder.h; sourceTree = "<group>"; };
+		1D6A30AF3579F40C4B86F52A /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
+		1D6A32365F43364AFCB28840 /* DXTKDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSource.h; sourceTree = "<group>"; };
+		1D6A323E59F7F22F178103FA /* DXTKCollectionViewDataSourceBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCollectionViewDataSourceBuilder.h; sourceTree = "<group>"; };
+		1D6A3311AF3071204273A37C /* DXTKBaseDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSourcePlugin.h; sourceTree = "<group>"; };
+		1D6A35EB7675D5085591B84A /* DXTKExtandableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKExtandableDataSource.h; sourceTree = "<group>"; };
+		1D6A35EF0E7B5A75CB07697A /* DXTKBaseDataSourcePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSourcePlugin.m; sourceTree = "<group>"; };
+		1D6A36DDB76D3B47B068CFB1 /* DXTKDelegateProxyPluginSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDelegateProxyPluginSpec.m; sourceTree = "<group>"; };
+		1D6A36EAA22470C1DA8FA77A /* DXTKDelegateProxyPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDelegateProxyPlugin.h; sourceTree = "<group>"; };
+		1D6A3705E87DD189FDE246F2 /* DXTKTableViewDataSourceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSourceBuilder.m; sourceTree = "<group>"; };
+		1D6A38781327588FEC4446B9 /* DXTKBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBuilderSpec.m; sourceTree = "<group>"; };
+		1D6A3E849F33CEB7ABA7EFF3 /* DXTKDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourceDelegate.h; sourceTree = "<group>"; };
+		1D6A3F16236F2A65218B397F /* DXTKCollectionViewDataSourceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSourceBuilder.m; sourceTree = "<group>"; };
+		308FD2E316F0E067006B0415 /* DXTKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCell.h; sourceTree = "<group>"; };
 		308FD2E416F0E067006B0415 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
 		308FD2E516F0E067006B0415 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
-		308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourcePlugin.h; sourceTree = "<group>"; };
-		308FD2EC16F0E0BB006B0415 /* DXTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTableView.h; sourceTree = "<group>"; };
-		308FD2ED16F0E0BB006B0415 /* DXTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTableView.m; sourceTree = "<group>"; };
 		308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
 		308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
-		308FD2F416F0E119006B0415 /* DXTKBlockBasedCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBlockBasedCellMapping.h; sourceTree = "<group>"; };
-		308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBlockBasedCellMapping.m; sourceTree = "<group>"; };
 		308FD2F716F0E119006B0415 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
 		308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseContentProvider.m; sourceTree = "<group>"; };
 		308FD2FA16F0E119006B0415 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 		AD68D9AD18EAC55800BE7E13 /* DXTKBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBuilder.h; sourceTree = "<group>"; };
 		AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBuilder.m; sourceTree = "<group>"; };
 		AD68D9B318EAC6CF00BE7E13 /* DXTKCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellBuilder.h; sourceTree = "<group>"; };
-		AD68D9B418EAC6CF00BE7E13 /* DXTKDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSource.h; sourceTree = "<group>"; };
 		AD68D9B518EAC73100BE7E13 /* DXTKCellBuilderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCellBuilderSpec.m; sourceTree = "<group>"; };
 		AD68D9B918EAC83000BE7E13 /* DXTKTableViewCellBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewCellBuilder.h; sourceTree = "<group>"; };
 		AD68D9BA18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewCellBuilder.m; sourceTree = "<group>"; };
@@ -115,16 +112,8 @@
 		AD68D9C918EB017700BE7E13 /* DXTKDomaonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDomaonObject.h; sourceTree = "<group>"; };
 		AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDomaonObject.m; sourceTree = "<group>"; };
 		AD68D9CC18EB05B600BE7E13 /* DXTKContentSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
-		D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterMapping.h; sourceTree = "<group>"; };
-		D399C0AC16F5F02100A053BB /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		D399C0AD16F5F02100A053BB /* Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Header.m; sourceTree = "<group>"; };
-		D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKHeaderFooterFilling.h; sourceTree = "<group>"; };
-		D399C0B016F6587F00A053BB /* Footer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Footer.h; sourceTree = "<group>"; };
-		D399C0B116F6587F00A053BB /* Footer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Footer.m; sourceTree = "<group>"; };
-		D3A834A2170469D700AE6006 /* IOS5Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS5Header.h; sourceTree = "<group>"; };
-		D3A834A3170469D700AE6006 /* IOS5Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS5Header.m; sourceTree = "<group>"; };
-		D3A834A517046FD700AE6006 /* IOS5Footer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOS5Footer.h; sourceTree = "<group>"; };
-		D3A834A617046FD800AE6006 /* IOS5Footer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IOS5Footer.m; sourceTree = "<group>"; };
+		ADA4EDE518EC26AB003E6AC5 /* DXTKBuilder+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DXTKBuilder+Private.h"; sourceTree = "<group>"; };
+		ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DXTKBuilder+Private.m"; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -156,41 +145,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D6A3C55F518016F5B07E5F3 /* Examples */ = {
+		1D6A3C3417599DAF7931BD84 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				1D6A397BB1500B44BEAA9E33 /* RootViewController.m */,
-				1D6A301D467704E22E29BDEE /* RootViewController.h */,
-				1D6A3C3F8FD6DDB52A1068BF /* MenuDataProvider.m */,
-				1D6A3657321999F77D3CCA90 /* MenuDataProvider.h */,
-				1D6A30B8DE1AB4F4FD32F6A3 /* MenuCell.m */,
-				1D6A3348F9DD29DF6E7740BC /* MenuCell.h */,
-				1D6A36605F4BD566A847C096 /* MenuItem.m */,
-				1D6A3CAF805CD7E303F018B9 /* MenuItem.h */,
-				D399C0AC16F5F02100A053BB /* Header.h */,
-				D399C0AD16F5F02100A053BB /* Header.m */,
-				D399C0B016F6587F00A053BB /* Footer.h */,
-				D399C0B116F6587F00A053BB /* Footer.m */,
-				D3A834A2170469D700AE6006 /* IOS5Header.h */,
-				D3A834A3170469D700AE6006 /* IOS5Header.m */,
-				D3A834A517046FD700AE6006 /* IOS5Footer.h */,
-				D3A834A617046FD800AE6006 /* IOS5Footer.m */,
+				1D6A307D835D4C71A3FFEBD8 /* DXTKDelegateProxyPlugin.m */,
+				1D6A36EAA22470C1DA8FA77A /* DXTKDelegateProxyPlugin.h */,
+				1D6A35EF0E7B5A75CB07697A /* DXTKBaseDataSourcePlugin.m */,
+				1D6A3311AF3071204273A37C /* DXTKBaseDataSourcePlugin.h */,
 			);
-			path = Examples;
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		1D6A3DCDD7BAE6E13EF758FB /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A30AF3579F40C4B86F52A /* DXTKDataSourcePlugin.h */,
+				1D6A32365F43364AFCB28840 /* DXTKDataSource.h */,
+				1D6A35EB7675D5085591B84A /* DXTKExtandableDataSource.h */,
+				1D6A3E849F33CEB7ABA7EFF3 /* DXTKDataSourceDelegate.h */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		308FD2E216F0E067006B0415 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				AD68D9B318EAC6CF00BE7E13 /* DXTKCellBuilder.h */,
-				AD68D9B418EAC6CF00BE7E13 /* DXTKDataSource.h */,
-				308FD2E316F0E067006B0415 /* DXTKBaseCell.h */,
+				308FD2E316F0E067006B0415 /* DXTKCell.h */,
 				308FD2E416F0E067006B0415 /* DXTKCellMapping.h */,
 				308FD2E516F0E067006B0415 /* DXTKContentProvider.h */,
-				308FD2E616F0E067006B0415 /* DXTKDataSourcePlugin.h */,
-				D399C0AF16F5F06E00A053BB /* DXTKHeaderFooterFilling.h */,
-				D374D0F516F8436800317A66 /* DXTKHeaderFooterMapping.h */,
 				AD68D9CC18EB05B600BE7E13 /* DXTKContentSection.h */,
+				1D6A3DCDD7BAE6E13EF758FB /* DataSource */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -198,8 +183,6 @@
 		308FD2EB16F0E0BB006B0415 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				308FD2EC16F0E0BB006B0415 /* DXTableView.h */,
-				308FD2ED16F0E0BB006B0415 /* DXTableView.m */,
 				308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */,
 				308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */,
 			);
@@ -211,19 +194,9 @@
 			children = (
 				308FD2F616F0E119006B0415 /* ContentProvider */,
 				308FD2F916F0E119006B0415 /* DataSource */,
-				308FD2F316F0E119006B0415 /* CellMapping */,
 				308FD2FC16F0E119006B0415 /* Section */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		308FD2F316F0E119006B0415 /* CellMapping */ = {
-			isa = PBXGroup;
-			children = (
-				308FD2F416F0E119006B0415 /* DXTKBlockBasedCellMapping.h */,
-				308FD2F516F0E119006B0415 /* DXTKBlockBasedCellMapping.m */,
-			);
-			path = CellMapping;
 			sourceTree = "<group>";
 		};
 		308FD2F616F0E119006B0415 /* ContentProvider */ = {
@@ -294,7 +267,6 @@
 				AD0E6E5D16E7988600231F24 /* DXTKAppDelegate.h */,
 				AD0E6E5E16E7988600231F24 /* DXTKAppDelegate.m */,
 				AD0E6E5516E7988600231F24 /* Supporting Files */,
-				1D6A3C55F518016F5B07E5F3 /* Examples */,
 			);
 			path = DXTableKit;
 			sourceTree = "<group>";
@@ -321,6 +293,8 @@
 				AD68D9B518EAC73100BE7E13 /* DXTKCellBuilderSpec.m */,
 				AD68D9BC18EAC85700BE7E13 /* DXTKTableViewCellBuilderSpec.m */,
 				AD68D9C218EAD35100BE7E13 /* DXTKCollectionViewCellBuilderSpec.m */,
+				1D6A38781327588FEC4446B9 /* DXTKBuilderSpec.m */,
+				1D6A36DDB76D3B47B068CFB1 /* DXTKDelegateProxyPluginSpec.m */,
 			);
 			path = DXTableKitTests;
 			sourceTree = "<group>";
@@ -342,6 +316,7 @@
 				308FD2F216F0E119006B0415 /* Base */,
 				308FD2EB16F0E0BB006B0415 /* TableView */,
 				308FD2E216F0E067006B0415 /* Protocols */,
+				1D6A3C3417599DAF7931BD84 /* Plugins */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -351,6 +326,12 @@
 			children = (
 				AD68D9AD18EAC55800BE7E13 /* DXTKBuilder.h */,
 				AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */,
+				1D6A3705E87DD189FDE246F2 /* DXTKTableViewDataSourceBuilder.m */,
+				1D6A308B59475AF884CBE5D4 /* DXTKTableViewDataSourceBuilder.h */,
+				1D6A3F16236F2A65218B397F /* DXTKCollectionViewDataSourceBuilder.m */,
+				1D6A323E59F7F22F178103FA /* DXTKCollectionViewDataSourceBuilder.h */,
+				ADA4EDE518EC26AB003E6AC5 /* DXTKBuilder+Private.h */,
+				ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -519,24 +500,19 @@
 			files = (
 				AD0E6E5B16E7988600231F24 /* main.m in Sources */,
 				AD0E6E5F16E7988600231F24 /* DXTKAppDelegate.m in Sources */,
-				1D6A3E470AD1D6F5DBF1C8D1 /* RootViewController.m in Sources */,
-				1D6A36721EE4DB9D28F4F370 /* MenuDataProvider.m in Sources */,
-				1D6A3163B671633CC51D780F /* MenuCell.m in Sources */,
-				1D6A3990C37CB94539451750 /* MenuItem.m in Sources */,
 				AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */,
 				AD68D9BB18EAC83000BE7E13 /* DXTKTableViewCellBuilder.m in Sources */,
-				308FD2F016F0E0BB006B0415 /* DXTableView.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
-				308FD2FF16F0E119006B0415 /* DXTKBlockBasedCellMapping.m in Sources */,
 				AD68D9C718EAD66100BE7E13 /* DXTKBaseCellBuilder.m in Sources */,
 				308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */,
+				ADA4EDE718EC26AB003E6AC5 /* DXTKBuilder+Private.m in Sources */,
 				308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */,
 				308FD30216F0E119006B0415 /* DXTKContentSection.m in Sources */,
-				D399C0AE16F5F02100A053BB /* Header.m in Sources */,
 				AD68D9C118EAD2F600BE7E13 /* DXTKCollectionViewCellBuilder.m in Sources */,
-				D399C0B216F6587F00A053BB /* Footer.m in Sources */,
-				D3A834A4170469D800AE6006 /* IOS5Header.m in Sources */,
-				D3A834A717046FD800AE6006 /* IOS5Footer.m in Sources */,
+				1D6A398712C22C4C4EFF52AF /* DXTKDelegateProxyPlugin.m in Sources */,
+				1D6A32104061A1A00DCB694D /* DXTKBaseDataSourcePlugin.m in Sources */,
+				1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */,
+				1D6A37B5D6D7D14FB34A0658 /* DXTKCollectionViewDataSourceBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,8 +522,10 @@
 			files = (
 				AD68D9B718EAC73E00BE7E13 /* DXTKCellBuilderSpec.m in Sources */,
 				AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */,
+				ADA4EDE418EC1784003E6AC5 /* DXTKDelegateProxyPluginSpec.m in Sources */,
 				AD68D9C418EAD3D800BE7E13 /* DXTKCollectionViewCellBuilderSpec.m in Sources */,
 				AD68D9BE18EAC85A00BE7E13 /* DXTKTableViewCellBuilderSpec.m in Sources */,
+				1D6A34423D3A77C4B5F1251F /* DXTKBuilderSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,9 +44,6 @@
 
 - (id)itemForIndexPath:(NSIndexPath *)path
 {
-    NSParameterAssert(path.section <= self.sections.count);
-    NSParameterAssert(path.row <= [[self.sections[path.section] items] count]);
-    
     return [self.sections[path.section] items][path.row];
 }
 
@@ -66,8 +63,8 @@
     } else {
         self.state = DXTKContentProviderStateEmpty;
     }
-    
-    [self.delegate dataProviderDidFinishLoading:self];
+
+    [self.delegate contentProviderDidFinishLoading:self];
 }
 
 - (NSArray *)embedSectionIfNeed:(NSArray *)array
@@ -83,7 +80,7 @@
 - (void)commitError:(NSError *)error
 {
     self.state = DXTKContentProviderStateError;
-    [self.delegate dataProvider:self didFinishLoadingWithError:error];
+    [self.delegate contentProvider:self didFinishLoadingWithError:error];
 }
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKDataSourcePlugin.h"
+
+@protocol DXTKDataSourceDelegate;
 
 @protocol DXTKDataSource <NSObject>
 
-- (void)reload;
+@property (nonatomic, readonly, weak) id contentView;
 
-- (void)attachPlugin:(id<DXTKDataSourcePlugin>)plugin;
+- (void)reload;
 
 @end

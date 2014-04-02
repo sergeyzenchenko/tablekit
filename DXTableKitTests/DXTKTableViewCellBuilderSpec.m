@@ -8,7 +8,6 @@
 
 #import <Kiwi/Kiwi.h>
 #import "DXTKTableViewCellBuilder.h"
-#import "DXTKBlockBasedCellMapping.h"
 #import "DXTKDomaonObject.h"
 
 
@@ -55,19 +54,11 @@ describe(@"#setMapping", ^{
         });
         
         it(@"Should register cell classess from mapping", ^{
-            cellMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
-                [mapping registerClass:[UITableViewCell class] forDomainObjectClass:[NSString class]];
-            }];
-            
             [[tableViewMock should] receive:@selector(registerClass:forCellReuseIdentifier:) withArguments:[UITableViewCell class], @"NSString", nil];
             [cellBuilder setMapping:cellMapping];
         });
         
         it(@"Should register cell nibs from mapping", ^{
-            cellMapping = [DXTKBlockBasedCellMapping mappingWithBlock:^(DXTKBlockBasedCellMapping *mapping) {
-                [mapping registerNib:cellNib forDomainObjectClass:[NSString class]];
-            }];
-            
             [[tableViewMock should] receive:@selector(registerNib:forCellReuseIdentifier:) withArguments:cellNib, @"NSString", nil];
             [cellBuilder setMapping:cellMapping];
         });

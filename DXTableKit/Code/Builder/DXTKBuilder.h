@@ -11,11 +11,18 @@
 #import "DXTKCellMapping.h"
 #import "DXTKBaseDataSource.h"
 
+@protocol DXTKDataSourceDelegate;
+
 @interface DXTKBuilder : NSObject
 
-@property (nonatomic, strong) id<DXTKContentProvider> contentProvider;
-@property (nonatomic, strong) id<DXTKCellMapping> cellMapping;
++ (DXTKBuilder*)withContentView:(id)contentView;
 
-- (DXTKBaseDataSource*)build;
+- (id<DXTKDataSource>)build;
+
+- (void)setContentProvider:(id<DXTKContentProvider>)contentProvider;
+- (void)setDelegate:(id<DXTKDataSourceDelegate>)delegate;
+
+- (void)registerCellClass:(Class)cellClass forDomainObjectClass:(Class)domainClass;
+- (void)registerNib:(UINib*)nib forDomainObjectClass:(Class)domainClass;
 
 @end

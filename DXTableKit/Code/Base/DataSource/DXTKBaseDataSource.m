@@ -7,116 +7,128 @@
 //
 
 #import "DXTKBaseDataSource.h"
+#import "DXTKDataSourcePlugin.h"
+#import "DXTKDataSource.h"
+#import "DXTKDataSourceDelegate.h"
+#import "DXTKDelegateProxyPlugin.h"
 
-@interface DXTKBaseDataSource ()
+@interface DXTKBaseDataSource () <DXTKContentProviderDelegate>
 
 @property (nonatomic, strong) NSMutableArray *plugins;
+@property (nonatomic, strong) id<DXTKContentProvider> contentProvider;
+@property (nonatomic, strong) id<DXTKCellBuilder> cellBuilder;
+@property (nonatomic, weak) id contentView;
 
 @end
 
 @implementation DXTKBaseDataSource
 
-- (id)init
+- (id)initWithContentView:(id)contentView
+          contentProvider:(id<DXTKContentProvider>)contentProvider
+                 delegate:(id<DXTKDataSourceDelegate>)delegate
+
 {
     self = [super init];
     if (self) {
         self.plugins = [NSMutableArray new];
-        [self setup];
+
+        self.contentView = contentView;
+        self.contentProvider = contentProvider;
+        
+        [self attachPlugin:[[DXTKDelegateProxyPlugin alloc] initWithDelegate:delegate]];
     }
+
     return self;
 }
 
-- (void)setup
-{
-
-}
-
-- (void)attachPlugin:(id<DXTKDataSourcePlugin>)plugin
+- (void)attachPlugin:(id <DXTKDataSourcePlugin>)plugin
 {
     [plugin attachToDataSource:self];
     [self.plugins addObject:plugin];
 }
 
-- (void)setContentView:(UIView *)contentView
-{
-    if (_contentView != contentView) {
-        _contentView = contentView;
-        [(id)(self.contentView) setDelegate:(id)self];
-        [(id)(self.contentView) setDataSource:(id)self];
-        [self reload];
-    }
-}
-
-- (void)setDataProvider:(id<DXTKContentProvider>)dataProvider
-{
-    NSParameterAssert([dataProvider conformsToProtocol:@protocol(DXTKContentProvider)]);
-    
-    if (_dataProvider != dataProvider) {
-        _dataProvider = dataProvider;
-        _dataProvider.delegate = self;
-        [self reload];
-    }
-}
-
-- (void)setCellsMapping:(id<DXTKCellMapping>)cellsMapping
-{
-    NSParameterAssert([cellsMapping conformsToProtocol:@protocol(DXTKCellMapping)]);
-    
-    if (_cellsMapping != cellsMapping) {
-        _cellsMapping = cellsMapping;
-        [self reload];
-    }
-}
-
 - (void)reload
 {
     [self.plugins makeObjectsPerformSelector:@selector(reload)];
-    
-    [self.dataProvider reload];
+    [self.contentProvider reload];
 }
 
 - (void)reloadContentView
 {
-    [(id)(self.contentView) reloadData];
+    [(id) (self.contentView) reloadData];
 }
 
-- (id<DXTKBaseCell>)buildCellForIndexPath:(NSIndexPath*)indexPath
+- (id <DXTKCell>)buildCellForIndexPath:(NSIndexPath *)indexPath
 {
-    id domainObject = [self.dataProvider itemForIndexPath:indexPath];
+    id domainObject = [self.contentProvider itemForIndexPath:indexPath];
 
-    NSParameterAssert(domainObject != nil);
-    
-    id<DXTKBaseCell> cell = nil;
-
-    NSParameterAssert(cell != nil);
-    
+    id <DXTKCell> cell = [self.cellBuilder buildCellForDomainObject:domainObject
+                                                          indexPath:indexPath];
     [cell fillWithObject:domainObject];
-    
+
     return cell;
 }
 
-- (void)selectCellAtIndexPath:(NSIndexPath*)indexPath
-{
-    if ([self.delegate respondsToSelector:@selector(didSelectDomainObject:fromDataSource:)]) {
-        [self.delegate didSelectDomainObject:[self.dataProvider itemForIndexPath:indexPath] fromDataSource:self];
-    }
-}
+#pragma mark - Plugins callbacks forwarding
 
-- (void)dataProvider:(id <DXTKContentProvider>)dataProvider didFinishLoadingWithError:(NSError *)error
+- (void)selectCellAtIndexPath:(NSIndexPath *)indexPath
 {
+    id domainObject = [self.contentProvider itemForIndexPath:indexPath];
+
     [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin dataProvider:dataProvider didFinishLoadingWithError:error];
+        [plugin didSelectDomainObject:domainObject
+                          atIndexPath:indexPath
+                       fromDataSource:self];
     }];
 }
 
-- (void)dataProviderDidFinishLoading:(id <DXTKContentProvider>)dataProvider
+- (void)contentProviderDidStartLoading:(id <DXTKContentProvider>)contentProvider
 {
     [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin dataProviderDidFinishLoading:dataProvider];
+        [plugin contentProviderDidStartLoading:contentProvider];
     }];
-    
-    [self reloadContentView];
 }
 
+- (void)contentProvider:(id <DXTKContentProvider>)contentProvider didFinishLoadingWithError:(NSError *)error
+{
+    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
+        [plugin contentProvider:contentProvider didFinishLoadingWithError:error];
+    }];
+}
+
+- (void)contentProviderDidFinishLoading:(id <DXTKContentProvider>)contentProvider
+{
+    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
+        [plugin contentProviderDidFinishLoading:contentProvider];
+    }];
+}
+
+- (void)contentProviderWillChangeState:(id <DXTKContentProvider>)contentProvider
+{
+    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
+        [plugin contentProviderWillChangeState:contentProvider];
+    }];
+}
+
+- (void)contentProviderDidChangeState:(id <DXTKContentProvider>)contentProvider
+{
+    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
+        [plugin contentProviderDidChangeState:contentProvider];
+    }];
+}
+
+- (void)contentProviderWillBeginUpdates:(id <DXTKContentProvider>)contentProvider
+{
+    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
+        [plugin contentProviderWillBeginUpdates:contentProvider];
+    }];
+}
+
+- (void)contentProviderDidEndUpdates:(id <DXTKContentProvider>)contentProvider
+{
+    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
+        [plugin contentProviderDidEndUpdates:contentProvider];
+    }];
+}
 
 @end

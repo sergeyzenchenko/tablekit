@@ -7,22 +7,17 @@
 //
 
 #import "DXTKTableViewDataSource.h"
-#import "DXTKContentSection.h"
-
-@interface DXTKTableViewDataSource ()
-
-@end
 
 @implementation DXTKTableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.dataProvider numberOfSections];
+    return [self.contentProvider numberOfSections];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.dataProvider numberOfItemsInSection:section];
+    return [self.contentProvider numberOfItemsInSection:section];
 }
 
 - (id)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -32,18 +27,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(self.shouldAutoDeselectCells){
-        [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    }
-    
     [self selectCellAtIndexPath:indexPath];
-}
-
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
-    if([self.dataProvider respondsToSelector:@selector(arrayOfIndexes)]){
-        return [self.dataProvider arrayOfIndexes];
-    }
-    return nil;
 }
 
 @end

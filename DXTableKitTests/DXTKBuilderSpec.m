@@ -71,10 +71,14 @@ describe(@"#build", ^{
         context(@"TableView data source building", ^{
             
             __block id<DXTKContentProvider> contentProvider;
+            __block id<DXTKDataSourceDelegate> delegate;
             
             beforeEach(^{
                 contentProvider = [DXTKBaseContentProvider new];
+                delegate = [KWMock mockForProtocol:@protocol(DXTKDataSourceDelegate)];
+                
                 [builder setContentProvider:contentProvider];
+                [builder setDelegate:delegate];
             });
             
             it(@"Should create data source for tableview", ^{
@@ -87,6 +91,14 @@ describe(@"#build", ^{
                 
                 [[(id)dataSource.contentProvider should] beNonNil];
                 [[(id)dataSource.contentProvider should] equal:contentProvider];
+                
+                NSArray *plugins = [dataSource performSelector:@selector(plugins)];
+                
+                [[plugins should] haveCountOf:1];
+                
+                id plugin = plugins[0];
+                
+                [[[plugin performSelector:@selector(delegate)] should] equal:delegate];
             });
         });
     });

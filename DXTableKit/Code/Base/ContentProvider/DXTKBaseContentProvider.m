@@ -70,13 +70,13 @@
 - (NSArray *)embedSectionIfNeed:(NSArray *)array
 {
     if (array.count > 0 && ![array[0] isKindOfClass:[DXTKContentSection class]]) {
-        DXTKContentSection *contentSection = [DXTKContentSection new];
-        contentSection.items = array;
+        DXTKContentSection *contentSection = [DXTKContentSection sectionWithItems:array sectionObject:nil];
         array = @[contentSection];
     }
     
     return array;
 }
+
 - (void)commitError:(NSError *)error
 {
     self.state = DXTKContentProviderStateError;

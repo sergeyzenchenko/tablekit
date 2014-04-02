@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol DXTKContentSection <NSObject>
+@protocol DXTKContentSectionInfo <NSObject>
 
 - (id)sectionObject;
 

@@ -10,11 +10,12 @@
 #import "DXTKCellMapping.h"
 #import "DXTKContentProvider.h"
 #import "DXTKDataSource.h"
+#import "DXTKExtandableDataSource.h"
 
 @class DXTKBaseDataSource;
 @protocol DXTKDataSourceDelegate;
 
-@interface DXTKBaseDataSource : NSObject <DXTKDataSource>
+@interface DXTKBaseDataSource : NSObject <DXTKDataSource, DXTKExtandableDataSource>
 
 @property (nonatomic, readonly) id<DXTKContentProvider> contentProvider;
 

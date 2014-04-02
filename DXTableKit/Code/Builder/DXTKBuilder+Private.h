@@ -12,4 +12,6 @@
 
 @property(nonatomic, readonly) id contentView;
 
+- (Class)dataSourceClass;
+
 @end

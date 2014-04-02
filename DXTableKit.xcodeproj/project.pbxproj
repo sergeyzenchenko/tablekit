@@ -35,6 +35,7 @@
 		ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDF118EC4169003E6AC5 /* DXTKBaseDataSource.m */; };
 		ADA4EDF818EC4659003E6AC5 /* DXTKContentSectionSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDF618EC45C4003E6AC5 /* DXTKContentSectionSpec.m */; };
 		ADA4EDFA18EC471C003E6AC5 /* DXTKTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDF918EC471C003E6AC5 /* DXTKTableViewDataSourceSpec.m */; };
+		ADA4EDFC18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDFB18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		ADA4EDF118EC4169003E6AC5 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
 		ADA4EDF618EC45C4003E6AC5 /* DXTKContentSectionSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKContentSectionSpec.m; sourceTree = "<group>"; };
 		ADA4EDF918EC471C003E6AC5 /* DXTKTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSourceSpec.m; sourceTree = "<group>"; };
+		ADA4EDFB18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSourceSpec.m; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -244,6 +246,7 @@
 				1D6A36DDB76D3B47B068CFB1 /* DXTKDelegateProxyPluginSpec.m */,
 				ADA4EDF618EC45C4003E6AC5 /* DXTKContentSectionSpec.m */,
 				ADA4EDF918EC471C003E6AC5 /* DXTKTableViewDataSourceSpec.m */,
+				ADA4EDFB18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m */,
 			);
 			path = DXTableKitTests;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */,
 				ADA4EDF818EC4659003E6AC5 /* DXTKContentSectionSpec.m in Sources */,
 				ADA4EDE418EC1784003E6AC5 /* DXTKDelegateProxyPluginSpec.m in Sources */,
+				ADA4EDFC18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m in Sources */,
 				1D6A34423D3A77C4B5F1251F /* DXTKBuilderSpec.m in Sources */,
 				ADA4EDFA18EC471C003E6AC5 /* DXTKTableViewDataSourceSpec.m in Sources */,
 			);

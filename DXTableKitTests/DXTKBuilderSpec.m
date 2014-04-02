@@ -12,6 +12,7 @@
 #import "DXTKBaseContentProvider.h"
 #import "DXTKTableViewDataSourceBuilder.h"
 #import "DXTKCollectionViewDataSourceBuilder.h"
+#import "DXTKBuilder+Private.h"
 
 SPEC_BEGIN(DXTKBuilderSpec)
 

@@ -13,8 +13,6 @@
 		1D6A398712C22C4C4EFF52AF /* DXTKDelegateProxyPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A307D835D4C71A3FFEBD8 /* DXTKDelegateProxyPlugin.m */; };
 		1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3705E87DD189FDE246F2 /* DXTKTableViewDataSourceBuilder.m */; };
 		308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */; };
-		308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */; };
-		308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */; };
 		AD0E6E4F16E7988600231F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E4E16E7988600231F24 /* UIKit.framework */; };
 		AD0E6E5116E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E5316E7988600231F24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5216E7988600231F24 /* CoreGraphics.framework */; };
@@ -33,6 +31,8 @@
 		ADA4EDE418EC1784003E6AC5 /* DXTKDelegateProxyPluginSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A36DDB76D3B47B068CFB1 /* DXTKDelegateProxyPluginSpec.m */; };
 		ADA4EDE718EC26AB003E6AC5 /* DXTKBuilder+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */; };
 		ADA4EDEB18EC4010003E6AC5 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDEA18EC4010003E6AC5 /* DXTKContentSection.m */; };
+		ADA4EDF218EC4169003E6AC5 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDEE18EC4169003E6AC5 /* DXTKBaseContentProvider.m */; };
+		ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDF118EC4169003E6AC5 /* DXTKBaseDataSource.m */; };
 		C7475366A5FA46FAA2E331D7 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB986F7D61DD4761AE812EFE /* libPods-tests.a */; };
 		FB9286AD6222439B82D2A372 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 04F00490A4A0473A95D0FFDA /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -68,10 +68,6 @@
 		308FD2E516F0E067006B0415 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
 		308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
 		308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
-		308FD2F716F0E119006B0415 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
-		308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseContentProvider.m; sourceTree = "<group>"; };
-		308FD2FA16F0E119006B0415 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
-		308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
 		AD0E6E4B16E7988600231F24 /* DXTableKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DXTableKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E4E16E7988600231F24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD0E6E5016E7988600231F24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,6 +94,10 @@
 		ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DXTKBuilder+Private.m"; sourceTree = "<group>"; };
 		ADA4EDE918EC4010003E6AC5 /* DXTKContentSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
 		ADA4EDEA18EC4010003E6AC5 /* DXTKContentSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKContentSection.m; sourceTree = "<group>"; };
+		ADA4EDED18EC4169003E6AC5 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
+		ADA4EDEE18EC4169003E6AC5 /* DXTKBaseContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseContentProvider.m; sourceTree = "<group>"; };
+		ADA4EDF018EC4169003E6AC5 /* DXTKBaseDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseDataSource.h; sourceTree = "<group>"; };
+		ADA4EDF118EC4169003E6AC5 /* DXTKBaseDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBaseDataSource.m; sourceTree = "<group>"; };
 		DB986F7D61DD4761AE812EFE /* libPods-tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E05490AFBF4641459DCDD716 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F3FF63F1BC9B4618AAF7A528 /* Pods-tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tests.xcconfig"; path = "Pods/Pods-tests.xcconfig"; sourceTree = SOURCE_ROOT; };
@@ -170,33 +170,6 @@
 				308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */,
 			);
 			path = TableView;
-			sourceTree = "<group>";
-		};
-		308FD2F216F0E119006B0415 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				308FD2F616F0E119006B0415 /* ContentProvider */,
-				308FD2F916F0E119006B0415 /* DataSource */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		308FD2F616F0E119006B0415 /* ContentProvider */ = {
-			isa = PBXGroup;
-			children = (
-				308FD2F716F0E119006B0415 /* DXTKBaseContentProvider.h */,
-				308FD2F816F0E119006B0415 /* DXTKBaseContentProvider.m */,
-			);
-			path = ContentProvider;
-			sourceTree = "<group>";
-		};
-		308FD2F916F0E119006B0415 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				308FD2FA16F0E119006B0415 /* DXTKBaseDataSource.h */,
-				308FD2FB16F0E119006B0415 /* DXTKBaseDataSource.m */,
-			);
-			path = DataSource;
 			sourceTree = "<group>";
 		};
 		AD0E6E4216E7988600231F24 = {
@@ -281,9 +254,10 @@
 		AD0E6E8316E79CCD00231F24 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				ADA4EDEC18EC4169003E6AC5 /* ContentProvider */,
+				ADA4EDEF18EC4169003E6AC5 /* DataSource */,
 				ADA4EDE818EC400C003E6AC5 /* Models */,
 				AD68D9AC18EAC54900BE7E13 /* Builder */,
-				308FD2F216F0E119006B0415 /* Base */,
 				308FD2EB16F0E0BB006B0415 /* TableView */,
 				308FD2E216F0E067006B0415 /* Protocols */,
 				1D6A3C3417599DAF7931BD84 /* Plugins */,
@@ -324,6 +298,24 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		ADA4EDEC18EC4169003E6AC5 /* ContentProvider */ = {
+			isa = PBXGroup;
+			children = (
+				ADA4EDED18EC4169003E6AC5 /* DXTKBaseContentProvider.h */,
+				ADA4EDEE18EC4169003E6AC5 /* DXTKBaseContentProvider.m */,
+			);
+			path = ContentProvider;
+			sourceTree = "<group>";
+		};
+		ADA4EDEF18EC4169003E6AC5 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				ADA4EDF018EC4169003E6AC5 /* DXTKBaseDataSource.h */,
+				ADA4EDF118EC4169003E6AC5 /* DXTKBaseDataSource.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,6 +327,7 @@
 				AD0E6E4816E7988600231F24 /* Frameworks */,
 				AD0E6E4916E7988600231F24 /* Resources */,
 				F63A0E402BD848D785560EE0 /* Copy Pods Resources */,
+				ADA4EDF518EC4387003E6AC5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -443,6 +436,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		ADA4EDF518EC4387003E6AC5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "XcodeCoverage/exportenv.sh\n";
+		};
 		F63A0E402BD848D785560EE0 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,13 +472,13 @@
 			files = (
 				AD0E6E5B16E7988600231F24 /* main.m in Sources */,
 				AD0E6E5F16E7988600231F24 /* DXTKAppDelegate.m in Sources */,
+				ADA4EDF218EC4169003E6AC5 /* DXTKBaseContentProvider.m in Sources */,
 				AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
-				308FD30016F0E119006B0415 /* DXTKBaseContentProvider.m in Sources */,
 				ADA4EDE718EC26AB003E6AC5 /* DXTKBuilder+Private.m in Sources */,
-				308FD30116F0E119006B0415 /* DXTKBaseDataSource.m in Sources */,
 				1D6A398712C22C4C4EFF52AF /* DXTKDelegateProxyPlugin.m in Sources */,
 				1D6A32104061A1A00DCB694D /* DXTKBaseDataSourcePlugin.m in Sources */,
+				ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */,
 				1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */,
 				ADA4EDEB18EC4010003E6AC5 /* DXTKContentSection.m in Sources */,
 				1D6A37B5D6D7D14FB34A0658 /* DXTKCollectionViewDataSourceBuilder.m in Sources */,
@@ -579,6 +585,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E05490AFBF4641459DCDD716 /* Pods.xcconfig */;
 			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXTableKit/DXTableKit-Prefix.pch";
 				INFOPLIST_FILE = "DXTableKit/DXTableKit-Info.plist";
@@ -592,6 +600,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E05490AFBF4641459DCDD716 /* Pods.xcconfig */;
 			buildSettings = {
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXTableKit/DXTableKit-Prefix.pch";
 				INFOPLIST_FILE = "DXTableKit/DXTableKit-Info.plist";
@@ -610,6 +620,8 @@
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXTableKit/DXTableKit-Prefix.pch";
 				INFOPLIST_FILE = "DXTableKitTests/DXTableKitTests-Info.plist";
@@ -628,6 +640,8 @@
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
+				GCC_GENERATE_TEST_COVERAGE_FILES = NO;
+				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DXTableKit/DXTableKit-Prefix.pch";
 				INFOPLIST_FILE = "DXTableKitTests/DXTableKitTests-Info.plist";

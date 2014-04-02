@@ -6,6 +6,4 @@
 - (void)commitResult:(id)result;
 - (void)commitError:(NSError *)error;
 
-- (void)prepareToUse;
-
 @end

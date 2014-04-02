@@ -11,22 +11,6 @@
 
 @synthesize delegate = _delegate, state = _state;
 
-- (id)init
-{
-    self = [super init];
-    
-    if (self) {
-        [self prepareToUse];
-    }
-    
-    return self;
-}
-
-- (void)prepareToUse
-{
-
-}
-
 - (NSInteger)numberOfSections
 {
     return self.sections.count;

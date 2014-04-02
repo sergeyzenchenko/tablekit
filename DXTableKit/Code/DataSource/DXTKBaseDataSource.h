@@ -27,4 +27,6 @@
 - (id<DXTKCell>)buildCellForIndexPath:(NSIndexPath*)indexPath;
 - (void)selectCellAtIndexPath:(NSIndexPath*)indexPath;
 
+- (id<DXTKCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath;
+
 @end

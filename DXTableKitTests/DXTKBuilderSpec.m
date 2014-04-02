@@ -60,11 +60,11 @@ describe(@"#withContentView", ^{
 });
 
 describe(@"#build", ^{
-    __block UITableView *tableView;
+    __block UITableView *tableViewMock;
     
     beforeEach(^{
-        tableView = [UITableView new];
-        builder = [DXTKBuilder withContentView:tableView];
+        tableViewMock = [KWMock mockForClass:[UITableView class]];
+        builder = [DXTKBuilder withContentView:tableViewMock];
     });
     
     context(@"All fields are set", ^{
@@ -87,7 +87,7 @@ describe(@"#build", ^{
                 [[dataSource should] beKindOfClass:[DXTKTableViewDataSource class]];
                 
                 [[dataSource.contentView should] beNonNil];
-                [[dataSource.contentView should] equal:tableView];
+                [[dataSource.contentView should] equal:tableViewMock];
                 
                 [[(id)dataSource.contentProvider should] beNonNil];
                 [[(id)dataSource.contentProvider should] equal:contentProvider];
@@ -99,6 +99,24 @@ describe(@"#build", ^{
                 id plugin = plugins[0];
                 
                 [[[plugin performSelector:@selector(delegate)] should] equal:delegate];
+            });
+            
+            it(@"Should register cells by class", ^{
+                [[tableViewMock should] receive:@selector(registerClass:forCellReuseIdentifier:)
+                                  withArguments:[UITableViewCell class], NSStringFromClass([DXTKBuilder class]), nil];
+                
+                [builder registerCellClass:[UITableViewCell class] forDomainObjectClass:[DXTKBuilder class]];
+            });
+            
+            it(@"Should register cells from nib", ^{
+                
+                UINib *nib = [KWMock mockForClass:[UINib class]];
+                
+                
+                [[tableViewMock should] receive:@selector(registerNib:forCellReuseIdentifier:)
+                                  withArguments:nib, NSStringFromClass([DXTKBuilder class]), nil];
+                
+                [builder registerNib:nib forDomainObjectClass:[DXTKBuilder class]];
             });
         });
     });

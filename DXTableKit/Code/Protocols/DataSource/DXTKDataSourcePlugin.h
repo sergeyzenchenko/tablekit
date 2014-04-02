@@ -15,4 +15,6 @@
 
 - (void)attachToDataSource:(DXTKBaseDataSource*)dataSource;
 
+- (void)reload;
+
 @end

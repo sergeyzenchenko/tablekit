@@ -33,7 +33,6 @@
     return self;
 }
 
-
 - (NSUInteger)numberOfObjects
 {
     return self.items.count;

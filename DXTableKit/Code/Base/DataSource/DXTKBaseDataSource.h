@@ -10,7 +10,6 @@
 #import "DXTKCellMapping.h"
 #import "DXTKContentProvider.h"
 #import "DXTKDataSource.h"
-#import "DXTKCellBuilder.h"
 
 @class DXTKBaseDataSource;
 @protocol DXTKDataSourceDelegate;

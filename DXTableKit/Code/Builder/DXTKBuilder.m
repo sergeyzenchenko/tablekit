@@ -52,7 +52,7 @@
     NSParameterAssert(contentView);
     
     self = [super init];
-
+    
     if (self) {
         self.contentView = contentView;
     }

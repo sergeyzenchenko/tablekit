@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) NSMutableArray *plugins;
 @property (nonatomic, strong) id<DXTKContentProvider> contentProvider;
-@property (nonatomic, strong) id<DXTKCellBuilder> cellBuilder;
 @property (nonatomic, weak) id contentView;
 
 @end
@@ -62,11 +61,16 @@
 {
     id domainObject = [self.contentProvider itemForIndexPath:indexPath];
 
-    id <DXTKCell> cell = [self.cellBuilder buildCellForDomainObject:domainObject
+    id <DXTKCell> cell = [self buildCellForDomainObject:domainObject
                                                           indexPath:indexPath];
     [cell fillWithObject:domainObject];
 
     return cell;
+}
+
+- (id<DXTKCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath
+{
+    return nil;
 }
 
 #pragma mark - Plugins callbacks forwarding

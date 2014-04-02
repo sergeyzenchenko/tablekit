@@ -25,6 +25,12 @@
     return [self buildCellForIndexPath:indexPath];
 }
 
+- (id<DXTKCell>)buildCellForDomainObject:(id)domainObject indexPath:(NSIndexPath*)indexPath
+{
+    return [self.contentView dequeueReusableCellWithIdentifier:NSStringFromClass([domainObject class])
+                                                  forIndexPath:indexPath];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self selectCellAtIndexPath:indexPath];

@@ -159,16 +159,20 @@ describe(@"#setCustomDataSourceClass:", ^{
             [builder setDelegate:delegate];
         });
         
-        it(@"Should use custom datasource class", ^{
-            [builder setCustomDataSourceClass:[TableTestDataSource class]];
-            
-            [[(id)[builder build] should] beKindOfClass:[TableTestDataSource class]];
+        context(@"Custom class is inherited from datasource class supported by builder", ^{
+            it(@"Should build datasource with custom class", ^{
+                [builder setCustomDataSourceClass:[TableTestDataSource class]];
+                
+                [[(id)[builder build] should] beKindOfClass:[TableTestDataSource class]];
+            });
         });
         
-        it(@"Should raise an exception if custom class is not inherited from datasource supported by builder", ^{
-            [[theBlock(^{
-                [builder setCustomDataSourceClass:[NSString class]];
-            }) should] raise];
+        context(@"Custom class is not inherited from datasource class supported by builder", ^{
+            it(@"Should raise an exception", ^{
+                [[theBlock(^{
+                    [builder setCustomDataSourceClass:[NSString class]];
+                }) should] raise];
+            });
         });
     });
 });

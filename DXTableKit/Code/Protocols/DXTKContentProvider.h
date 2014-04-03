@@ -25,17 +25,25 @@
 - (void)contentProviderWillBeginUpdates:(id<DXTKContentProvider>)contentProvider;
 - (void)contentProviderDidEndUpdates:(id<DXTKContentProvider>)contentProvider;
 
+- (void)contentProvider:(id<DXTKContentProvider>)contentProvider didInsertSection:(NSUInteger)section;
+- (void)contentProvider:(id<DXTKContentProvider>)contentProvider didRemoveSection:(NSUInteger)section;
+
+- (void)contentProvider:(id<DXTKContentProvider>)contentProvider didInsertRowAtIndexPath:(NSIndexPath*)indexPath;
+- (void)contentProvider:(id<DXTKContentProvider>)contentProvider didRemoveRowAtIndexPath:(NSIndexPath*)indexPath;
+
 @end
 
 typedef enum DXTKContentProviderState {
     /** State for just created content provider. This is the default. */
-    DXTKContentProviderStateCreated,
+    DXTKContentProviderStateReady,
     /** Content provider is loading content */
     DXTKContentProviderStateLoading,
     /** Content provider is ready and has content */
     DXTKContentProviderStateHasResults,
     /** Content provider loading finished with empty data set */
     DXTKContentProviderStateEmpty,
+    /** Content provider loading more data */
+    DXTKContentProviderStateOutdated,
     /** Content provider loading more data */
     DXTKContentProviderStateUpdating,
     /** Content provider loading finished with error and content is not available */
@@ -69,6 +77,7 @@ typedef enum DXTKContentProviderState {
 /** Get number of sections in content provider.
 * @return Number of sections in content provider, if content contains no sections this method should return 1.
 * */
+
 - (NSInteger)numberOfSections;
 /** Get number of items in specific section.
  * @param section section index

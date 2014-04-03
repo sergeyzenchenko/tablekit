@@ -7,7 +7,7 @@
 //
 
 #import "DXTKAppDelegate.h"
-
+#import "DXTKRootViewController.h"
 
 @implementation DXTKAppDelegate
 
@@ -15,6 +15,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
+    self.window.rootViewController = [DXTKRootViewController new];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

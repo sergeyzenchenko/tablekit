@@ -25,6 +25,9 @@
 		AD0E6E6E16E7988600231F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E4E16E7988600231F24 /* UIKit.framework */; };
 		AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
+		AD27A16F18EDAB6A00BF8A19 /* DXTKRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD27A16E18EDAB6A00BF8A19 /* DXTKRootViewController.m */; };
+		AD27A17218EDAC0B00BF8A19 /* DXTKExampelContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = AD27A17118EDAC0B00BF8A19 /* DXTKExampelContentProvider.m */; };
+		AD27A17518EDACF000BF8A19 /* DXTKExampleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AD27A17418EDACF000BF8A19 /* DXTKExampleTableViewCell.m */; };
 		AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */; };
 		AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */; };
 		ADA4EDEB18EC4010003E6AC5 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDEA18EC4010003E6AC5 /* DXTKContentSection.m */; };
@@ -81,6 +84,12 @@
 		AD0E6E6C16E7988600231F24 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AD0E6E7416E7988600231F24 /* DXTableKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DXTableKitTests-Info.plist"; sourceTree = "<group>"; };
 		AD0E6E7616E7988600231F24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD27A16D18EDAB6A00BF8A19 /* DXTKRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKRootViewController.h; sourceTree = "<group>"; };
+		AD27A16E18EDAB6A00BF8A19 /* DXTKRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKRootViewController.m; sourceTree = "<group>"; };
+		AD27A17018EDAC0B00BF8A19 /* DXTKExampelContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKExampelContentProvider.h; sourceTree = "<group>"; };
+		AD27A17118EDAC0B00BF8A19 /* DXTKExampelContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKExampelContentProvider.m; sourceTree = "<group>"; };
+		AD27A17318EDACF000BF8A19 /* DXTKExampleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKExampleTableViewCell.h; sourceTree = "<group>"; };
+		AD27A17418EDACF000BF8A19 /* DXTKExampleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKExampleTableViewCell.m; sourceTree = "<group>"; };
 		AD68D9AD18EAC55800BE7E13 /* DXTKBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBuilder.h; sourceTree = "<group>"; };
 		AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKBuilder.m; sourceTree = "<group>"; };
 		AD68D9C918EB017700BE7E13 /* DXTKDomaonObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDomaonObject.h; sourceTree = "<group>"; };
@@ -204,6 +213,7 @@
 		AD0E6E5416E7988600231F24 /* DXTableKit */ = {
 			isa = PBXGroup;
 			children = (
+				AD27A16C18EDAB5700BF8A19 /* Examples */,
 				AD0E6E8316E79CCD00231F24 /* Code */,
 				AD0E6E5D16E7988600231F24 /* DXTKAppDelegate.h */,
 				AD0E6E5E16E7988600231F24 /* DXTKAppDelegate.m */,
@@ -260,6 +270,19 @@
 				1D6A3C3417599DAF7931BD84 /* Plugins */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		AD27A16C18EDAB5700BF8A19 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				AD27A16D18EDAB6A00BF8A19 /* DXTKRootViewController.h */,
+				AD27A16E18EDAB6A00BF8A19 /* DXTKRootViewController.m */,
+				AD27A17018EDAC0B00BF8A19 /* DXTKExampelContentProvider.h */,
+				AD27A17118EDAC0B00BF8A19 /* DXTKExampelContentProvider.m */,
+				AD27A17318EDACF000BF8A19 /* DXTKExampleTableViewCell.h */,
+				AD27A17418EDACF000BF8A19 /* DXTKExampleTableViewCell.m */,
+			);
+			path = Examples;
 			sourceTree = "<group>";
 		};
 		AD68D9AC18EAC54900BE7E13 /* Builder */ = {
@@ -470,10 +493,13 @@
 				AD0E6E5F16E7988600231F24 /* DXTKAppDelegate.m in Sources */,
 				ADA4EDF218EC4169003E6AC5 /* DXTKBaseContentProvider.m in Sources */,
 				AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */,
+				AD27A17218EDAC0B00BF8A19 /* DXTKExampelContentProvider.m in Sources */,
+				AD27A17518EDACF000BF8A19 /* DXTKExampleTableViewCell.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
 				1D6A32104061A1A00DCB694D /* DXTKBaseDataSourcePlugin.m in Sources */,
 				ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */,
 				1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */,
+				AD27A16F18EDAB6A00BF8A19 /* DXTKRootViewController.m in Sources */,
 				ADA4EDEB18EC4010003E6AC5 /* DXTKContentSection.m in Sources */,
 				1D6A37B5D6D7D14FB34A0658 /* DXTKCollectionViewDataSourceBuilder.m in Sources */,
 			);

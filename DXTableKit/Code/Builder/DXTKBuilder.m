@@ -17,6 +17,7 @@
 @property(nonatomic, strong) id <DXTKContentProvider> contentProvider;
 @property(nonatomic, strong) id contentView;
 @property(nonatomic, weak) id <DXTKDataSourceDelegate> delegate;
+
 @property(nonatomic, strong) Class customDataSourceClass;
 
 @end

@@ -35,6 +35,10 @@
         self.plugins = [NSMutableArray new];
         
         self.contentView = contentView;
+        
+        [self.contentView setDelegate:self];
+        [self.contentView setDataSource:(id)self];
+        
         self.contentProvider = contentProvider;
         
         self.contentProviderDelegateProxy = (id)[[LBDelegateMatrioska alloc] initWithDelegates:@[self]];

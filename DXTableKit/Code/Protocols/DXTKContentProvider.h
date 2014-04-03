@@ -13,6 +13,8 @@
 
 @protocol DXTKContentProviderDelegate <NSObject>
 
+@optional
+
 - (void)contentProviderDidStartLoading:(id<DXTKContentProvider>)contentProvider;
 - (void)contentProvider:(id <DXTKContentProvider>)contentProvider didFinishLoadingWithError:(NSError *)error;
 - (void)contentProviderDidFinishLoading:(id<DXTKContentProvider>)contentProvider;

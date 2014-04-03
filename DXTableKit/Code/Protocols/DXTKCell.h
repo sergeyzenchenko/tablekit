@@ -8,4 +8,8 @@
  * */
 - (void)fillWithObject:(id)object;
 
+@optional
+
+- (void)setStateInfo:(NSDictionary*)stateInfo;
+
 @end

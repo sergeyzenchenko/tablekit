@@ -27,7 +27,6 @@
 		AD0E6E7716E7988600231F24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD0E6E7516E7988600231F24 /* InfoPlist.strings */; };
 		AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9AE18EAC55800BE7E13 /* DXTKBuilder.m */; };
 		AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */ = {isa = PBXBuildFile; fileRef = AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */; };
-		ADA4EDE718EC26AB003E6AC5 /* DXTKBuilder+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */; };
 		ADA4EDEB18EC4010003E6AC5 /* DXTKContentSection.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDEA18EC4010003E6AC5 /* DXTKContentSection.m */; };
 		ADA4EDF218EC4169003E6AC5 /* DXTKBaseContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDEE18EC4169003E6AC5 /* DXTKBaseContentProvider.m */; };
 		ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = ADA4EDF118EC4169003E6AC5 /* DXTKBaseDataSource.m */; };
@@ -88,7 +87,6 @@
 		AD68D9CA18EB017700BE7E13 /* DXTKDomaonObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKDomaonObject.m; sourceTree = "<group>"; };
 		AD68D9CC18EB05B600BE7E13 /* DXTKContentSectionInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DXTKContentSectionInfo.h; sourceTree = "<group>"; };
 		ADA4EDE518EC26AB003E6AC5 /* DXTKBuilder+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DXTKBuilder+Private.h"; sourceTree = "<group>"; };
-		ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DXTKBuilder+Private.m"; sourceTree = "<group>"; };
 		ADA4EDE918EC4010003E6AC5 /* DXTKContentSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentSection.h; sourceTree = "<group>"; };
 		ADA4EDEA18EC4010003E6AC5 /* DXTKContentSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKContentSection.m; sourceTree = "<group>"; };
 		ADA4EDED18EC4169003E6AC5 /* DXTKBaseContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKBaseContentProvider.h; sourceTree = "<group>"; };
@@ -274,7 +272,6 @@
 				1D6A3F16236F2A65218B397F /* DXTKCollectionViewDataSourceBuilder.m */,
 				1D6A323E59F7F22F178103FA /* DXTKCollectionViewDataSourceBuilder.h */,
 				ADA4EDE518EC26AB003E6AC5 /* DXTKBuilder+Private.h */,
-				ADA4EDE618EC26AB003E6AC5 /* DXTKBuilder+Private.m */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -474,7 +471,6 @@
 				ADA4EDF218EC4169003E6AC5 /* DXTKBaseContentProvider.m in Sources */,
 				AD68D9AF18EAC55800BE7E13 /* DXTKBuilder.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
-				ADA4EDE718EC26AB003E6AC5 /* DXTKBuilder+Private.m in Sources */,
 				1D6A32104061A1A00DCB694D /* DXTKBaseDataSourcePlugin.m in Sources */,
 				ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */,
 				1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */,

@@ -14,6 +14,16 @@
 #import "DXTKCollectionViewDataSourceBuilder.h"
 #import "DXTKBuilder+Private.h"
 
+@interface TableTestDataSource : DXTKTableViewDataSource
+
+@end
+
+@implementation TableTestDataSource
+
+
+
+@end
+
 SPEC_BEGIN(DXTKBuilderSpec)
 
 describe(@"initialization", ^{
@@ -125,6 +135,40 @@ describe(@"#build", ^{
                     [builder build];
                 }) should] raise];
             });
+        });
+    });
+});
+
+describe(@"#setCustomDataSourceClass:", ^{
+    __block id<DXTKContentProvider> contentProvider;
+    __block id<DXTKDataSourceDelegate> delegate;
+    
+    beforeEach(^{
+        contentProvider = [DXTKBaseContentProvider new];
+        delegate = [KWMock mockForProtocol:@protocol(DXTKDataSourceDelegate)];
+    });
+    
+    context(@"TableView", ^{
+        __block UITableView *tableViewMock;
+        
+        beforeEach(^{
+            tableViewMock = [KWMock mockForClass:[UITableView class]];
+            builder = [DXTKBuilder withContentView:tableViewMock];
+            
+            [builder setContentProvider:contentProvider];
+            [builder setDelegate:delegate];
+        });
+        
+        it(@"Should use custom datasource class", ^{
+            [builder setCustomDataSourceClass:[TableTestDataSource class]];
+            
+            [[(id)[builder build] should] beKindOfClass:[TableTestDataSource class]];
+        });
+        
+        it(@"Should raise an exception if custom class is not inherited from datasource supported by builder", ^{
+            [[theBlock(^{
+                [builder setCustomDataSourceClass:[NSString class]];
+            }) should] raise];
         });
     });
 });

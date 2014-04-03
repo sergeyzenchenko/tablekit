@@ -17,6 +17,7 @@
 @property(nonatomic, strong) id <DXTKContentProvider> contentProvider;
 @property(nonatomic, strong) id contentView;
 @property(nonatomic, weak) id <DXTKDataSourceDelegate> delegate;
+@property(nonatomic, strong) Class customDataSourceClass;
 
 @end
 
@@ -65,11 +66,24 @@
     return nil;
 }
 
+- (void)setCustomDataSourceClass:(Class)dataSourceClass
+{
+    NSParameterAssert([dataSourceClass isSubclassOfClass:[self dataSourceClass]]);
+    
+    _customDataSourceClass = dataSourceClass;
+}
+
 - (id<DXTKDataSource>)build
 {
     NSParameterAssert(self.contentProvider);
     
-    id<DXTKDataSource> ds = [[[self dataSourceClass] alloc] initWithContentView:self.contentView
+    Class dataSourceClass = [self dataSourceClass];
+    
+    if (self.customDataSourceClass) {
+        dataSourceClass = self.customDataSourceClass;
+    }
+    
+    id<DXTKDataSource> ds = [[dataSourceClass alloc] initWithContentView:self.contentView
                                                                        contentProvider:self.contentProvider
                                                                               delegate:self.delegate];
 

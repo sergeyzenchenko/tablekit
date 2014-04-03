@@ -9,6 +9,8 @@
 
 @protocol DXTKDataSourceDelegate <NSObject>
 
-- (void)didSelectDomainObject:(id)object atIndexPath:(NSIndexPath *)indexPath fromDataSource:(id <DXTKDataSource>)dataSource;
+- (void)didSelectDomainObject:(id)object
+                  atIndexPath:(NSIndexPath *)indexPath
+               fromDataSource:(id <DXTKDataSource>)dataSource;
 
 @end

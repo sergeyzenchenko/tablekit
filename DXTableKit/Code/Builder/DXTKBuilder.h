@@ -24,4 +24,6 @@
 - (void)registerCellClass:(Class)cellClass forDomainObjectClass:(Class)domainClass;
 - (void)registerNib:(UINib*)nib forDomainObjectClass:(Class)domainClass;
 
+- (void)setCustomDataSourceClass:(Class)dataSourceClass;
+
 @end

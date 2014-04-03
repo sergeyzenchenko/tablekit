@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "DXTKContentProvider.h"
-#import "DXTKCellMapping.h"
 #import "DXTKBaseDataSource.h"
 
 @protocol DXTKDataSourceDelegate;

@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DXTKCellMapping.h"
 #import "DXTKContentProvider.h"
 #import "DXTKDataSource.h"
 #import "DXTKExtandableDataSource.h"
+#import "DXTKCell.h"
 
 @class DXTKBaseDataSource;
 @protocol DXTKDataSourceDelegate;

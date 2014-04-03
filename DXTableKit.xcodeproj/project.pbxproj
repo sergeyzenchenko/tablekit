@@ -62,7 +62,6 @@
 		1D6A3E849F33CEB7ABA7EFF3 /* DXTKDataSourceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKDataSourceDelegate.h; sourceTree = "<group>"; };
 		1D6A3F16236F2A65218B397F /* DXTKCollectionViewDataSourceBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCollectionViewDataSourceBuilder.m; sourceTree = "<group>"; };
 		308FD2E316F0E067006B0415 /* DXTKCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCell.h; sourceTree = "<group>"; };
-		308FD2E416F0E067006B0415 /* DXTKCellMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCellMapping.h; sourceTree = "<group>"; };
 		308FD2E516F0E067006B0415 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
 		308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
 		308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				308FD2E316F0E067006B0415 /* DXTKCell.h */,
-				308FD2E416F0E067006B0415 /* DXTKCellMapping.h */,
 				308FD2E516F0E067006B0415 /* DXTKContentProvider.h */,
 				AD68D9CC18EB05B600BE7E13 /* DXTKContentSectionInfo.h */,
 				1D6A3DCDD7BAE6E13EF758FB /* DataSource */,

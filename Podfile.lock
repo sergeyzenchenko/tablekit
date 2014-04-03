@@ -4,11 +4,14 @@ PODS:
   - Kiwi/XCTest (2.2.4):
     - Kiwi/ARC
     - Kiwi/NonARC
+  - LBDelegateMatrioska (0.0.2)
 
 DEPENDENCIES:
   - Kiwi/XCTest
+  - LBDelegateMatrioska (~> 0.0)
 
 SPEC CHECKSUMS:
   Kiwi: d60d7498b640a16f58b01925fc3c8d7c4d809f66
+  LBDelegateMatrioska: d7a6df1df0c8045c6011556b8f55b414e83d9493
 
 COCOAPODS: 0.29.0

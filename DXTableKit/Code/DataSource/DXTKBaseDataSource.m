@@ -6,17 +6,20 @@
 //  Copyright (c) 2013 111min. All rights reserved.
 //
 
+#import <LBDelegateMatrioska/LBDelegateMatrioska.h>
 #import "DXTKBaseDataSource.h"
 #import "DXTKDataSourcePlugin.h"
 #import "DXTKDataSource.h"
 #import "DXTKDataSourceDelegate.h"
-#import "DXTKDelegateProxyPlugin.h"
 
-@interface DXTKBaseDataSource () <DXTKContentProviderDelegate>
+
+@interface DXTKBaseDataSource ()
 
 @property (nonatomic, strong) NSMutableArray *plugins;
 @property (nonatomic, strong) id<DXTKContentProvider> contentProvider;
 @property (nonatomic, weak) id contentView;
+
+@property (nonatomic, strong) LBDelegateMatrioska<DXTKContentProviderDelegate, DXTKDataSourceDelegate> *contentProviderDelegateProxy;
 
 @end
 
@@ -30,11 +33,17 @@
     self = [super init];
     if (self) {
         self.plugins = [NSMutableArray new];
-
+        
         self.contentView = contentView;
         self.contentProvider = contentProvider;
         
-        [self attachPlugin:[[DXTKDelegateProxyPlugin alloc] initWithDelegate:delegate]];
+        self.contentProviderDelegateProxy = (id)[[LBDelegateMatrioska alloc] initWithDelegates:@[self]];
+        
+        [self.contentProvider setDelegate:self.contentProviderDelegateProxy];
+        
+        if (delegate) {
+            [self.contentProviderDelegateProxy addDelegate:delegate];
+        }
     }
 
     return self;
@@ -42,8 +51,11 @@
 
 - (void)attachPlugin:(id <DXTKDataSourcePlugin>)plugin
 {
+    NSParameterAssert(plugin);
+    
     [plugin attachToDataSource:self];
     [self.plugins addObject:plugin];
+    [self.contentProviderDelegateProxy addDelegate:plugin];
 }
 
 - (void)reload
@@ -78,61 +90,45 @@
 - (void)selectCellAtIndexPath:(NSIndexPath *)indexPath
 {
     id domainObject = [self.contentProvider itemForIndexPath:indexPath];
-
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin didSelectDomainObject:domainObject
-                          atIndexPath:indexPath
-                       fromDataSource:self];
-    }];
+    
+    [self.contentProviderDelegateProxy didSelectDomainObject:domainObject
+                                                 atIndexPath:indexPath
+                                              fromDataSource:self];
 }
 
 - (void)contentProviderDidStartLoading:(id <DXTKContentProvider>)contentProvider
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProviderDidStartLoading:contentProvider];
-    }];
+    
 }
 
 - (void)contentProvider:(id <DXTKContentProvider>)contentProvider didFinishLoadingWithError:(NSError *)error
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProvider:contentProvider didFinishLoadingWithError:error];
-    }];
+    
 }
 
 - (void)contentProviderDidFinishLoading:(id <DXTKContentProvider>)contentProvider
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProviderDidFinishLoading:contentProvider];
-    }];
+    
 }
 
 - (void)contentProviderWillChangeState:(id <DXTKContentProvider>)contentProvider
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProviderWillChangeState:contentProvider];
-    }];
+    
 }
 
 - (void)contentProviderDidChangeState:(id <DXTKContentProvider>)contentProvider
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProviderDidChangeState:contentProvider];
-    }];
+    
 }
 
 - (void)contentProviderWillBeginUpdates:(id <DXTKContentProvider>)contentProvider
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProviderWillBeginUpdates:contentProvider];
-    }];
+    
 }
 
 - (void)contentProviderDidEndUpdates:(id <DXTKContentProvider>)contentProvider
 {
-    [self.plugins enumerateObjectsUsingBlock:^(id <DXTKDataSourcePlugin> plugin, NSUInteger idx, BOOL *stop) {
-        [plugin contentProviderDidEndUpdates:contentProvider];
-    }];
+    
 }
 
 @end

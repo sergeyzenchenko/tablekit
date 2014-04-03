@@ -92,14 +92,6 @@ describe(@"#build", ^{
                 
                 [[(id)dataSource.contentProvider should] beNonNil];
                 [[(id)dataSource.contentProvider should] equal:contentProvider];
-                
-                NSArray *plugins = [dataSource performSelector:@selector(plugins)];
-                
-                [[plugins should] haveCountOf:1];
-                
-                id plugin = plugins[0];
-                
-                [[[plugin performSelector:@selector(delegate)] should] equal:delegate];
             });
             
             it(@"Should register cells by class", ^{

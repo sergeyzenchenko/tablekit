@@ -19,7 +19,7 @@
 
 - (NSInteger)numberOfItemsInSection:(NSUInteger)section
 {
-    return 100;
+    return 1000000;
 }
 
 - (id<DXTKContentSection>)sectionObjectForSection:(NSUInteger)section

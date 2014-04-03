@@ -74,7 +74,7 @@ describe(@"#build", ^{
     __block UITableView *tableViewMock;
     
     beforeEach(^{
-        tableViewMock = [KWMock mockForClass:[UITableView class]];
+        tableViewMock = [KWMock nullMockForClass:[UITableView class]];
         builder = [DXTKBuilder withContentView:tableViewMock];
     });
     
@@ -152,7 +152,7 @@ describe(@"#setCustomDataSourceClass:", ^{
         __block UITableView *tableViewMock;
         
         beforeEach(^{
-            tableViewMock = [KWMock mockForClass:[UITableView class]];
+            tableViewMock = [KWMock nullMockForClass:[UITableView class]];
             builder = [DXTKBuilder withContentView:tableViewMock];
             
             [builder setContentProvider:contentProvider];

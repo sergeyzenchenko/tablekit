@@ -34,6 +34,17 @@ void (^tests)() = ^ {
 };
 
 describe(@"#init", ^{
+    
+    context(@"nil items received", ^{
+        it(@"Should raise an exception", ^{
+            [[theBlock(^{
+                section = [DXTKContentSection sectionWithItems:nil sectionObject:sectionObject];
+            }) should] raise];
+        });
+    });
+    
+    
+    
     beforeEach(^{
         section = [DXTKContentSection sectionWithItems:items sectionObject:sectionObject];
     });
@@ -42,6 +53,23 @@ describe(@"#init", ^{
 });
 
 describe(@"#sectionWithItems", ^{
+    
+    context(@"nil items received", ^{
+        it(@"Should raise an exception", ^{
+            [[theBlock(^{
+                section = [[DXTKContentSection alloc] initWithItems:nil sectionObject:sectionObject];
+            }) should] raise];
+        });
+    });
+    
+    context(@"Non array items received", ^{
+        it(@"Should raise an exception", ^{
+            [[theBlock(^{
+                section = [[DXTKContentSection alloc] initWithItems:(id)@"" sectionObject:sectionObject];
+            }) should] raise];
+        });
+    });
+    
     beforeEach(^{
         section = [[DXTKContentSection alloc] initWithItems:items sectionObject:sectionObject];
     });

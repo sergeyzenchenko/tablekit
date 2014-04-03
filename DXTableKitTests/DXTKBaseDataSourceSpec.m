@@ -38,17 +38,21 @@ beforeEach(^{
     
 });
 
-describe(@"#attachPlugin", ^{
-    it(@"Should attach plugin", ^{
-        NSObject<DXTKDataSourcePlugin> *plugin = [KWMock mock];
+describe(@"#init", ^{
+    it(@"Should set delegate for contentView", ^{
+        [[contentViewMock should] receive:@selector(setDelegate:)];
         
-        [[plugin should] receive:@selector(attachToDataSource:) withArguments:dataSource, nil];
+        dataSource = [[DXTKBaseDataSource alloc] initWithContentView:contentViewMock
+                                                     contentProvider:contentProviderMock
+                                                            delegate:delegateMock];
+    });
+    
+    it(@"Should set datasource for contentView", ^{
+        [[contentViewMock should] receive:@selector(setDataSource:)];
         
-        [dataSource attachPlugin:plugin];
-        
-        NSArray *plugins = [dataSource performSelector:@selector(plugins)];
-        
-        [[plugins should] containObjects:plugin, nil];
+        dataSource = [[DXTKBaseDataSource alloc] initWithContentView:contentViewMock
+                                                     contentProvider:contentProviderMock
+                                                            delegate:delegateMock];
     });
 });
 

@@ -24,6 +24,8 @@
 
 - (instancetype)initWithItems:(NSArray *)items sectionObject:(id)sectionObject
 {
+    NSParameterAssert([items isKindOfClass:[NSArray class]]);
+    
     self = [super init];
     if (self) {
         self.items = items;

@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) id<DXTKDataSource> dataSource;
-@property (nonatomic, strong) id<DXTKContentProvider> contentProvider;
 
 @end
 
@@ -33,9 +32,7 @@
     
     DXTKBuilder *builder = [DXTKBuilder withContentView:self.tableView];
     
-    self.contentProvider = [DXTKExampelContentProvider new];
-    
-    [builder setContentProvider:self.contentProvider];
+    [builder setContentProvider:[DXTKExampelContentProvider new]];
     [builder registerCellClass:[DXTKExampleTableViewCell class] forDomainObjectClass:[@(1) class]];
     
     self.dataSource = [builder build];

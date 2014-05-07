@@ -12,6 +12,11 @@
 		1D6A37B5D6D7D14FB34A0658 /* DXTKCollectionViewDataSourceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3F16236F2A65218B397F /* DXTKCollectionViewDataSourceBuilder.m */; };
 		1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3705E87DD189FDE246F2 /* DXTKTableViewDataSourceBuilder.m */; };
 		308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */; };
+		689FAD57191A354F00D517F3 /* DXTKCoreDataContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FAD56191A354F00D517F3 /* DXTKCoreDataContentProvider.m */; };
+		689FAD5C191A35D800D517F3 /* DXTKCoreDataContentProviderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FAD5B191A35D800D517F3 /* DXTKCoreDataContentProviderSpec.m */; };
+		689FAD5D191A375A00D517F3 /* DXTKCoreDataContentProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 689FAD56191A354F00D517F3 /* DXTKCoreDataContentProvider.m */; };
+		689FAD5F191A588E00D517F3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689FAD5E191A588E00D517F3 /* CoreData.framework */; };
+		689FAD60191A58E600D517F3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689FAD5E191A588E00D517F3 /* CoreData.framework */; };
 		AD0E6E4F16E7988600231F24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E4E16E7988600231F24 /* UIKit.framework */; };
 		AD0E6E5116E7988600231F24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5016E7988600231F24 /* Foundation.framework */; };
 		AD0E6E5316E7988600231F24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0E6E5216E7988600231F24 /* CoreGraphics.framework */; };
@@ -67,6 +72,10 @@
 		308FD2E516F0E067006B0415 /* DXTKContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKContentProvider.h; sourceTree = "<group>"; };
 		308FD2EE16F0E0BB006B0415 /* DXTKTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKTableViewDataSource.h; sourceTree = "<group>"; };
 		308FD2EF16F0E0BB006B0415 /* DXTKTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKTableViewDataSource.m; sourceTree = "<group>"; };
+		689FAD55191A354F00D517F3 /* DXTKCoreDataContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTKCoreDataContentProvider.h; sourceTree = "<group>"; };
+		689FAD56191A354F00D517F3 /* DXTKCoreDataContentProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCoreDataContentProvider.m; sourceTree = "<group>"; };
+		689FAD5B191A35D800D517F3 /* DXTKCoreDataContentProviderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTKCoreDataContentProviderSpec.m; sourceTree = "<group>"; };
+		689FAD5E191A588E00D517F3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AD0E6E4B16E7988600231F24 /* DXTableKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DXTableKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0E6E4E16E7988600231F24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AD0E6E5016E7988600231F24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689FAD5F191A588E00D517F3 /* CoreData.framework in Frameworks */,
 				AD0E6E4F16E7988600231F24 /* UIKit.framework in Frameworks */,
 				AD0E6E5116E7988600231F24 /* Foundation.framework in Frameworks */,
 				AD0E6E5316E7988600231F24 /* CoreGraphics.framework in Frameworks */,
@@ -126,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689FAD60191A58E600D517F3 /* CoreData.framework in Frameworks */,
 				AD0E6E6D16E7988600231F24 /* SenTestingKit.framework in Frameworks */,
 				AD0E6E6E16E7988600231F24 /* UIKit.framework in Frameworks */,
 				AD0E6E6F16E7988600231F24 /* Foundation.framework in Frameworks */,
@@ -200,6 +211,7 @@
 		AD0E6E4D16E7988600231F24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				689FAD5E191A588E00D517F3 /* CoreData.framework */,
 				AD0E6E4E16E7988600231F24 /* UIKit.framework */,
 				AD0E6E5016E7988600231F24 /* Foundation.framework */,
 				AD0E6E5216E7988600231F24 /* CoreGraphics.framework */,
@@ -245,6 +257,7 @@
 				ADA4EDF618EC45C4003E6AC5 /* DXTKContentSectionSpec.m */,
 				ADA4EDF918EC471C003E6AC5 /* DXTKTableViewDataSourceSpec.m */,
 				ADA4EDFB18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m */,
+				689FAD5B191A35D800D517F3 /* DXTKCoreDataContentProviderSpec.m */,
 			);
 			path = DXTableKitTests;
 			sourceTree = "<group>";
@@ -322,6 +335,8 @@
 			children = (
 				ADA4EDED18EC4169003E6AC5 /* DXTKBaseContentProvider.h */,
 				ADA4EDEE18EC4169003E6AC5 /* DXTKBaseContentProvider.m */,
+				689FAD55191A354F00D517F3 /* DXTKCoreDataContentProvider.h */,
+				689FAD56191A354F00D517F3 /* DXTKCoreDataContentProvider.m */,
 			);
 			path = ContentProvider;
 			sourceTree = "<group>";
@@ -497,6 +512,7 @@
 				AD27A17518EDACF000BF8A19 /* DXTKExampleTableViewCell.m in Sources */,
 				308FD2F116F0E0BB006B0415 /* DXTKTableViewDataSource.m in Sources */,
 				1D6A32104061A1A00DCB694D /* DXTKBaseDataSourcePlugin.m in Sources */,
+				689FAD57191A354F00D517F3 /* DXTKCoreDataContentProvider.m in Sources */,
 				ADA4EDF318EC4169003E6AC5 /* DXTKBaseDataSource.m in Sources */,
 				1D6A3DAE53F693E1D9DEBC4C /* DXTKTableViewDataSourceBuilder.m in Sources */,
 				AD27A16F18EDAB6A00BF8A19 /* DXTKRootViewController.m in Sources */,
@@ -510,6 +526,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD68D9CB18EB017700BE7E13 /* DXTKDomaonObject.m in Sources */,
+				689FAD5D191A375A00D517F3 /* DXTKCoreDataContentProvider.m in Sources */,
+				689FAD5C191A35D800D517F3 /* DXTKCoreDataContentProviderSpec.m in Sources */,
 				ADA4EDF818EC4659003E6AC5 /* DXTKContentSectionSpec.m in Sources */,
 				ADA4EDFC18EC58E7003E6AC5 /* DXTKBaseDataSourceSpec.m in Sources */,
 				1D6A34423D3A77C4B5F1251F /* DXTKBuilderSpec.m in Sources */,

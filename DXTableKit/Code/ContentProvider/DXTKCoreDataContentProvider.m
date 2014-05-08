@@ -175,8 +175,12 @@
         [self.delegate contentProviderDidStartLoading:self];
     }
  
-    self.state = DXTKContentProviderStateLoading;
-    
+    if (self.state == DXTKContentProviderStateHasResults) {
+        self.state = DXTKContentProviderStateUpdating;
+    } else {
+        self.state = DXTKContentProviderStateLoading;
+    }
+        
     NSError *error = nil;
     [self.fetchedResultsController performFetch:&error];
     
@@ -189,7 +193,12 @@
         if ([self.delegate respondsToSelector:@selector(contentProviderDidFinishLoading:)]) {
             [self.delegate contentProviderDidFinishLoading:self];
         }
-        self.state = DXTKContentProviderStateHasResults;
+        
+        if (self.fetchedResultsController.fetchedObjects.count > 0) {
+            self.state = DXTKContentProviderStateHasResults;
+        } else {
+            self.state = DXTKContentProviderStateEmpty;
+        }                
     }    
 }
 

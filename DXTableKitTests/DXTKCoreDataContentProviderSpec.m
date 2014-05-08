@@ -15,8 +15,8 @@ SPEC_BEGIN(DXTKContentProviderSpec)
 __block DXTKCoreDataContentProvider<NSFetchedResultsControllerDelegate> *contentProvider;
 __block NSFetchedResultsController *fetchedResultsController;
 
-beforeAll(^{
-    fetchedResultsController = [KWMock mockForClass:[NSFetchedResultsController class]];
+beforeEach(^{
+    fetchedResultsController = [KWMock nullMockForClass:[NSFetchedResultsController class]];
     contentProvider = (DXTKCoreDataContentProvider<NSFetchedResultsControllerDelegate> *)[[DXTKCoreDataContentProvider alloc] initWithFetchedResultsController:fetchedResultsController];
 });
 
@@ -34,10 +34,8 @@ describe(@"DXTKCoreDataContentProvider", ^{
         [[contentProvider should] conformToProtocol:@protocol(NSFetchedResultsControllerDelegate)];
     });
     
-    context(@"initialization", ^{
-        it(@"should init with NSFetchedResultsController", ^{
-            [[contentProvider should] respondToSelector:@selector(initWithFetchedResultsController:)];
-        });
+    it(@"should init with NSFetchedResultsController", ^{
+        [[contentProvider should] respondToSelector:@selector(initWithFetchedResultsController:)];
     });
     
     context(@"with fetched results Controller", ^{
@@ -182,19 +180,36 @@ describe(@"DXTKCoreDataContentProvider", ^{
     context(@"state switching", ^{
         
         /** State for just created content provider. This is the default. */
-        it(@"#DXTKContentProviderStateReady", ^{
-
+        it(@"it should enter #DXTKContentProviderStateReady state after init", ^{
+            [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateReady)];
         });
         /** Content provider is loading content */
-        it(@"#DXTKContentProviderStateLoading", ^{
+        it(@"should enter #DXTKContentProviderStateLoading state when loading with no prevoous data", ^{
+            [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateLoading)];
+            [contentProvider reload];
         });
         
          /** Content provider is ready and has content */
         it(@"#DXTKContentProviderStateHasResults", ^{
+            [fetchedResultsController stub:@selector(fetchedObjects) andReturn:@[@1, @2]];
+            [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateEmpty)];
+            [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateHasResults)];
+            [contentProvider reload];
         });
         
         /** Content provider loading finished with empty data set */
-        it(@"#DXTKContentProviderStateEmpty", ^{
+        context(@"#DXTKContentProviderStateEmpty", ^{
+            it(@"with empty array", ^{
+                [fetchedResultsController stub:@selector(fetchedObjects) andReturn:@[]];
+                [contentProvider reload];
+                [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateEmpty)];
+            });
+            
+            it(@"with nil array", ^{
+                [fetchedResultsController stub:@selector(fetchedObjects) andReturn:nil];
+                [contentProvider reload];
+                [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateEmpty)];
+            });
         });
         
         /** Content provider loading more data */
@@ -203,13 +218,31 @@ describe(@"DXTKCoreDataContentProvider", ^{
         });
         
         /** Content provider loading more data */
-        it(@"#DXTKContentProviderStateUpdating", ^{
-
+        context(@"#DXTKContentProviderStateUpdating", ^{
+            it(@"should enter state when have data", ^{
+                [contentProvider setState:DXTKContentProviderStateHasResults];
+                [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateUpdating)];
+                [contentProvider reload];
+            });
+            
+            it(@"should not enter state when have no data", ^{
+                [contentProvider setState:DXTKContentProviderStateEmpty];
+                [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateUpdating)];
+                [contentProvider reload];
+            });
         });
         
         /** Content provider loading finished with error and content is not available */
         it(@"#DXTKContentProviderStateError", ^{
-        
+            NSError *error = [NSError errorWithDomain:@"some error" code:0 userInfo:nil];
+            [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
+                NSValue *pointerValue = params[0];
+                void **errorRef = [pointerValue pointerValue];
+                *errorRef = (__bridge void *)(error);
+                return nil;
+            }];
+            [contentProvider reload];
+            [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateError)];            
         });
         
     });

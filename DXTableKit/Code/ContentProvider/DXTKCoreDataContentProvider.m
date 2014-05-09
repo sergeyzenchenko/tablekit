@@ -170,37 +170,52 @@
 #pragma mark - implementation
 #pragma mark -
 
-- (void)reload
+- (void)beforeContentLoading
 {
     if ([self.delegate respondsToSelector:@selector(contentProviderDidStartLoading:)]) {
         [self.delegate contentProviderDidStartLoading:self];
     }
- 
+    
     if (self.state == DXTKContentProviderStateHasResults) {
         self.state = DXTKContentProviderStateUpdating;
     } else {
         self.state = DXTKContentProviderStateLoading;
     }
-        
+}
+
+- (void)reload
+{
+    [self beforeContentLoading];
+    
     NSError *error = nil;
     [self.fetchedResultsController performFetch:&error];
     
     if (error != nil) {
-        if ([self.delegate respondsToSelector:@selector(contentProvider:didFinishLoadingWithError:)]) {
-            [self.delegate contentProvider:self didFinishLoadingWithError:error];
-        }
-        self.state = DXTKContentProviderStateError;
+        [self afterContentLoadingWithError:error];
     } else {
-        if ([self.delegate respondsToSelector:@selector(contentProviderDidFinishLoading:)]) {
-            [self.delegate contentProviderDidFinishLoading:self];
-        }
-        
-        if (self.fetchedResultsController.fetchedObjects.count > 0) {
-            self.state = DXTKContentProviderStateHasResults;
-        } else {
-            self.state = DXTKContentProviderStateEmpty;
-        }                
-    }    
+        [self afterSuccessfullContentLoading];
+    }
+}
+
+- (void)afterContentLoadingWithError:(NSError *)error
+{
+    if ([self.delegate respondsToSelector:@selector(contentProvider:didFinishLoadingWithError:)]) {
+        [self.delegate contentProvider:self didFinishLoadingWithError:error];
+    }
+    self.state = DXTKContentProviderStateError;
+}
+
+- (void)afterSuccessfullContentLoading
+{
+    if ([self.delegate respondsToSelector:@selector(contentProviderDidFinishLoading:)]) {
+        [self.delegate contentProviderDidFinishLoading:self];
+    }
+    
+    if (self.fetchedResultsController.fetchedObjects.count > 0) {
+        self.state = DXTKContentProviderStateHasResults;
+    } else {
+        self.state = DXTKContentProviderStateEmpty;
+    }
 }
 
 @end

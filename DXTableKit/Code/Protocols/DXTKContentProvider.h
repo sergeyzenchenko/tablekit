@@ -29,6 +29,10 @@
 - (void)contentProvider:(id<DXTKContentProvider>)contentProvider didRemoveSection:(NSUInteger)section;
 
 - (void)contentProvider:(id<DXTKContentProvider>)contentProvider didInsertRowAtIndexPath:(NSIndexPath*)indexPath;
+- (void)contentProvider:(id<DXTKContentProvider>)contentProvider
+  didMoveRowAtIntexPath:(NSIndexPath *)indexPath
+            toIndexPath:(NSIndexPath *)newIndexPath;
+- (void)contentProvider:(id<DXTKContentProvider>)contentProvider didUpdateCellAtIndexPath:(NSIndexPath *)indexPath;
 - (void)contentProvider:(id<DXTKContentProvider>)contentProvider didRemoveRowAtIndexPath:(NSIndexPath*)indexPath;
 
 @end

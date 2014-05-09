@@ -97,14 +97,6 @@
             break;
         }
             
-        case NSFetchedResultsChangeMove: {
-            break;
-        }
-            
-        case NSFetchedResultsChangeUpdate: {
-            break;
-        }
-            
         case NSFetchedResultsChangeDelete: {
             if ([self.delegate respondsToSelector:@selector(contentProvider:didRemoveSection:)]) {
                 [self.delegate contentProvider:self didRemoveSection:sectionIndex];

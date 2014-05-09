@@ -160,9 +160,32 @@ describe(@"DXTKCoreDataContentProvider", ^{
                          withArguments:contentProvider,indexPath, nil];
             [contentProvider controller:nil
                         didChangeObject:nil
-                            atIndexPath:indexPath
+                            atIndexPath:nil
                           forChangeType:NSFetchedResultsChangeInsert
                            newIndexPath:indexPath];
+        });
+        
+        it(@"#contentProvider:didMoveCellAtIndexPath:toIndexPath:", ^{
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+            NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:2 inSection:1];
+            [[delegate should] receive:@selector(contentProvider:didMoveCellAtIntexPath:toIndexPath:)
+                         withArguments:contentProvider, indexPath, toIndexPath];
+            [contentProvider controller:nil
+                        didChangeObject:nil
+                            atIndexPath:indexPath
+                          forChangeType:NSFetchedResultsChangeMove
+                           newIndexPath:toIndexPath];
+        });
+        
+        it(@"#contentProvider:didUpdateCellAtIndexPath:", ^{
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+            [[delegate should] receive:@selector(contentProvider:didUpdateCellAtIndexPath:)
+                         withArguments:contentProvider, indexPath];
+            [contentProvider controller:nil
+                        didChangeObject:nil
+                            atIndexPath:indexPath
+                          forChangeType:NSFetchedResultsChangeUpdate
+                           newIndexPath:nil];
         });
         
         it(@"#contentProvider:didRemoveRowAtIndexPath:", ^{
@@ -173,7 +196,7 @@ describe(@"DXTKCoreDataContentProvider", ^{
                         didChangeObject:nil
                             atIndexPath:indexPath
                           forChangeType:NSFetchedResultsChangeDelete
-                           newIndexPath:indexPath];
+                           newIndexPath:nil];
         });
     });
     

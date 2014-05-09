@@ -65,10 +65,16 @@
         }
         
         case NSFetchedResultsChangeMove: {
+            if ([self.delegate respondsToSelector:@selector(contentProvider:didMoveCellAtIntexPath:toIndexPath:)]) {
+                [self.delegate contentProvider:self didMoveCellAtIntexPath:indexPath toIndexPath:newIndexPath];
+            }
             break;
         }
             
         case NSFetchedResultsChangeUpdate: {
+            if ([self.delegate respondsToSelector:@selector(contentProvider:didUpdateCellAtIndexPath:)]) {
+                [self.delegate contentProvider:self didUpdateCellAtIndexPath:indexPath];
+            }
             break;
         }
         

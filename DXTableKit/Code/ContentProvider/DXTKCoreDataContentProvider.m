@@ -152,14 +152,17 @@
 
 - (void)setState:(DXTKContentProviderState)state
 {
-    if ([self.delegate respondsToSelector:@selector(contentProviderWillChangeState:)]) {
-        [self.delegate contentProviderWillChangeState:self];
-    }
-    
-    _state = state;
-    
-    if ([self.delegate respondsToSelector:@selector(contentProviderDidChangeState:)]) {
-        [self.delegate contentProviderDidChangeState:self];
+    if (_state != state) {
+        if ([self.delegate respondsToSelector:@selector(contentProviderWillChangeState:)]) {
+            [self.delegate contentProviderWillChangeState:self];
+        }
+        
+        _state = state;
+        
+        if ([self.delegate respondsToSelector:@selector(contentProviderDidChangeState:)]) {
+            [self.delegate contentProviderDidChangeState:self];
+        }
+
     }
 }
 

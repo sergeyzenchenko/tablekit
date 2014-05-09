@@ -122,14 +122,38 @@ describe(@"DXTKCoreDataContentProvider", ^{
             [contentProvider reload];
         });
         
-        it(@"#contentProviderWillChangeState:", ^{
-            [[delegate should] receive:@selector(contentProviderWillChangeState:) withArguments:contentProvider, nil];
-            [contentProvider setState:DXTKContentProviderStateError];
+
+        context(@"previous and new states are not equal ", ^{
+            beforeEach(^{
+                [contentProvider setState:DXTKContentProviderStateReady];
+            });
+            
+            it(@"#contentProviderWillChangeState:", ^{
+                [[delegate should] receive:@selector(contentProviderWillChangeState:) withArguments:contentProvider, nil];
+                [contentProvider setState:DXTKContentProviderStateError];
+            });
+            
+            it(@"#contentProviderDidChangeState:", ^{
+                [[delegate should] receive:@selector(contentProviderDidChangeState:) withArguments:contentProvider, nil];
+                [contentProvider setState:DXTKContentProviderStateError];
+            });
         });
         
-        it(@"#contentProviderDidChangeState:", ^{
-            [[delegate should] receive:@selector(contentProviderDidChangeState:) withArguments:contentProvider, nil];
-            [contentProvider setState:DXTKContentProviderStateError];
+        context(@"new and previous and new states are equal", ^{
+            
+            beforeEach(^{
+                [contentProvider setState:DXTKContentProviderStateError];
+            });
+            
+            it(@"should not call #contentProviderWillChangeState:", ^{
+                [[delegate shouldNot] receive:@selector(contentProviderWillChangeState:) withArguments:contentProvider, nil];
+                [contentProvider setState:DXTKContentProviderStateError];
+            });
+            
+            it(@"should not call #contentProviderDidChangeState:", ^{
+                [[delegate shouldNot] receive:@selector(contentProviderDidChangeState:) withArguments:contentProvider, nil];
+                [contentProvider setState:DXTKContentProviderStateError];
+            });
         });
         
         it(@"#contentProviderWillBeginUpdates:", ^{

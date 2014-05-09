@@ -156,7 +156,7 @@ describe(@"DXTKCoreDataContentProvider", ^{
         
         it(@"#contentProvider:didInsertRowAtIndexPath:", ^{
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-            [[delegate should] receive:@selector(contentProvider:didInsertRowAtIndexPath:)
+            [[delegate should] receive:@selector(contentProvider:didInsertCellAtIndexPath:)
                          withArguments:contentProvider,indexPath, nil];
             [contentProvider controller:nil
                         didChangeObject:nil
@@ -167,7 +167,7 @@ describe(@"DXTKCoreDataContentProvider", ^{
         
         it(@"#contentProvider:didRemoveRowAtIndexPath:", ^{
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-            [[delegate should] receive:@selector(contentProvider:didRemoveRowAtIndexPath:)
+            [[delegate should] receive:@selector(contentProvider:didRemoveCellAtIndexPath:)
                          withArguments:contentProvider, indexPath, nil];
             [contentProvider controller:nil
                         didChangeObject:nil

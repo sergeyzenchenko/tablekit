@@ -58,8 +58,8 @@
 {
     switch (type) {
         case NSFetchedResultsChangeInsert: {
-            if ([self.delegate respondsToSelector:@selector(contentProvider:didInsertRowAtIndexPath:)]) {
-                [self.delegate contentProvider:self didInsertRowAtIndexPath:newIndexPath];
+            if ([self.delegate respondsToSelector:@selector(contentProvider:didInsertCellAtIndexPath:)]) {
+                [self.delegate contentProvider:self didInsertCellAtIndexPath:newIndexPath];
             }
             break;
         }
@@ -73,8 +73,8 @@
         }
         
         case NSFetchedResultsChangeDelete: {
-            if ([self.delegate respondsToSelector:@selector(contentProvider:didRemoveRowAtIndexPath:)]) {
-                [self.delegate contentProvider:self didRemoveRowAtIndexPath:indexPath];
+            if ([self.delegate respondsToSelector:@selector(contentProvider:didRemoveCellAtIndexPath:)]) {
+                [self.delegate contentProvider:self didRemoveCellAtIndexPath:indexPath];
             }
             break;
         }

@@ -14,10 +14,13 @@ SPEC_BEGIN(DXTKContentProviderSpec)
 
 __block DXTKCoreDataContentProvider<NSFetchedResultsControllerDelegate> *contentProvider;
 __block NSFetchedResultsController *fetchedResultsController;
+__block NSObject<DXTKContentProviderDelegate> *delegate;
 
 beforeEach(^{
     fetchedResultsController = [KWMock nullMockForClass:[NSFetchedResultsController class]];
     contentProvider = (DXTKCoreDataContentProvider<NSFetchedResultsControllerDelegate> *)[[DXTKCoreDataContentProvider alloc] initWithFetchedResultsController:fetchedResultsController];
+    delegate = [KWMock nullMockForProtocol:@protocol(DXTKContentProviderDelegate)];
+    [contentProvider setDelegate:delegate];
 });
 
 describe(@"DXTKCoreDataContentProvider", ^{
@@ -25,22 +28,10 @@ describe(@"DXTKCoreDataContentProvider", ^{
     it(@"should conforms to DXTKContentProvider protocol", ^{
         [[contentProvider should] conformToProtocol:@protocol(DXTKContentProvider)];
     });
-
-    it(@"should have fetchedResultsController method", ^{
-        [[contentProvider should] respondToSelector:@selector(fetchedResultsController)];
-    });
     
-    it(@"should conforms to NSFetchedResultsControllerDelegate protocol", ^{
-        [[contentProvider should] conformToProtocol:@protocol(NSFetchedResultsControllerDelegate)];
-    });
-    
-    it(@"should init with NSFetchedResultsController", ^{
-        [[contentProvider should] respondToSelector:@selector(initWithFetchedResultsController:)];
-    });
-    
-    context(@"with fetched results Controller", ^{
+    describe(@"interaction with NSFetchedResultsController", ^{
         
-        it(@" 's fetchedResultsController should performFetch on reload ", ^{
+        it(@"should #performFetch: in FetchedResultsController on #reload method call", ^{
             [[fetchedResultsController should] receive:@selector(performFetch:)];
             [contentProvider reload];
         });
@@ -74,55 +65,50 @@ describe(@"DXTKCoreDataContentProvider", ^{
         it(@"should return fetchedResultsController's sectionInfo", ^{
             id sectionInfo = [KWMock mockForProtocol:@protocol(NSFetchedResultsSectionInfo)];
             [fetchedResultsController stub:@selector(sections) andReturn:@[sectionInfo]];
-
+            
             [[(id)[contentProvider sectionObjectForSection:0] should] equal:sectionInfo];
         });
     });
     
-    context(@"have delegate", ^{
+    describe(@"Data changing", ^{
         
-        __block NSObject<DXTKContentProviderDelegate> *delegate;
-        
-        beforeEach(^{
-            delegate = [KWMock nullMockForProtocol:@protocol(DXTKContentProviderDelegate)];
-            [contentProvider setDelegate:delegate];
+        context(@"data loading started", ^{
+            it(@"should call #contentProviderDidStartLoading:", ^{
+                [[delegate should] receive:@selector(contentProviderDidStartLoading:)
+                             withArguments:contentProvider, nil];
+                [contentProvider reload];
+            });
         });
         
-        it(@"should set delegate", ^{
-            [[(id)contentProvider.delegate should] beNonNil];
+        context(@"data loading finished with error", ^{
+            it(@"should call #contentProvider:didFinishLoadingWithError:", ^{
+                NSError *error = [NSError errorWithDomain:@"some error" code:0 userInfo:nil];
+                [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
+                    NSValue *pointerValue = params[0];
+                    void **errorRef = [pointerValue pointerValue];
+                    *errorRef = (__bridge void *)(error);
+                    return nil;
+                }];
+                [[delegate should] receive:@selector(contentProvider:didFinishLoadingWithError:)
+                             withArguments:contentProvider,error, nil];
+                [contentProvider reload];
+            });
         });
         
-        it(@"#contentProviderDidStartLoading:", ^{
-            [[delegate should] receive:@selector(contentProviderDidStartLoading:) withArguments:contentProvider, nil];
-            [contentProvider reload];
+        context(@"data loading finished successfully", ^{
+            it(@"should call #contentProviderDidFinishLoading:", ^{
+                NSError *error = nil;
+                [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
+                    NSValue *pointerValue = params[0];
+                    void **errorRef = [pointerValue pointerValue];
+                    *errorRef = (__bridge void *)(error);
+                    return nil;
+                }];
+                [[delegate should] receive:@selector(contentProviderDidFinishLoading:) withArguments:contentProvider, nil];
+                [contentProvider reload];
+            });
         });
         
-        it(@"#contentProvider:didFinishLoadingWithError:", ^{
-            NSError *error = [NSError errorWithDomain:@"some error" code:0 userInfo:nil];
-            [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
-                NSValue *pointerValue = params[0];
-                void **errorRef = [pointerValue pointerValue];
-                *errorRef = (__bridge void *)(error);
-                return nil;
-            }];
-            [[delegate should] receive:@selector(contentProvider:didFinishLoadingWithError:)
-                            withArguments:contentProvider,error, nil];
-            [contentProvider reload];
-        });
-        
-        it(@"#contentProviderDidFinishLoading:", ^{
-            NSError *error = nil;
-            [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
-                NSValue *pointerValue = params[0];
-                void **errorRef = [pointerValue pointerValue];
-                *errorRef = (__bridge void *)(error);
-                return nil;
-            }];
-            [[delegate should] receive:@selector(contentProviderDidFinishLoading:) withArguments:contentProvider, nil];
-            [contentProvider reload];
-        });
-        
-
         context(@"previous and new states are not equal ", ^{
             beforeEach(^{
                 [contentProvider setState:DXTKContentProviderStateReady];
@@ -155,143 +141,167 @@ describe(@"DXTKCoreDataContentProvider", ^{
                 [contentProvider setState:DXTKContentProviderStateError];
             });
         });
-        
-        it(@"#contentProviderWillBeginUpdates:", ^{
+    });
+    
+    describe(@"content changing", ^{
+        it(@"should call #contentProviderWillBeginUpdates: when content changing process started", ^{
             [[delegate should] receive:@selector(contentProviderWillBeginUpdates:) withArguments:contentProvider, nil];
             [contentProvider controllerWillChangeContent:nil];
         });
         
-        it(@"#contentProviderDidEndUpdates:", ^{
+        it(@"should call #contentProviderDidEndUpdates: when content changing process compleated", ^{
             [[delegate should] receive:@selector(contentProviderDidEndUpdates:) withArguments:contentProvider, nil];
             [contentProvider controllerDidChangeContent:nil];
         });
         
-        it(@"#contentProvider:didInsertSection:", ^{
-            [[delegate should] receive:@selector(contentProvider:didInsertSection:)
-                         withArguments:contentProvider, theValue(2), nil];
-            [contentProvider controller:nil didChangeSection:nil atIndex:2 forChangeType:NSFetchedResultsChangeInsert];
+        context(@"section content updates", ^{
+            it(@"#contentProvider:didInsertSection:", ^{
+                [[delegate should] receive:@selector(contentProvider:didInsertSection:)
+                             withArguments:contentProvider, theValue(2), nil];
+                [contentProvider controller:nil didChangeSection:nil atIndex:2 forChangeType:NSFetchedResultsChangeInsert];
+            });
+            
+            it(@"#contentProvider:didRemoveSection:", ^{
+                [[delegate should] receive:@selector(contentProvider:didRemoveSection:)
+                             withArguments:contentProvider, theValue(2), nil];
+                [contentProvider controller:nil didChangeSection:nil atIndex:2 forChangeType:NSFetchedResultsChangeDelete];
+            });
         });
         
-        it(@"#contentProvider:didRemoveSection:", ^{
-            [[delegate should] receive:@selector(contentProvider:didRemoveSection:)
-                         withArguments:contentProvider, theValue(2), nil];
-            [contentProvider controller:nil didChangeSection:nil atIndex:2 forChangeType:NSFetchedResultsChangeDelete];
-        });
-        
-        it(@"#contentProvider:didInsertRowAtIndexPath:", ^{
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-            [[delegate should] receive:@selector(contentProvider:didInsertCellAtIndexPath:)
-                         withArguments:contentProvider,indexPath, nil];
-            [contentProvider controller:nil
-                        didChangeObject:nil
-                            atIndexPath:nil
-                          forChangeType:NSFetchedResultsChangeInsert
-                           newIndexPath:indexPath];
-        });
-        
-        it(@"#contentProvider:didMoveCellAtIndexPath:toIndexPath:", ^{
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-            NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:2 inSection:1];
-            [[delegate should] receive:@selector(contentProvider:didMoveCellAtIntexPath:toIndexPath:)
-                         withArguments:contentProvider, indexPath, toIndexPath];
-            [contentProvider controller:nil
-                        didChangeObject:nil
-                            atIndexPath:indexPath
-                          forChangeType:NSFetchedResultsChangeMove
-                           newIndexPath:toIndexPath];
-        });
-        
-        it(@"#contentProvider:didUpdateCellAtIndexPath:", ^{
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-            [[delegate should] receive:@selector(contentProvider:didUpdateCellAtIndexPath:)
-                         withArguments:contentProvider, indexPath];
-            [contentProvider controller:nil
-                        didChangeObject:nil
-                            atIndexPath:indexPath
-                          forChangeType:NSFetchedResultsChangeUpdate
-                           newIndexPath:nil];
-        });
-        
-        it(@"#contentProvider:didRemoveRowAtIndexPath:", ^{
-            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
-            [[delegate should] receive:@selector(contentProvider:didRemoveCellAtIndexPath:)
-                         withArguments:contentProvider, indexPath, nil];
-            [contentProvider controller:nil
-                        didChangeObject:nil
-                            atIndexPath:indexPath
-                          forChangeType:NSFetchedResultsChangeDelete
-                           newIndexPath:nil];
+        context(@"cell content updates", ^{
+            it(@"#contentProvider:didInsertCellAtIndexPath:", ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+                [[delegate should] receive:@selector(contentProvider:didInsertCellAtIndexPath:)
+                             withArguments:contentProvider,indexPath, nil];
+                [contentProvider controller:nil
+                            didChangeObject:nil
+                                atIndexPath:nil
+                              forChangeType:NSFetchedResultsChangeInsert
+                               newIndexPath:indexPath];
+            });
+            
+            it(@"#contentProvider:didMoveCellAtIndexPath:toIndexPath:", ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+                NSIndexPath *toIndexPath = [NSIndexPath indexPathForRow:2 inSection:1];
+                [[delegate should] receive:@selector(contentProvider:didMoveCellAtIntexPath:toIndexPath:)
+                             withArguments:contentProvider, indexPath, toIndexPath];
+                [contentProvider controller:nil
+                            didChangeObject:nil
+                                atIndexPath:indexPath
+                              forChangeType:NSFetchedResultsChangeMove
+                               newIndexPath:toIndexPath];
+            });
+            
+            it(@"#contentProvider:didUpdateCellAtIndexPath:", ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+                [[delegate should] receive:@selector(contentProvider:didUpdateCellAtIndexPath:)
+                             withArguments:contentProvider, indexPath];
+                [contentProvider controller:nil
+                            didChangeObject:nil
+                                atIndexPath:indexPath
+                              forChangeType:NSFetchedResultsChangeUpdate
+                               newIndexPath:nil];
+            });
+            
+            it(@"#contentProvider:didRemoveRowAtIndexPath:", ^{
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:1];
+                [[delegate should] receive:@selector(contentProvider:didRemoveCellAtIndexPath:)
+                             withArguments:contentProvider, indexPath, nil];
+                [contentProvider controller:nil
+                            didChangeObject:nil
+                                atIndexPath:indexPath
+                              forChangeType:NSFetchedResultsChangeDelete
+                               newIndexPath:nil];
+            });
         });
     });
     
-    context(@"state switching", ^{
-        
-        /** State for just created content provider. This is the default. */
-        it(@"it should enter #DXTKContentProviderStateReady state after init", ^{
-            [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateReady)];
-        });
-        /** Content provider is loading content */
-        it(@"should enter #DXTKContentProviderStateLoading state when loading with no prevoous data", ^{
-            [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateLoading)];
-            [contentProvider reload];
+    describe(@"state switching", ^{
+        context(@"just initialized", ^{
+            it(@"should be in #DXTKContentProviderStateReady state", ^{
+                [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateReady)];
+            });
         });
         
-         /** Content provider is ready and has content */
-        it(@"#DXTKContentProviderStateHasResults", ^{
-            [fetchedResultsController stub:@selector(fetchedObjects) andReturn:@[@1, @2]];
-            [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateEmpty)];
-            [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateHasResults)];
-            [contentProvider reload];
-        });
-        
-        /** Content provider loading finished with empty data set */
-        context(@"#DXTKContentProviderStateEmpty", ^{
-            it(@"with empty array", ^{
-                [fetchedResultsController stub:@selector(fetchedObjects) andReturn:@[]];
-                [contentProvider reload];
-                [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateEmpty)];
+        context(@"start data loading", ^{            
+            context(@"content provider does not have previous data", ^{
+                it(@"should enter #DXTKContentProviderStateLoading state", ^{
+                    [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateLoading)];
+                    [contentProvider reload];
+                });
+                
+                it(@"should not enter #DXTKContentProviderStateUpdating state", ^{
+                    [contentProvider setState:DXTKContentProviderStateEmpty];
+                    [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateUpdating)];
+                    [contentProvider reload];
+                });
             });
             
-            it(@"with nil array", ^{
-                [fetchedResultsController stub:@selector(fetchedObjects) andReturn:nil];
-                [contentProvider reload];
-                [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateEmpty)];
+            context(@"content provider have previous data", ^{
+                it(@"should enter DXTKContentProviderStateUpdating state", ^{
+                    [contentProvider setState:DXTKContentProviderStateHasResults];
+                    [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateUpdating)];
+                    [contentProvider reload];
+                });
+                
+                it(@"should not enter #DXTKContentProviderStateLoading state", ^{
+                    [contentProvider setState:DXTKContentProviderStateHasResults];
+                    [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateLoading)];
+                    [contentProvider reload];
+                });
             });
         });
+        
+        context(@"finish data loading", ^{
+            context(@"finished successfully", ^{
+                context(@"new data present", ^{
+                    it(@"should enter #DXTKContentProviderStateHasResults state", ^{
+                        [fetchedResultsController stub:@selector(fetchedObjects) andReturn:@[@1, @2]];
+                        [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateEmpty)];
+                        [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateHasResults)];
+                        [contentProvider reload];
+                    });
+                });
+                
+                context(@"no data", ^{
+                    context(@"empty array", ^{
+                        it(@"should enter #DXTKContentProviderStateEmpty state", ^{
+                            [fetchedResultsController stub:@selector(fetchedObjects) andReturn:@[]];
+                            [contentProvider reload];
+                            [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateEmpty)];
+                        });
+                    });
+                    
+                    context(@"nil array", ^{
+                        it(@"should enter #DXTKContentProviderStateEmpty state", ^{
+                            [fetchedResultsController stub:@selector(fetchedObjects) andReturn:nil];
+                            [contentProvider reload];
+                            [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateEmpty)];
+                        });
+                    });
+                });
+            });
+            
+            context(@"finished with error", ^{
+                it(@"should enter #DXTKContentProviderStateError state", ^{
+                    NSError *error = [NSError errorWithDomain:@"some error" code:0 userInfo:nil];
+                    [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
+                        NSValue *pointerValue = params[0];
+                        void **errorRef = [pointerValue pointerValue];
+                        *errorRef = (__bridge void *)(error);
+                        return nil;
+                    }];
+                    [contentProvider reload];
+                    [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateError)];
+                });
+            });
+        });
+        
         
         /** Content provider loading more data */
         it(@"#DXTKContentProviderStateOutdated", ^{
             
         });
-        
-        /** Content provider loading more data */
-        context(@"#DXTKContentProviderStateUpdating", ^{
-            it(@"should enter state when have data", ^{
-                [contentProvider setState:DXTKContentProviderStateHasResults];
-                [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateUpdating)];
-                [contentProvider reload];
-            });
-            
-            it(@"should not enter state when have no data", ^{
-                [contentProvider setState:DXTKContentProviderStateEmpty];
-                [[contentProvider shouldNot] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateUpdating)];
-                [contentProvider reload];
-            });
-        });
-        
-        /** Content provider loading finished with error and content is not available */
-        it(@"#DXTKContentProviderStateError", ^{
-            NSError *error = [NSError errorWithDomain:@"some error" code:0 userInfo:nil];
-            [fetchedResultsController stub:@selector(performFetch:) withBlock:^id(NSArray *params) {
-                NSValue *pointerValue = params[0];
-                void **errorRef = [pointerValue pointerValue];
-                *errorRef = (__bridge void *)(error);
-                return nil;
-            }];
-            [contentProvider reload];
-            [[theValue(contentProvider.state) should] equal:theValue(DXTKContentProviderStateError)];            
-        });
-        
     });
     
 });

@@ -4,6 +4,7 @@
 //
 
 #import "DXTKCollectionViewDataSourceBuilder.h"
+#import "DXTKCollectionViewDataSource.h"
 #import "DXTKBuilder+Private.h"
 
 @implementation DXTKCollectionViewDataSourceBuilder
@@ -16,6 +17,11 @@
 - (void)registerNib:(UINib *)nib forDomainObjectClass:(Class)domainClass
 {
     [self.contentView registerNib:nib forCellWithReuseIdentifier:NSStringFromClass(domainClass)];
+}
+
+- (Class)dataSourceClass
+{
+    return [DXTKCollectionViewDataSource class];
 }
 
 @end

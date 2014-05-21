@@ -71,7 +71,6 @@ describe(@"DXTKCoreDataContentProvider", ^{
     });
     
     describe(@"Data changing", ^{
-        
         context(@"data loading started", ^{
             it(@"should call #contentProviderDidStartLoading:", ^{
                 [[delegate should] receive:@selector(contentProviderDidStartLoading:)
@@ -223,7 +222,7 @@ describe(@"DXTKCoreDataContentProvider", ^{
             });
         });
         
-        context(@"start data loading", ^{            
+        context(@"start data loading", ^{
             context(@"content provider does not have previous data", ^{
                 it(@"should enter #DXTKContentProviderStateLoading state", ^{
                     [[contentProvider should] receive:@selector(setState:) withArguments:theValue(DXTKContentProviderStateLoading)];
@@ -296,14 +295,11 @@ describe(@"DXTKCoreDataContentProvider", ^{
                 });
             });
         });
-        
-        
         /** Content provider loading more data */
         it(@"#DXTKContentProviderStateOutdated", ^{
             
         });
-    });
-    
+    });    
 });
 
 SPEC_END
